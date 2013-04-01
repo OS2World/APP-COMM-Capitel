@@ -1,0 +1,80 @@
+CC = gcc
+
+CFLAGS = -O2 -DUNIX -Wall -fpack-struct
+
+all: ucapitel
+
+#-------------------
+
+compile:
+	echo
+	echo compile...
+	echo
+
+capitel/obj.unx/capitel.o: makefile capitel/source/capitel.c 
+	gcc $(CFLAGS) -c -o capitel/obj.unx/capitel.o capitel/source/capitel.c 
+
+answer/obj.unx/answer.o: makefile answer/source/answer.c 
+	gcc $(CFLAGS) -c -o answer/obj.unx/answer.o answer/source/answer.c 
+
+util/obj.unx/dosstart.o: makefile util/source.unx/dosstart.c 
+	gcc $(CFLAGS) -c -o util/obj.unx/dosstart.o util/source.unx/dosstart.c 
+
+util/obj.unx/dtmf.o: makefile util/source/dtmf.c 
+	gcc $(CFLAGS) -c -o util/obj.unx/dtmf.o util/source/dtmf.c
+
+util/obj.unx/silence.o: makefile util/source/silence.c 
+	gcc $(CFLAGS) -c -o util/obj.unx/silence.o util/source/silence.c
+
+util/obj.unx/register.o: makefile util/source/register.c 
+	gcc $(CFLAGS) -c -o util/obj.unx/register.o util/source/register.c
+
+util/obj.unx/vorwahl.o: makefile util/source/vorwahl.c 
+	gcc $(CFLAGS) -c -o util/obj.unx/vorwahl.o util/source/vorwahl.c
+
+isdn/obj.unx/isdncapi.o: makefile isdn/source/isdncapi.c 
+	gcc $(CFLAGS) -c -o isdn/obj.unx/isdncapi.o isdn/source/isdncapi.c
+
+isdn/obj.unx/isdnc20.o: makefile isdn/source/isdnc20.c 
+	gcc $(CFLAGS) -c -o isdn/obj.unx/isdnc20.o isdn/source/isdnc20.c
+
+wave/obj.unx/alw2wav.o: makefile wave/source/alw2wav.c 
+	gcc $(CFLAGS) -c -o wave/obj.unx/alw2wav.o wave/source/alw2wav.c
+
+wave/obj.unx/wav2alw.o: makefile wave/source/wav2alw.c 
+	gcc $(CFLAGS) -c -o wave/obj.unx/wav2alw.o wave/source/wav2alw.c
+
+../units/unx.obj/os_unx.o: makefile ../units/unx.src/os_unx.c 
+	gcc $(CFLAGS) -c -o ../units/unx.obj/os_unx.o ../units/unx.src/os_unx.c
+
+../units/unx.obj/loadcapi.o: makefile ../units/unx.src/loadcapi.c 
+	gcc $(CFLAGS) -c -o ../units/unx.obj/loadcapi.o ../units/unx.src/loadcapi.c
+
+../units/unx.obj/cfg_file.o: makefile ../units/common.src/cfg_file.c 
+	gcc $(CFLAGS) -c -o ../units/unx.obj/cfg_file.o ../units/common.src/cfg_file.c
+
+../units/unx.obj/util.o: makefile ../units/common.src/util.c 
+	gcc $(CFLAGS) -c -o ../units/unx.obj/util.o ../units/common.src/util.c
+
+../units/unx.obj/num2nam.o: makefile ../units/common.src/num2nam.c 
+	gcc $(CFLAGS) -c -o ../units/unx.obj/num2nam.o ../units/common.src/num2nam.c 
+
+../units/unx.obj/capi_chk.o: makefile ../units/common.src/capi_chk.c 
+	gcc $(CFLAGS) -c -o ../units/unx.obj/capi_chk.o ../units/common.src/capi_chk.c
+
+#-------------------
+
+ucapitel: compile makefile capitel/obj.unx/capitel.o answer/obj.unx/answer.o ../units/unx.obj/os_unx.o ../units/unx.obj/cfg_file.o ../units/unx.obj/util.o util/obj.unx/dosstart.o ../units/unx.obj/num2nam.o wave/obj.unx/wav2alw.o wave/obj.unx/alw2wav.o util/obj.unx/dtmf.o util/obj.unx/silence.o util/obj.unx/register.o util/obj.unx/vorwahl.o isdn/obj.unx/isdncapi.o isdn/obj.unx/isdnc20.o ../units/unx.obj/capi_chk.o ../units/unx.obj/loadcapi.o
+	echo /
+	echo linking.../
+	echo /
+	gcc  -lcapi20 -lm -lpthread $(CFLAGS) -o ucapitel capitel/obj.unx/capitel.o answer/obj.unx/answer.o ../units/unx.obj/os_unx.o ../units/unx.obj/cfg_file.o ../units/unx.obj/util.o util/obj.unx/dosstart.o ../units/unx.obj/num2nam.o wave/obj.unx/wav2alw.o wave/obj.unx/alw2wav.o util/obj.unx/dtmf.o util/obj.unx/silence.o util/obj.unx/register.o util/obj.unx/vorwahl.o isdn/obj.unx/isdncapi.o isdn/obj.unx/isdnc20.o ../units/unx.obj/capi_chk.o ../units/unx.obj/loadcapi.o 
+
+clean:
+
+	find . -name "*.o" -exec rm {} \;
+	find . -name "*~" -exec rm {} \;
+	find ../units -name "*.o" -exec rm {} \;
+	find ../units -name "*~" -exec rm {} \;
+	rm ucapitel
+	

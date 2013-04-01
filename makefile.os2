@@ -1,0 +1,13 @@
+all: ctelos2t.exe \
+     ctelos2e.exe \
+     ctelos2g.exe \
+
+ctelos2t.exe:
+             nmake -f ctelos2t.mak
+
+ctelos2e.exe:
+             nmake -f ctelos2e.mak
+
+ctelos2g.exe:
+             nmake -f ctelos2g.mak
+
