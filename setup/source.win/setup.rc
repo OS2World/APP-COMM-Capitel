@@ -1,0 +1,2564 @@
+
+#include <commctrl.h>
+#include <windows.h>
+#include "setup.h"
+
+#ifndef APSTUDIO_INVOKED
+ID_ICON           ICON      RES_MAIN_ICON
+ID_WATERMARK      BITMAP    RES_NEWWIZ_WATER1
+ID_HEADER         BITMAP    RES_NEWWIZ_WATER2
+ID_BMPLIST        BITMAP    RES_IMGLST_BITMAP
+#endif
+
+#ifdef APSTUDIO_INVOKED
+#define TEXT_ENG_TITLE   "TEXT_ENG_TITLE"
+#define TEXT_ENG_INSTALL "TEXT_ENG_INSTALL"
+#define TEXT_GER_TITLE   "TEXT_GER_TITLE"
+#define TEXT_GER_INSTALL "TEXT_GER_INSTALL"
+#define TEXT_FRE_TITLE   "TEXT_FRE_TITLE"
+#define TEXT_FRE_INSTALL "TEXT_FRE_INSTALL"
+#define TEXT_ITA_TITLE   "TEXT_ITA_TITLE"
+#define TEXT_ITA_INSTALL "TEXT_ITA_INSTALL"
+#define TEXT_SPA_TITLE   "TEXT_SPA_TITLE"
+#define TEXT_SPA_INSTALL "TEXT_SPA_INSTALL"
+#define TEXT_DUT_TITLE   "TEXT_DUT_TITLE"
+#define TEXT_DUT_INSTALL "TEXT_DUT_INSTALL"
+#define TEXT_NOR_TITLE   "TEXT_NOR_TITLE"
+#define TEXT_NOR_INSTALL "TEXT_NOR_INSTALL"
+#define TEXT_DAN_TITLE   "TEXT_DAN_TITLE"
+#define TEXT_DAN_INSTALL "TEXT_DAN_INSTALL"
+#define TEXT_FIN_TITLE   "TEXT_FIN_TITLE"
+#define TEXT_FIN_INSTALL "TEXT_FIN_INSTALL"
+#define TEXT_CZE_TITLE   "TEXT_CZE_TITLE"
+#define TEXT_CZE_INSTALL "TEXT_CZE_INSTALL"
+#define TEXT_POL_TITLE   "TEXT_POL_TITLE"
+#define TEXT_POL_INSTALL "TEXT_POL_INSTALL"
+#define TEXT_RUS_TITLE   "TEXT_RUS_TITLE"
+#define TEXT_RUS_INSTALL "TEXT_RUS_INSTALL"
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle englischen resourcen
+ * anmerkung: wenn eine neue sprache hinzugefuegt werden soll, einfach den
+ *            kompletten block mit den englischen resourcen kopieren und am
+ *            ende der datei wieder einfuegen. dann muessen nur noch die
+ *            texte uebersetzt und die LANGUAGE-statements angepasst werden)
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_ENG_TITLE
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_ENG_TITLE
+  STR_INSTALLTEXT         TEXT_ENG_INSTALL
+  STR_INSTALLFAIL         "The installation did not complete successfully."
+  STR_REMOVEFAIL          "The deinstallation did not complete successfully."
+  STR_WIZ97_P2TITLE       "Software Components"
+  STR_WIZ97_P2SUBTITLE    "Specify which software components you want to be installed during setup."
+  STR_WIZ97_P3TITLE       "Target Directory"
+  STR_WIZ97_P3SUBTITLE    "You can select a target directory where the software should be installed."
+  STR_WIZ97_P4TITLE       "Carry out Installation"
+  STR_WIZ97_P4SUBTITLE    "The installation can now be performed."
+  STR_WARNING             "Warning"
+  STR_VERSIONWARNING      "A more recent version of %s is currently installed on your system.\r\rDo you really want to replace the existing version?"
+  STR_INFERROR            "There is an error in file %s, line %d. Installation can not continue."
+  STR_BROWSETITLE         "Please select a target folder for installation:"
+  STR_STOPSERVICE         "Stoping services ..."
+  STR_COPYING             "Copying files ..."
+  STR_DELETING            "Deleting files ..."
+  STR_REGISTRY            "Updating registry ..."
+  STR_SHORTCUTS           "Updating shortcuts ..."
+  STR_STARTSERVICE        "Starting services ..."
+  STR_CLOSE_BTN           "Close"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1  
+  LTEXT           "Place a checkmark beside each software component you want to install, or remove the checkmark to exclude it from installation.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Place a checkmark beside each software component you want to install, or remove the checkmark to exclude it from installation.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Please enter the target directory where the software should be installed. Or, search for the apropriate folder by clicking Browse.",IDC_TEXT1,21,37,275,16
+  LTEXT           "&Target directory:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "B&rowse...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Please enter the target directory where the software should be installed. Or, search for the apropriate folder by clicking Browse.",IDC_TEXT1,21,1,275,16
+  LTEXT           "&Target directory:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "B&rowse...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Setup is now ready to install the selected software.",-2,21,37,275,8
+  LTEXT           "Click on the Next button to start the installation.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Please keep your Microsoft Windows CD-ROM handy. Files from this CD may be required during the installation.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup is now ready to install the selected software.",-2,21,1,275,8
+  LTEXT           "Click on the Next button to start the installation.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Please keep your Microsoft Windows CD-ROM handy. Files from this CD may be required during the installation.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "The installation was successful.",-1,115,33,189,8
+  LTEXT           "Click Finish to exit Setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "A number of the updated files are currently in use. The system must therefore be restarted before the newly installed software can be used.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "The installation was successful.",-1,115,40,189,8
+  LTEXT           "Click Finish to exit Setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "A number of the updated files are currently in use. The system must therefore be restarted before the newly installed software can be used.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "You are about to remove the following software component from your computer:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Click Next to uninstall.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "You are about to remove the following software component from your computer:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Click Next to uninstall.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "The software was successfully removed.",-1,115,33,189,8
+  LTEXT           "Click Finish to exit Setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "You have to reboot your system to remove some files that are currently in use.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ENG_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "The software was successfully removed.",-1,115,40,189,8
+  LTEXT           "Click Finish to exit Setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "You have to reboot your system to remove some files that are currently in use.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle deutschen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_GER_TITLE
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_GER_TITLE
+  STR_INSTALLTEXT         TEXT_GER_INSTALL
+  STR_INSTALLFAIL         "Die Installation konnte nicht erfolgreich durchgeführt werden."
+  STR_REMOVEFAIL          "Die Deinstallation konnte nicht erfolgreich durchgeführt werden."
+  STR_WIZ97_P2TITLE       "Software-Komponenten"
+  STR_WIZ97_P2SUBTITLE    "Wählen Sie die Software-Komponenten aus, die von Setup installiert werden sollen."
+  STR_WIZ97_P3TITLE       "Zielverzeichnis"
+  STR_WIZ97_P3SUBTITLE    "Wählen Sie das Zielverzeichnis, in welches die Software installiert werden soll."
+  STR_WIZ97_P4TITLE       "Installation durchführen"
+  STR_WIZ97_P4SUBTITLE    "Die Installation kann nun durchgeführt werden."
+  STR_WARNING             "Warnung"
+  STR_VERSIONWARNING      "Auf Ihrem System ist bereits eine neuere Version von %s vorhanden.\r\rSoll die vorhandene Version wirklich überschrieben werden?"
+  STR_INFERROR            "Die Datei %s enthaelt in Zeile %d einen Fehler. Die Installation kann nicht fortgesetzt werden."
+  STR_BROWSETITLE         "Wählen Sie ein Zielverzeichnis für die Installation aus:"
+  STR_STOPSERVICE         "Dienste werden gestoppt ..."
+  STR_COPYING             "Kopiere Dateien..."
+  STR_DELETING            "Lösche Dateien..."
+  STR_REGISTRY            "Bearbeite Registry ..."
+  STR_SHORTCUTS           "Das Start-Menü wird aktualisiert..."
+  STR_STARTSERVICE        "Dienste werden gestartet ..."
+  STR_CLOSE_BTN           "Schließen"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Bitte markieren Sie die einzelnen Software-Komponenten, die installiert werden sollen. Entfernen Sie die Markierung um eine Komponente von der Installation auszuschließen.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Bitte markieren Sie die einzelnen Software-Komponenten, die installiert werden sollen. Entfernen Sie die Markierung um eine Komponente von der Installation auszuschließen.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Bitte geben Sie Verzeichnis ein, in das die Software installiert werden soll. Oder wählen Sie ein Verzeichnis aus, indem Sie auf Suchen klicken.",IDC_TEXT1,21,37,275,16
+  LTEXT           "Ziel&verzeichnis:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Suchen...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Bitte geben Sie Verzeichnis ein, in das die Software installiert werden soll. Oder wählen Sie ein Verzeichnis aus, indem Sie auf Suchen klicken.",IDC_TEXT1,21,1,275,16
+  LTEXT           "Ziel&verzeichnis:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Suchen...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1  
+  LTEXT           "Setup ist nun bereit, die von Ihnen ausgewählte Software zu installieren.",-2,21,37,275,8
+  LTEXT           "Klicken Sie auf 'Weiter', um die Installation zu beginnen.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Bitte halten Sie Ihre Microsoft Windows CD-ROM bereit. Während der Installation müssen möglicherweise einige Dateien von dieser CD kopiert werden.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup ist nun bereit, die von Ihnen ausgewählte Software zu installieren.",-2,21,1,275,8
+  LTEXT           "Klicken Sie auf 'Weiter', um die Installation zu beginnen.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Bitte halten Sie Ihre Microsoft Windows CD-ROM bereit. Während der Installation müssen möglicherweise einige Dateien von dieser CD kopiert werden.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Installation beendet",IDC_TEXT1,115,1,189,24
+  LTEXT           "Die Installation wurde erfolgreich durchgeführt.",-1,115,33,189,8
+  LTEXT           "Klicken Sie auf 'Fertigstellen', um Setup zu schließen.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Einige der aktualisierten Dateien sind zur Zeit in Benutzung, deshalb muß das System neu gestartet werden, bevor Sie die installierte Software verwenden können.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Installation beendet",IDC_TEXT1,115,8,189,24
+  LTEXT           "Die Installation wurde erfolgreich durchgeführt.",-1,115,40,189,8
+  LTEXT           "Klicken Sie auf 'Fertigstellen', um Setup zu schließen.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Einige der aktualisierten Dateien sind zur Zeit in Benutzung, deshalb muß das System neu gestartet werden, bevor Sie die installierte Software verwenden können.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Sie sind dabei, folgende Software-Komponente von Ihrem Computer zu entfernen:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Klicken Sie auf Weiter, um die Deinstallation durchzuführen.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Sie sind dabei, folgende Software-Komponente von Ihrem Computer zu entfernen:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Klicken Sie auf Weiter, um die Deinstallation durchzuführen.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Deinstallation beendet",IDC_TEXT1,115,1,189,24
+  LTEXT           "Die Deinstallation wurde erfolgreich durchgeführt.",-1,115,33,189,8
+  LTEXT           "Klicken Sie auf 'Fertigstellen', um Setup zu schließen.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Einige Dateien sind zur Zeit in Benutzung und werden erst beim nächsten Systemstart gelöscht.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_GER_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Deinstallation beendet",IDC_TEXT1,115,8,189,24
+  LTEXT           "Die Deinstallation wurde erfolgreich durchgeführt.",-1,115,40,189,8
+  LTEXT           "Klicken Sie auf 'Fertigstellen', um Setup zu schließen.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Einige Dateien sind zur Zeit in Benutzung und werden erst beim nächsten Systemstart gelöscht.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle franzoesichen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_FRE_TITLE
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_FRE_TITLE
+  STR_INSTALLTEXT         TEXT_FRE_INSTALL
+  STR_INSTALLFAIL         "L'installation n'a pas pu être effectuée correctement."
+  STR_REMOVEFAIL          "La désinstallation n'a pas pu être effectuée correctement."
+  STR_WIZ97_P2TITLE       "Composants logiciels"
+  STR_WIZ97_P2SUBTITLE    "Sélectionnez les composants à installer."
+  STR_WIZ97_P3TITLE       "Répertoire d'installation"
+  STR_WIZ97_P3SUBTITLE    "Vous pouvez sélectionner le répertoire dans lequel le logiciel doit être installé."
+  STR_WIZ97_P4TITLE       "Installer"
+  STR_WIZ97_P4SUBTITLE    "L'installation peut être effectuée maintenant."
+  STR_WARNING             "Avertissement"
+  STR_VERSIONWARNING      "Une nouvelle version de %s est déjà installée sur votre système.\r\rSouhaitez vous quand même remplacer le version présente ?"
+  STR_INFERROR            "Le fichier %s contient une erreur dans la ligne %d. L'installation est interrompue."
+  STR_BROWSETITLE         "Sélectionnez le répertoire d'installation :"
+  STR_STOPSERVICE         "Arrêt des services ..."
+  STR_COPYING             "Copier les fichiers ..."
+  STR_DELETING            "Supprimer les fichiers ..."
+  STR_REGISTRY            "Gestion de la base de registre ..."
+  STR_SHORTCUTS           "Mise à jour du menu de démarrage ..."
+  STR_STARTSERVICE        "Lancement des services ..."
+  STR_CLOSE_BTN           "Fermer"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Sélectionnez les composants à installer. Pour exclure un composant de l'installation, supprimez la sélection correspondante.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Sélectionnez les composants à installer. Pour exclure un composant de l'installation, supprimez la sélection correspondante.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Entrez le répertoire dans lequel le logiciel doit être installé. Ou sélectionnez un répertoire en cliquant sur Parcourir.",IDC_TEXT1,21,37,275,16
+  LTEXT           "Répertoire &cible :",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Parcourir...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Entrez le répertoire dans lequel le logiciel doit être installé. Ou sélectionnez un répertoire en cliquant sur Parcourir.",IDC_TEXT1,21,1,275,16
+  LTEXT           "Répertoire &cible :",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Parcourir...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Le logiciel d'installation est prêt à installer les composants sélectionnés.",-2,21,37,275,8
+  LTEXT           "Cliquez sur 'Suivant' pour commencer l'installation.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Ayez votre CD-ROM Microsoft Windows à portée de main. Pendant l'installation, certains fichiers de ce CD devront éventuellement être copiés sur le disque dur.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Le logiciel d'installation est prêt à installer les composants sélectionnés.",-2,21,1,275,8
+  LTEXT           "Cliquez sur 'Suivant' pour commencer l'installation.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Ayez votre CD-ROM Microsoft Windows à portée de main. Pendant l'installation, certains fichiers de ce CD devront éventuellement être copiés sur le disque dur.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "L'installation est terminée",IDC_TEXT1,115,1,189,24
+  LTEXT           "L'installation a été exécutée correctement.",-1,115,33,189,8
+  LTEXT           "Cliquez sur 'Terminer' pour fermer le logiciel d'installation.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Certains des fichiers mis à jour sont en cours d'utilisation, c'est pourquoi vous devez redémarrer le système avant de pouvoir utiliser le logiciel installé.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "L'installation est terminée",IDC_TEXT1,115,8,189,24
+  LTEXT           "L'installation a été exécutée correctement.",-1,115,40,189,8
+  LTEXT           "Cliquez sur 'Terminer' pour fermer le logiciel d'installation.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Certains des fichiers mis à jour sont en cours d'utilisation, c'est pourquoi vous devez redémarrer le système avant de pouvoir utiliser le logiciel installé.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Les composants suivants seront supprimés :",-1,115,33,189,8
+  ICON            "",IDC_STATIC,115,52,10,10
+  LTEXT           "",IDC_TEXT2,132,53,172,8
+  LTEXT           "Cliquez sur 'Suivant' pour procéder à la désinstallation.",-2,115,73,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Les composants suivants seront supprimés :",-1,115,40,189,8
+  ICON            "",IDC_STATIC,115,59,10,10
+  LTEXT           "",IDC_TEXT2,132,60,172,8
+  LTEXT           "Cliquez sur 'Suivant' pour procéder à la désinstallation.",-2,115,80,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "La désinstallation est terminée",IDC_TEXT1,115,1,189,24
+  LTEXT           "La désinstallation a été exécutée correctement.",-1,115,33,189,8
+  LTEXT           "Cliquez sur 'Terminer' pour fermer le logiciel d'installation.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Certains des fichiers sont en cours d'utilisation et ne seront effacés qu'après le redémarrage du système.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FRE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "La désinstallation est terminée",IDC_TEXT1,115,8,189,24
+  LTEXT           "La désinstallation a été exécutée correctement.",-1,115,40,189,8
+  LTEXT           "Cliquez sur 'Terminer' pour fermer le logiciel d'installation.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Certains des fichiers sont en cours d'utilisation et ne seront effacés qu'après le redémarrage du système.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle italienischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_ITA_TITLE
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_ITA_TITLE
+  STR_INSTALLTEXT         TEXT_ITA_INSTALL
+  STR_INSTALLFAIL         "Il programma non è stato installato con successo."
+  STR_REMOVEFAIL          "Il programma non è stato disinstallato con successo."
+  STR_WIZ97_P2TITLE       "Componenti Software"
+  STR_WIZ97_P2SUBTITLE    "Specifica quali componenti software desiderate installare durante il setup."
+  STR_WIZ97_P3TITLE       "Directory di destinazione"
+  STR_WIZ97_P3SUBTITLE    "Potete selezionare una directory di destinazione nella quale sarà installato il software."
+  STR_WIZ97_P4TITLE       "Esegui l'installazione"
+  STR_WIZ97_P4SUBTITLE    "L'installazione può adesso essere eseguita."
+  STR_WARNING             "Attenzione"
+  STR_VERSIONWARNING      "Nel sistema è già presente una versione più nuova di %s.\r\rSovrascrivere veramente la versione già esistente?"
+  STR_INFERROR            "C'è un errore nel file %s, linea %d. L'installazione non puo' essere portata a termine."
+  STR_BROWSETITLE         "Selezionate una directory di destinazione per l'installazione."
+  STR_STOPSERVICE         "Arresto dei servizi..."
+  STR_COPYING             "Copia dei file ..."
+  STR_DELETING            "Cancellazione dei file ..."
+  STR_REGISTRY            "Aggiornamento dei registri ..."
+  STR_SHORTCUTS           "Aggiornamento dei collegamenti ..."
+  STR_STARTSERVICE        "Avvio dei servizi ..."
+  STR_CLOSE_BTN           "Chiusura"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Selezionate la casella di ogni componente software che desiderate installare, o desezionatela se desiderate escludere il componente dall'installazione..",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Selezionate la casella di ogni componente software che desiderate installare, o desezionatela se desiderate escludere il componente dall'installazione..",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Inserite la directory di destinazione all'interno della quale i file devono essere estratti. Se preferite, scegliete la directory premendo Sfoglia.",IDC_TEXT1,21,37,275,16
+  LTEXT           "&Directory di destinazione:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "S&foglia...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Inserite la directory di destinazione all'interno della quale i file devono essere estratti. Se preferite, scegliete la directory premendo Sfoglia.",IDC_TEXT1,21,1,275,16
+  LTEXT           "&Directory di destinazione:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "S&foglia...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Setup è adesso pronto per installare il software selezionato.",-2,21,37,275,8
+  LTEXT           "Cliccare su 'Avanti', per iniziare l'installazione.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Tenere a portata di mano il proprio CD-ROM di Microsoft Windows. Durante l'installazione potrebbe essere necessario copiare alcuni file da tale CD.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup è adesso pronto per installare il software selezionato.",-2,21,1,275,8
+  LTEXT           "Cliccare su 'Avanti', per iniziare l'installazione.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Tenere a portata di mano il proprio CD-ROM di Microsoft Windows. Durante l'installazione potrebbe essere necessario copiare alcuni file da tale CD.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "L'installazione è stata effettuata con successo.",-1,115,33,189,8
+  LTEXT           "Cliccare su 'Fine' per uscire dal setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Alcuni dei file aggiornati sono attualmente in uso. Per questo motivo, prima di poter usare il  software installato, il sistema deve essere riavviato.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "L'installazione è stata effettuata con successo.",-1,115,40,189,8
+  LTEXT           "Cliccare su 'Fine' per uscire dal setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Alcuni dei file aggiornati sono attualmente in uso. Per questo motivo, prima di poter usare il  software installato, il sistema deve essere riavviato.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Si stanno eliminando dal computer le seguenti componenti software:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Per effettuare la deinstallazione, cliccare su 'Avanti'.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Si stanno eliminando dal computer le seguenti componenti software:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Per effettuare la deinstallazione, cliccare su 'Avanti'.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "La deinstallazione è stata effettuata con successo.",-1,115,33,189,8
+  LTEXT           "Cliccare su 'Fine' per uscire dal setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Alcuni file sono attualmente in uso e verranno cancellati solo al prossimo avvio del sistema.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_ITA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "La deinstallazione è stata effettuata con successo.",-1,115,40,189,8
+  LTEXT           "Cliccare su 'Fine' per uscire dal setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Alcuni file sono attualmente in uso e verranno cancellati solo al prossimo avvio del sistema.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle spanischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_SPA_TITLE
+LANGUAGE LANG_SPANISH, SUBLANG_NEUTRAL
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_SPA_TITLE
+  STR_INSTALLTEXT         TEXT_SPA_INSTALL
+  STR_INSTALLFAIL         "La instalación no se ha podido completar con éxito."
+  STR_REMOVEFAIL          "La desinstalación no se ha podido completar con éxito."
+  STR_WIZ97_P2TITLE       "Componentes de software"
+  STR_WIZ97_P2SUBTITLE    "Seleccione los componentes de software que desea instalar con setup."
+  STR_WIZ97_P3TITLE       "Directorio de destino"
+  STR_WIZ97_P3SUBTITLE    "Puede seleccionar el directorio de destino en el que desea instalar el software."
+  STR_WIZ97_P4TITLE       "Proceder a la instalación"
+  STR_WIZ97_P4SUBTITLE    "Ahora puede iniciar la instalación."
+  STR_WARNING             "Warning"
+  STR_VERSIONWARNING      "Dispone en su sistema de una versión más reciente de %s.\r\r¿Sobrescribir la versión disponible?"
+  STR_INFERROR            "El archivo %s contiene un error en la línea %d. No es posible continuar con la instalación."
+  STR_BROWSETITLE         "Seleccione un directorio de destino para la instalación:"
+  STR_STOPSERVICE         "Servicios anulados ..."
+  STR_COPYING             "Copiar archivos ..."
+  STR_DELETING            "Borrar archivos ..."
+  STR_REGISTRY            "Modificar registro ..."
+  STR_SHORTCUTS           "Actualizando el menú de inicio ..."
+  STR_STARTSERVICE        "Iniciando los servicios ..."
+  STR_CLOSE_BTN           "Cerrar"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Por favor, marque los componentes de software que desea instalar. Elimine la marca para descartar un componente de su instalación ",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Por favor, marque los componentes de software que desea instalar. Elimine la marca para descartar un componente de su instalación ",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Introduzca el directorio en el que desea instalar el software o seleccione un directorio haciendo clic en Buscar.",IDC_TEXT1,21,37,275,16
+  LTEXT           "Directorio &de salida:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Buscar ...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Introduzca el directorio en el que desea instalar el software o seleccione un directorio haciendo clic en Buscar.",IDC_TEXT1,21,1,275,16
+  LTEXT           "Directorio &de salida:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Buscar ...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Setup está preparado para instalar el software seleccionado por usted.",-2,21,37,275,8
+  LTEXT           "Haga clic en 'Siguiente', para iniciar la instalación.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Por favor, tenga preparado el CD-ROM de Microsoft Windows. Posiblemente, durante la instalación han de ser copiados algunos datos de dicho CD.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup está preparado para instalar el software seleccionado por usted.",-2,21,1,275,8
+  LTEXT           "Haga clic en 'Siguiente', para iniciar la instalación.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Por favor, tenga preparado el CD-ROM de Microsoft Windows. Posiblemente, durante la instalación han de ser copiados algunos datos de dicho CD.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "La instalación se ha realizado correctamente.",-1,115,33,189,8
+  LTEXT           "Haga clic en 'Finalizar', para cerrar el programa Setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Algunos de los archivos actualizados están siendo utilizados, por lo que ha de reiniciar el sistema antes de poder utilizar el software instalado.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "La instalación se ha realizado correctamente.",-1,115,40,189,8
+  LTEXT           "Haga clic en 'Finalizar', para cerrar el programa Setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Algunos de los archivos actualizados están siendo utilizados, por lo que ha de reiniciar el sistema antes de poder utilizar el software instalado.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Está a punto de eliminar de su ordenador los siguientes componentes de software:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Haga clic en 'Siguiente', para proceder a la desinstalación.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Está a punto de eliminar de su ordenador los siguientes componentes de software:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Haga clic en 'Siguiente', para proceder a la desinstalación.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "La desinstalación se ha realizado correctamente.",-1,115,33,189,8
+  LTEXT           "Haga clic en 'Finalizar', para cerrar el programa Setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Algunos de los archivos están siendo utilizados y serán borrados la próxima vez que arranque el sistema.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_SPA_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "La desinstalación se ha realizado correctamente.",-1,115,40,189,8
+  LTEXT           "Haga clic en 'Finalizar', para cerrar el programa Setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Algunos de los archivos están siendo utilizados y serán borrados la próxima vez que arranque el sistema.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle niederlaendischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_DUT_TITLE
+LANGUAGE LANG_DUTCH, SUBLANG_DUTCH
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_DUT_TITLE
+  STR_INSTALLTEXT         TEXT_DUT_INSTALL
+  STR_INSTALLFAIL         "De installatie is niet goed verlopen."
+  STR_REMOVEFAIL          "De installatie ongedaan maken is niet goed verlopen."
+  STR_WIZ97_P2TITLE       "Software-componenten"
+  STR_WIZ97_P2SUBTITLE    "Selecteer de software-componenten die door Setup geïnstalleerd moeten worden."
+  STR_WIZ97_P3TITLE       "Doeldirectory"
+  STR_WIZ97_P3SUBTITLE    "U kunt de doeldirectory selecteren waarin de software geïnstalleerd moet worden."
+  STR_WIZ97_P4TITLE       "Installatie uitvoeren"
+  STR_WIZ97_P4SUBTITLE    "De installatie kan nu uitgevoerd worden."
+  STR_WARNING             "Warning"
+  STR_VERSIONWARNING      "Op uw systeem is reeds een nieuwere versie van %s aanwezig.\r\rMoet de aanwezige versie werkelijk overschreven worden?"
+  STR_INFERROR            "Het bestand %s bevat in regel %d een fout. De installatie kan niet voortgezet worden."
+  STR_BROWSETITLE         "Selecteer een doeldirectory voor de installatie:"
+  STR_STOPSERVICE         "Diensten worden gestopt ..."
+  STR_COPYING             "Bezig met kopieren van bestanden ..."
+  STR_DELETING            "Bezig met wissen van bestanden ..."
+  STR_REGISTRY            "Bezig met bewerken van Registry ..."
+  STR_SHORTCUTS           "Het Start-menu wordt bijgewerkt ..."
+  STR_STARTSERVICE        "Diensten worden gestart ..."
+  STR_CLOSE_BTN           "Sluiten"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Markeer a.u.b. de afzonderlijke software-componenten die geïnstalleerd moeten worden. Verwijder de markering om een component van de installatie uit te sluiten.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Markeer a.u.b. de afzonderlijke software-componenten die geïnstalleerd moeten worden. Verwijder de markering om een component van de installatie uit te sluiten.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Voer a.u.b. de directory in waarin de software geïnstalleerd moet worden. Of selecteer een directory door op Zoeken te klikken.",IDC_TEXT1,21,37,275,16
+  LTEXT           "Doel&directory:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Zoeken ...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Voer a.u.b. de directory in waarin de software geïnstalleerd moet worden. Of selecteer een directory door op Zoeken te klikken.",IDC_TEXT1,21,1,275,16
+  LTEXT           "Doel&directory:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Zoeken ...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Setup is nu gereed, om de door u geselecteerde software te installeren.",-2,21,37,275,8
+  LTEXT           "Klik op 'Verder', om met de installatie te beginnen.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Houd a.u.b. uw Microsoft Windows CD-ROM bij de hand. Tijdens de installatie moeten mogelijkerwijs enkele bestanden van deze CD gekopieerd worden.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup is nu gereed, om de door u geselecteerde software te installeren.",-2,21,1,275,8
+  LTEXT           "Klik op 'Verder', om met de installatie te beginnen.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Houd a.u.b. uw Microsoft Windows CD-ROM bij de hand. Tijdens de installatie moeten mogelijkerwijs enkele bestanden van deze CD gekopieerd worden.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "De installatie werd met succes uitgevoerd.",-1,115,33,189,8
+  LTEXT           "Klik op 'Voltooien', om Setup te sluiten.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Enkele van de bijgewerkte bestanden zijn momenteel in gebruik, daarom moet het systeem opnieuw opgestart worden, voordat u de geïnstalleerde software kunt gebruiken.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "De installatie werd met succes uitgevoerd.",-1,115,40,189,8
+  LTEXT           "Klik op 'Voltooien', om Setup te sluiten.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Enkele van de bijgewerkte bestanden zijn momenteel in gebruik, daarom moet het systeem opnieuw opgestart worden, voordat u de geïnstalleerde software kunt gebruiken.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "U bent bezig, het volgende software-componente van uw computer te verwijderen:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Klik op 'Verder', om de de-installatie uit te voeren.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "U bent bezig, het volgende software-componente van uw computer te verwijderen:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Klik op 'Verder', om de de-installatie uit te voeren.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "De de-installatie werd met succes uitgevoerd.",-1,115,33,189,8
+  LTEXT           "Klik op 'Voltooien', om Setup te sluiten.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Enkele bestanden zijn momenteel in gebruik en worden pas bij de volgende systeemstart gewist.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DUT_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "De de-installatie werd met succes uitgevoerd.",-1,115,40,189,8
+  LTEXT           "Klik op 'Voltooien', om Setup te sluiten.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Enkele bestanden zijn momenteel in gebruik en worden pas bij de volgende systeemstart gewist.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle norwegischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_NOR_TITLE
+LANGUAGE LANG_NORWEGIAN, SUBLANG_NEUTRAL
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_NOR_TITLE
+  STR_INSTALLTEXT         TEXT_NOR_INSTALL
+  STR_INSTALLFAIL         "Installasjonen ble ikke fullført."
+  STR_REMOVEFAIL          "Avinstallasjonen ble ikke fullført."
+  STR_WIZ97_P2TITLE       "Programvarekomponenter"
+  STR_WIZ97_P2SUBTITLE    "Angi hvilke programvarekomponenter du vil installere."
+  STR_WIZ97_P3TITLE       "Målkatalog"
+  STR_WIZ97_P3SUBTITLE    "Du kan velge en målkatalog der programvaren skal installeres."
+  STR_WIZ97_P4TITLE       "Kjør installasjonen"
+  STR_WIZ97_P4SUBTITLE    "Du kan nå gjennomføre installasjonen."
+  STR_WARNING             "Advarsel"
+  STR_VERSIONWARNING      "Det finnes allerede en nyere versjon av %s på systemet.\r\rØnsker du virkelig å overskrive den eksisterende versjonen?"
+  STR_INFERROR            "Det ble funnet en feil i filen %s, linje %d. Installasjonen kan ikke fortsette."
+  STR_BROWSETITLE         "Velg en målkatalog for installasjonen:"
+  STR_STOPSERVICE         "Stopper tjenester ..."
+  STR_COPYING             "Kopierer filer ..."
+  STR_DELETING            "Sletter filer ..."
+  STR_REGISTRY            "Oppdaterer register ..."
+  STR_SHORTCUTS           "Oppdaterer snarveier ..."
+  STR_STARTSERVICE        "Starter tjenester ..."
+  STR_CLOSE_BTN           "Lukk"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Merk av de programvarenkomponentene du vil installere eller fjern merket for å utelukke dem du ikke vil installere.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Merk av de programvarenkomponentene du vil installere eller fjern merket for å utelukke dem du ikke vil installere.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Angi målkatalogen der du vil at programvaren skal lagres. Eller bla deg frem til katalogen ved hjelp av Bla gjennom.",IDC_TEXT1,21,37,275,16
+  LTEXT           "&Målkatalog:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Bla gjennom ...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Angi målkatalogen der du vil at programvaren skal lagres. Eller bla deg frem til katalogen ved hjelp av Bla gjennom.",IDC_TEXT1,21,1,275,16
+  LTEXT           "&Målkatalog:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Bla gjennom ...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Installasjonsprogrammet er nå klar til å installere den valgte programvaren.",-2,21,37,275,8
+  LTEXT           "Klikk på 'Neste' for å begynne installasjonen.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Hold klar CD-ROM-platen med Microsoft Windows. Under installasjonen må du eventuelt kopiere noen filer fra denne CDen.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Installasjonsprogrammet er nå klar til å installere den valgte programvaren.",-2,21,1,275,8
+  LTEXT           "Klikk på 'Neste' for å begynne installasjonen.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Hold klar CD-ROM-platen med Microsoft Windows. Under installasjonen må du eventuelt kopiere noen filer fra denne CDen.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Installasjonen er fullført.",-1,115,33,189,8
+  LTEXT           "Klikk på 'Fullfør' for å avslutte installasjonsprogrammet.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Noen av de oppdaterte filene er for øyeblikket i bruk. Systemet må derfor startes på nytt før du kan bruke den installerte programvaren.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Installasjonen er fullført.",-1,115,40,189,8
+  LTEXT           "Klikk på 'Fullfør' for å avslutte installasjonsprogrammet.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Noen av de oppdaterte filene er for øyeblikket i bruk. Systemet må derfor startes på nytt før du kan bruke den installerte programvaren.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Du er i ferd med å slette følgende programvarekomponenter fra datamaskinen:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Klikk på 'Neste' for å gjennomføre avinstallasjonen.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Du er i ferd med å slette følgende programvarekomponenter fra datamaskinen:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Klikk på 'Neste' for å gjennomføre avinstallasjonen.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Avinstallasjonen er fullført.",-1,115,33,189,8
+  LTEXT           "Klikk på 'Fullfør' for å avslutte installasjonsprogrammet.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Noen av filene er i øyeblikket i bruk og blir først slettet neste gang systemet startes.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_NOR_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Avinstallasjonen er fullført.",-1,115,40,189,8
+  LTEXT           "Klikk på 'Fullfør' for å avslutte installasjonsprogrammet.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Noen av filene er i øyeblikket i bruk og blir først slettet neste gang systemet startes.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle dänischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_DAN_TITLE
+LANGUAGE LANG_DANISH, SUBLANG_NEUTRAL
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_DAN_TITLE
+  STR_INSTALLTEXT         TEXT_DAN_INSTALL
+  STR_INSTALLFAIL         "Installationen mislykkedes."
+  STR_REMOVEFAIL          "Afinstallationen mislykkedes."
+  STR_WIZ97_P2TITLE       "Softwarekomponenter"
+  STR_WIZ97_P2SUBTITLE    "Marker de softwarekomponenter, som installationsprogrammet skal installere."
+  STR_WIZ97_P3TITLE       "Destinationsbibliotek"
+  STR_WIZ97_P3SUBTITLE    "Du kan selv vælge det destinationsbibliotek, som softwaren skal installeres i."
+  STR_WIZ97_P4TITLE       "Gennemfør installationen"
+  STR_WIZ97_P4SUBTITLE    "Du kan nu gennemføre installationen."
+  STR_WARNING             "Advarsel"
+  STR_VERSIONWARNING      "Der findes allerede en nyere version af %s på systemet.\r\rØnsker du virkelig at overskrive den eksisterende version?"
+  STR_INFERROR            "Filen %s indeholder en fejl i linje %d. Installationen afbrydes."
+  STR_BROWSETITLE         "Vælg et destinationsbibliotek til brug i forbindelse med installationen:"
+  STR_STOPSERVICE         "Tjenester afbrydes ..."
+  STR_COPYING             "Kopierer filer..."
+  STR_DELETING            "Sletter filer..."
+  STR_REGISTRY            "Ændrer registreringsdatabasen ..."
+  STR_SHORTCUTS           "Startmenuen opdateres..."
+  STR_STARTSERVICE        "Tjenester startes ..."
+  STR_CLOSE_BTN           "Luk"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Marker de softwarekomponenter, der skal installeres. Fjern markeringen af en komponent, hvis den ikke skal installeres.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Marker de softwarekomponenter, der skal installeres. Fjern markeringen af en komponent, hvis den ikke skal installeres.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Angiv, i hvilket destinationsbibliotek softwaren skal installeres. Eller vælg et bibliotek ved at klikke på Søg.",IDC_TEXT1,21,37,275,16
+  LTEXT           "Destinations&bibliotek:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Søg...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Angiv, i hvilket destinationsbibliotek softwaren skal installeres. Eller vælg et bibliotek ved at klikke på Søg.",IDC_TEXT1,21,1,275,16
+  LTEXT           "Destinations&bibliotek:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Søg...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Installationsprogrammet er nu klar til at installere den valgte software.",-2,21,37,275,8
+  LTEXT           "Klik på 'Næste' for at begynde installationen.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Find din Microsoft Windows cd-rom frem. Under installationen skal der muligvis kopieres nogle filer fra denne cd.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Installationsprogrammet er nu klar til at installere den valgte software.",-2,21,1,275,8
+  LTEXT           "Klik på 'Næste' for at begynde installationen.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Find din Microsoft Windows cd-rom frem. Under installationen skal der muligvis kopieres nogle filer fra denne cd.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Installationen er fuldført.",-1,115,33,189,8
+  LTEXT           "Klik på 'Udfør' for at afslutte installationsprogrammet.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Nogle af de opdaterede filer bruges i øjeblikket. Systemet skal derfor genstartes, inden du kan bruge den installerede software.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Installationen er fuldført.",-1,115,40,189,8
+  LTEXT           "Klik på 'Udfør' for at afslutte installationsprogrammet.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Nogle af de opdaterede filer bruges i øjeblikket. Systemet skal derfor genstartes, inden du kan bruge den installerede software.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Du er ved at slette følgende softwarekomponenter fra computeren:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Klik på Næste for at gennemføre deinstallationen.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Du er ved at slette følgende softwarekomponenter fra computeren:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Klik på Næste for at gennemføre deinstallationen.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Deinstallationen er fuldført.",-1,115,33,189,8
+  LTEXT           "Klik på 'Udfør' for at afslutte installationsprogrammet.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Nogle af filerne bruges i øjeblikket og slettes først, næste gang systemet startes.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_DAN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Deinstallationen er fuldført.",-1,115,40,189,8
+  LTEXT           "Klik på 'Udfør' for at afslutte installationsprogrammet.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Nogle af filerne bruges i øjeblikket og slettes først, næste gang systemet startes.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle finnischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_FIN_TITLE
+LANGUAGE LANG_FINNISH, SUBLANG_NEUTRAL
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_FIN_TITLE
+  STR_INSTALLTEXT         TEXT_FIN_INSTALL
+  STR_INSTALLFAIL         "Asennus epäonnistui."
+  STR_REMOVEFAIL          "Asennuksen poisto epäonnistui."
+  STR_WIZ97_P2TITLE       "Ohjelmiston osat"
+  STR_WIZ97_P2SUBTITLE    "Valitse, mitkä ohjelmiston osat haluat asentaa."
+  STR_WIZ97_P3TITLE       "Kohdehakemisto"
+  STR_WIZ97_P3SUBTITLE    "Valitse hakemisto, johon ohjelmisto asennetaan."
+  STR_WIZ97_P4TITLE       "Asenna ohjelmisto"
+  STR_WIZ97_P4SUBTITLE    "Voit nyt suorittaa asennusohjelman."
+  STR_WARNING             "Varoitus"
+  STR_VERSIONWARNING      "Järjestelmässäsi on jo asennettuna uudempi %s-ohjelman versio.\r\rHaluatko varmasti korvata aiemmin asennetun version?"
+  STR_INFERROR            "Virhe tiedoston %s rivillä %d. Asennus ei voi jatkua."
+  STR_BROWSETITLE         "Valitse kohdekansio asennusta varten:"
+  STR_STOPSERVICE         "Keskeytetään palvelut..."
+  STR_COPYING             "Kopioidaan tiedostoja..."
+  STR_DELETING            "Poistetaan tiedostoja..."
+  STR_REGISTRY            "Päivitetään rekisteritietoja..."
+  STR_SHORTCUTS           "Päivitetään pikakuvakkeita..."
+  STR_STARTSERVICE        "Aloitetaan palvelut..."
+  STR_CLOSE_BTN           "Sulje"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Valitse asennettavat ohjelmiston osat. Jos poistat valintamerkin, kyseistä ohjelmiston osaa ei asenneta.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Valitse asennettavat ohjelmiston osat. Jos poistat valintamerkin, kyseistä ohjelmiston osaa ei asenneta.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Valitse kohdehakemisto, johon ohjelmisto asennetaan. Voit myös selata kansioita napsauttamalla Selaa-painiketta.",IDC_TEXT1,21,37,275,16
+  LTEXT           "Kohdehakemisto",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Selaa...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Valitse kohdehakemisto, johon ohjelmisto asennetaan. Voit myös selata kansioita napsauttamalla Selaa-painiketta.",IDC_TEXT1,21,1,275,16
+  LTEXT           "Kohdehakemisto",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Selaa...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Asennusohjelma on nyt valmis asentamaan valitsemasi ohjelman.",-2,21,37,275,8
+  LTEXT           "Napsauta 'Jatka'-painiketta aloittaaksesi asennuksen.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Pidä Microsoft Windows CD-levysi käsillä. Asennuksen aikana joudut mahdollisesti kopioimaan joitakin tiedostoja tältä CD:ltä.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Asennusohjelma on nyt valmis asentamaan valitsemasi ohjelman.",-2,21,1,275,8
+  LTEXT           "Napsauta 'Jatka'-painiketta aloittaaksesi asennuksen.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Pidä Microsoft Windows CD-levysi käsillä. Asennuksen aikana joudut mahdollisesti kopioimaan joitakin tiedostoja tältä CD:ltä.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Asennus onnistui.",-1,115,33,189,8
+  LTEXT           "Napsauta 'Valmis'-painiketta sulkeaksesi asennusohjelman.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Jotkut päivitetyistä tiedostoista ovat tällä hetkellä käytössä, joten järjestelmä on käynnistettävä uudelleen, ennen kuin voit käyttää asennettua ohjelmaa.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Asennus onnistui.",-1,115,40,189,8
+  LTEXT           "Napsauta 'Valmis'-painiketta sulkeaksesi asennusohjelman.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Jotkut päivitetyistä tiedostoista ovat tällä hetkellä käytössä, joten järjestelmä on käynnistettävä uudelleen, ennen kuin voit käyttää asennettua ohjelmaa.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Olet aikeissa poistaa tietokoneeltasi seuraavat ohjelmiston osat:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Napsauta 'Jatka' jatkaaksesi asennuksen purkua.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Olet aikeissa poistaa tietokoneeltasi seuraavat ohjelmiston osat:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Napsauta 'Jatka' jatkaaksesi asennuksen purkua.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Asennuksen purku onnistui.",-1,115,33,189,8
+  LTEXT           "Napsauta 'Valmis'-painiketta sulkeaksesi asennusohjelman.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Jotkut tiedostot ovat tällä hetkellä käytössä, ja ne poistetaan vasta, kun järjestelmä käynnistetään seuraavan kerran.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_FIN_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Asennuksen purku onnistui.",-1,115,40,189,8
+  LTEXT           "Napsauta 'Valmis'-painiketta sulkeaksesi asennusohjelman.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Jotkut tiedostot ovat tällä hetkellä käytössä, ja ne poistetaan vasta, kun järjestelmä käynnistetään seuraavan kerran.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle tschechischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_CZE_TITLE
+LANGUAGE LANG_CZECH, SUBLANG_NEUTRAL
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_CZE_TITLE
+  STR_INSTALLTEXT         TEXT_CZE_INSTALL
+  STR_INSTALLFAIL         "Instalace nemohla být úspìsnì provedena."
+  STR_REMOVEFAIL          "Odinstalování nemohlo být úspìsnì provedeno."
+  STR_WIZ97_P2TITLE       "SouÞßsti software"
+  STR_WIZ97_P2SUBTITLE    "Vyberte souÞßsti software, kterÚ mß setup instalovat."
+  STR_WIZ97_P3TITLE       "CÝlov² adresß°"
+  STR_WIZ97_P3SUBTITLE    "M¨×ete vybrat cÝlov² adresß°, do kterÚho se mß instalovat software."
+  STR_WIZ97_P4TITLE       "ProvÚst instalaci"
+  STR_WIZ97_P4SUBTITLE    "Nyní mùzete provést instalaci."  
+  STR_WARNING             "VarovßnÝ"
+  STR_VERSIONWARNING      "Na VaÜem systÚmu je u× k dispozici novýjÜÝ verze %s.\r\rMß se existujÝcÝ verze skuteÞný p°epsat?"
+  STR_INFERROR            "Soubor %s obsahuje v °ßdku %d chybu. Instalace nem¨×e pokraÞovat."
+  STR_BROWSETITLE         "Vyberte cÝlov² adresß° pro instalaci:"
+  STR_STOPSERVICE         "Slu×by se zastavujÝ..."
+  STR_COPYING             "KopÝruji soubory..."
+  STR_DELETING            "Ma×u soubory..."
+  STR_REGISTRY            "Zpracovßvßm registry..."
+  STR_SHORTCUTS           "Aktualizuje se startovacÝ menu..."
+  STR_STARTSERVICE        "Slu×by se startujÝ..."
+  STR_CLOSE_BTN           "Zav°Ýt"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "OznaÞte prosÝm jednotlivÚ softwarovÚ komponenty, kterÚ majÝ b²t instalovßny. Odstra=te oznaÞenÝ, abyste komponent vylouÞili z instalace.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "OznaÞte prosÝm jednotlivÚ softwarovÚ komponenty, kterÚ majÝ b²t instalovßny. Odstra=te oznaÞenÝ, abyste komponent vylouÞili z instalace.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Zadejte prosÝm adresß°, do kterÚho se mß software instalovat. Nebo vyberte adresß° tÝm, ×e kliknete na Hledat.",IDC_TEXT1,21,37,275,16
+  LTEXT           "CÝlov²&adresß°:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Hledat...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Zadejte prosÝm adresß°, do kterÚho se mß software instalovat. Nebo vyberte adresß° tÝm, ×e kliknete na Hledat.",IDC_TEXT1,21,1,275,16
+  LTEXT           "CÝlov²&adresß°:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Hledat...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Setup je nyní pøipravený instalovat Vámi vybraný software.",-2,21,37,275,8
+  LTEXT           "Klepnìte na 'Dále', abyste zahájili instalaci.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE
+  LTEXT           "Pøipravte si prosím Vás CD-ROM Microsoft Windows. Mozná, ze bìhem instalace se budou muset kopírovat nìkteré soubory z tohoto CD.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup je nyní pøipravený instalovat Vámi vybraný software.",-2,21,1,275,8
+  LTEXT           "Klepnìte na 'Dále', abyste zahájili instalaci.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE
+  LTEXT           "Pøipravte si prosím Vás CD-ROM Microsoft Windows. Mozná, ze bìhem instalace se budou muset kopírovat nìkteré soubory z tohoto CD.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Instalace byla úspìsnì provedena.",-1,115,33,189,8
+  LTEXT           "Klepnìte na 'Dokonèit', abyste uzavøeli Setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Nìkteré z aktualizovaných souborù jsou v souèasné dobìpouzívané, proto musí být systém novì nastartován, døíve nez budete moci instalovaný software pouzít.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Instalace byla úspìsnì provedena.",-1,115,40,189,8
+  LTEXT           "Klepnìte na 'Dokonèit', abyste uzavøeli Setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Nìkteré z aktualizovaných souborù jsou v souèasné dobìpouzívané, proto musí být systém novì nastartován, døíve nez budete moci instalovaný software pouzít.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Chcete odstranit následující souèásti softwaru z Vaseho poèítaèe:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Klepnìte na 'Dále', abyste provedli odinstalování.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Chcete odstranit následující souèásti softwaru z Vaseho poèítaèe:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Klepnìte na 'Dále', abyste provedli odinstalování.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Odinstalování bylo úspìsnì provedeno.",-1,115,33,189,8
+  LTEXT           "Klepnìte na 'Dokonèit', abyste uzavøeli Setup.",-2,115,48,189,8
+  ICON            "",IDC_STATIC,115,64,10,10,NOT WS_VISIBLE
+  LTEXT           "Nìkteré soubory jsou v souèasné dobì pouzívány a budou smazány teprve pøi pøístím startu systému.",IDC_TEXT2,132,65,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_CZE_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Odinstalování bylo úspìsnì provedeno.",-1,115,40,189,8
+  LTEXT           "Klepnìte na 'Dokonèit', abyste uzavøeli Setup.",-2,115,55,189,8
+  ICON            "",IDC_STATIC,115,71,10,10,NOT WS_VISIBLE
+  LTEXT           "Nìkteré soubory jsou v souèasné dobì pouzívány a budou smazány teprve pøi pøístím startu systému.",IDC_TEXT2,132,72,172,40,NOT WS_VISIBLE
+END
+#endif
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle polnischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_POL_TITLE
+LANGUAGE LANG_POLISH, SUBLANG_NEUTRAL
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_POL_TITLE
+  STR_INSTALLTEXT         TEXT_POL_INSTALL
+  STR_INSTALLFAIL         "Instalacja nie mog³a zostaæ pomyolnie przeprowadzona."
+  STR_REMOVEFAIL          "Usuniêcie zainstalowanych elementów nie mog³o zostaæ pomyolnie przeprowadzone."
+  STR_WIZ97_P2TITLE       "Komponenty oprogramowania"
+  STR_WIZ97_P2SUBTITLE    "Nale+y wybraµ komponenty oprogramowania, kt¾re maj¦ byµ zainstalowane przez program instalacyjny (setup)."
+  STR_WIZ97_P3TITLE       "Katalog docelowy"
+  STR_WIZ97_P3SUBTITLE    "Mo+na wybraµ katalog docelowy, do kt¾rego oprogramowanie ma zostaµ zainstalowane."
+  STR_WIZ97_P4TITLE       "Przeprowadzenie instalacji"
+  STR_WIZ97_P4SUBTITLE    "Teraz mo¿na przeprowadziæ instalacjê."  
+  STR_WARNING             "Ostrze+enie"
+  STR_VERSIONWARNING      "W systemie jest ju+ obecna nowa wersja %s.\r\rCzy istniej¦ca wersja rzeczywi£cie ma zostaµ zast¦piona?"
+  STR_INFERROR            "Plik %s zawiera b¦¦d w linii %d. Instalacja nie mo+e byµ kontynuowana."
+  STR_BROWSETITLE         "Nale+y wybraµ katalog docelowy dla przeprowadzenia instalacji:"
+  STR_STOPSERVICE         "Us¦ugi zostaj¦ wstrzymane..."
+  STR_COPYING             "KopiujÛ pliki..."
+  STR_DELETING            "KasujÛ pliki..."
+  STR_REGISTRY            "EdytujÛ rejestry..."
+  STR_SHORTCUTS           "Menu Start jest aktualizowane..."
+  STR_STARTSERVICE        "Us¦ugi zostaj¦ uruchomione..."
+  STR_CLOSE_BTN           "ZamkniÛcie"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "ProszÛ zaznaczyµ poszczeg¾lne komponenty oprogramowania, kt¾re maj¦ zostaµ zainstalowane. UsuniÛcie zaznaczenia powoduje wykluczenie danego komponentu z instalacji.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "ProszÛ zaznaczyµ poszczeg¾lne komponenty oprogramowania, kt¾re maj¦ zostaµ zainstalowane. UsuniÛcie zaznaczenia powoduje wykluczenie danego komponentu z instalacji.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "ProszÛ podaµ nazwÛ katalogu, do kt¾rego oprogramowanie ma zostaµ zainstalowane, lub wybraµ nazwÛ katalogu poprzez klikniÛcie na polu wyszukiwania.",IDC_TEXT1,21,37,275,16
+  LTEXT           "Katalog &docelowy:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Wyszukiwanie...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "ProszÛ podaµ nazwÛ katalogu, do kt¾rego oprogramowanie ma zostaµ zainstalowane, lub wybraµ nazwÛ katalogu poprzez klikniÛcie na polu wyszukiwania.",IDC_TEXT1,21,1,275,16
+  LTEXT           "Katalog &docelowy:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Wyszukiwanie...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Program setup jest teraz przygotowany do zainstalowania wybranego oprogramowania.",-2,21,37,275,8
+  LTEXT           "W celu rozpoczêcia instalacji nale¿y klikn¹æ na polu 'Dalej'.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE
+  LTEXT           "Nale¿y przygotowaæ CD-ROM Microsoft Windows. Istnieje mo¿liwooæ, i¿ podczas instalacji niektóre pliki bêd¹ musia³y zostaæ skopiowane z tego CD-ROMu.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Program setup jest teraz przygotowany do zainstalowania wybranego oprogramowania.",-2,21,1,275,8
+  LTEXT           "W celu rozpoczêcia instalacji nale¿y klikn¹æ na polu 'Dalej'.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE
+  LTEXT           "Nale¿y przygotowaæ CD-ROM Microsoft Windows. Istnieje mo¿liwooæ, i¿ podczas instalacji niektóre pliki bêd¹ musia³y zostaæ skopiowane z tego CD-ROMu.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Instalacja zosta³a przeprowadzona prawid³owo.",-1,115,33,189,8
+  LTEXT           "W celu zakoñczenia dzia³ania programu setup nale¿y klikn¹æ na polu 'Zakoñcz'.",-2,115,48,189,16
+  ICON            "",IDC_STATIC,115,72,10,10,NOT WS_VISIBLE
+  LTEXT           "Niektóre ze zaktualizowanych plików znajduj¹ siê obecnie w u¿yciu. Z tego wzglêdu trzeba ponownie uruchomiæ system operacyjny, zanim bêdzie mo¿na korzystaæ z zainstalowanego oprogramowania.",IDC_TEXT2,132,73,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Instalacja zosta³a przeprowadzona prawid³owo.",-1,115,40,189,8
+  LTEXT           "W celu zakoñczenia dzia³ania programu setup nale¿y klikn¹æ na polu 'Zakoñcz'.",-2,115,55,189,16
+  ICON            "",IDC_STATIC,115,79,10,10,NOT WS_VISIBLE
+  LTEXT           "Niektóre ze zaktualizowanych plików znajduj¹ siê obecnie w u¿yciu. Z tego wzglêdu trzeba ponownie uruchomiæ system operacyjny, zanim bêdzie mo¿na korzystaæ z zainstalowanego oprogramowania.",IDC_TEXT2,132,80,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Obecnie z komputera zostan¹ usuniête nastêpuj¹ce komponenty oprogramowania:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "W celu usuniêcia komponentów oprogramowania nale¿y klikn¹æ na polu Dalej.",-2,115,81,189,16
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Obecnie z komputera zostan¹ usuniête nastêpuj¹ce komponenty oprogramowania:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "W celu usuniêcia komponentów oprogramowania nale¿y klikn¹æ na polu Dalej.",-2,115,88,189,16
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Usuniêcie zosta³o przeprowadzone prawid³owo.",-1,115,33,189,8
+  LTEXT           "W celu zakoñczenia dzia³ania programu setup nale¿y klikn¹æ na polu 'Zakoñcz'.",-2,115,48,189,16
+  ICON            "",IDC_STATIC,115,72,10,10,NOT WS_VISIBLE
+  LTEXT           "Niektóre pliki znajduj¹ siê obecnie w u¿yciu i z tego wzglêdu zostan¹ skasowane przy nastêpnym uruchomieniu systemu operacyjnego.",IDC_TEXT2,132,73,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_POL_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Usuniêcie zosta³o przeprowadzone prawid³owo.",-1,115,40,189,8
+  LTEXT           "W celu zakoñczenia dzia³ania programu setup nale¿y klikn¹æ na polu 'Zakoñcz'.",-2,115,55,189,16
+  ICON            "",IDC_STATIC,115,79,10,10,NOT WS_VISIBLE
+  LTEXT           "Niektóre pliki znajduj¹ siê obecnie w u¿yciu i z tego wzglêdu zostan¹ skasowane przy nastêpnym uruchomieniu systemu operacyjnego.",IDC_TEXT2,132,80,172,40,NOT WS_VISIBLE
+END
+#endif
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle russischen resourcen
+ * ------------------------------------------------------------------------ */
+
+#ifdef TEXT_RUS_TITLE
+#pragma code_page(1251)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+  STR_INSTALLTITLE        TEXT_RUS_TITLE
+  STR_INSTALLTEXT         TEXT_RUS_INSTALL
+  STR_INSTALLFAIL         "Óñòàíîâêà íå áûëà óñïåøíî âûïîëíåíà."
+  STR_REMOVEFAIL          "Îòìåíà óñòàíîâêè íå áûëà óñïåøíî âûïîëíåíà."
+  STR_WIZ97_P2TITLE       "Êîìïîíåíòû ÏÎ"
+  STR_WIZ97_P2SUBTITLE    "Âûáåðèòå êîìïîíåíòû ÏÎ, êîòîðûå äîëæíû áûòü óñòàíîâëåíû."
+  STR_WIZ97_P3TITLE       "Êàòàëîã íàçíà÷åíèÿ"
+  STR_WIZ97_P3SUBTITLE    "Âû ìîæåòå âûáðàòü êàòàëîã íàçíà÷åíèÿ, â êîòîðûé äîëæíî áûòü óñòàíîâëåíî ïðîãðàììíîå îáåñïå÷åíèå."
+  STR_WIZ97_P4TITLE       "Ïðîèçâåñòè óñòàíîâêó"
+  STR_WIZ97_P4SUBTITLE    "Óñòàíîâêà òåïåðü ìîæåò áûòü âûïîëíåíà."
+  STR_WARNING             "Ïðåäóïðåæäåíèå"
+  STR_VERSIONWARNING      "Â Âàøåé ñèñòåìå óæå óñòàíîâëåíà áîëåå ïîçäíÿÿ âåðñèÿ %s.\r\rÂû äåéñòâèòåëüíî õîòèòå çàïèñàòü íîâóþ âåðñèþ ïîâåðõ ñóùåñòâóþùåé?"
+  STR_INFERROR            "Â ôàéëå %s â ñòðîêå %d èìååòñÿ îøèáêà. Óñòàíîâêà íå ìîæåò áûòü ïðîäîëæåíà."
+  STR_BROWSETITLE         "Âûáåðèòå êàòàëîã íàçíà÷åíèÿ äëÿ óñòàíîâêè:"
+  STR_STOPSERVICE         "Óñëóãè ïðèîñòàíàâëèâàþòñÿ..."
+  STR_COPYING             "Êîïèðóþòñÿ ôàéëû..."
+  STR_DELETING            "Óäàëÿþòñÿ ôàéëû..."
+  STR_REGISTRY            "Îáíîâëÿåòñÿ ðååñòð..."
+  STR_SHORTCUTS           "Îáíîâëÿåòñÿ ãëàâíîå ìåíþ..."
+  STR_STARTSERVICE        "Óñëóãè çàïóñêàþòñÿ..."
+  STR_CLOSE_BTN           "Çàêðûòü"
+END
+
+IDD_WIZPAGE1 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           ".",IDC_TEXT2,115,33,189,142
+END
+
+IDD_WIZ97PAGE1 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           ".",IDC_TEXT2,115,40,189,142
+END
+
+IDD_WIZPAGE2 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Âûäåëèòå îòäåëüíûå êîìïîíåíòû ÏÎ, êîòîðûå äîëæíû áûòü óñòàíîâëåíû. Ñíèìèòå âûäåëåíèå ñ êîìïîíåíòà, íå ïîäëåæàùåãî óñòàíîâêå.",-2,21,37,275,16
+  LISTBOX         IDC_PRODLIST,21,67,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,138,220,38
+  LTEXT           "",IDC_TEXT1,27,147,209,24
+END
+
+IDD_WIZ97PAGE2 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Âûäåëèòå îòäåëüíûå êîìïîíåíòû ÏÎ, êîòîðûå äîëæíû áûòü óñòàíîâëåíû. Ñíèìèòå âûäåëåíèå ñ êîìïîíåíòà, íå ïîäëåæàùåãî óñòàíîâêå.",-2,21,1,275,16
+  LISTBOX         IDC_PRODLIST,21,31,220,69,LBS_NOINTEGRALHEIGHT|WS_VSCROLL|WS_TABSTOP|LBS_OWNERDRAWFIXED|LBS_HASSTRINGS
+  GROUPBOX        "",-1,21,102,220,38
+  LTEXT           "",IDC_TEXT1,27,111,209,24
+END
+
+IDD_WIZPAGE3 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Ââåäèòå êàòàëîã, â êîòîðûé äîëæíî áûòü óñòàíîâëåíî ÏÎ. Èëè âûáåðèòå êàòàëîã, ùåëêíóâ íà \'Îáçîð\'.",IDC_TEXT1,21,37,275,16
+  LTEXT           "&Êàòàëîã íàçíà÷åíèÿ:",IDC_TEXT2,21,68,220,8
+  EDITTEXT        IDC_TARGETDIR,21,78,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Îáçîð...",IDC_BROWSE,21,99,50,14
+END
+
+IDD_WIZ97PAGE3 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Ââåäèòå êàòàëîã, â êîòîðûé äîëæíî áûòü óñòàíîâëåíî ÏÎ. Èëè âûáåðèòå êàòàëîã, ùåëêíóâ íà \'Îáçîð\'.",IDC_TEXT1,21,1,275,16
+  LTEXT           "&Êàòàëîã íàçíà÷åíèÿ:",IDC_TEXT2,21,32,220,8
+  EDITTEXT        IDC_TARGETDIR,21,42,220,14,ES_AUTOHSCROLL|WS_GROUP
+  PUSHBUTTON      "&Îáçîð...",IDC_BROWSE,21,63,50,14
+END
+
+IDD_WIZPAGE4 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  LTEXT           "",IDC_HDR_TITLE,7,0,310,8
+  LTEXT           "",IDC_HDR_SUBTITLE,21,9,296,16
+  CONTROL         "",-3,"Static",SS_BLACKFRAME|SS_SUNKEN,0,28,317,1
+  LTEXT           "Ïðîãðàììà óñòàíîâêè òåïåðü ãîòîâà óñòàíîâèòü âûáðàííîå âàìè ÏÎ.",-2,21,37,275,8
+  LTEXT           "Íàæìèòå êíîïêó 'Äàëåå', ÷òîáû íà÷àòü óñòàíîâêó.",-1,21,52,275,8
+  ICON            "",IDC_STATIC,21,68,10,10,NOT WS_VISIBLE  
+  LTEXT           "Ïðèãîòîâüòå CD-ROM Microsoft Windows. Âî âðåìÿ óñòàíîâêè âîçìîæíî ïîòðåáóåòñÿ ïåðåïèñàòü ñ ýòîãî CD íåêîòîðûå ôàéëû.",IDC_TEXT1,38,69,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,158,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,168,275,10
+END
+
+IDD_WIZ97PAGE4 DIALOG DISCARDABLE 0, 0, 317, 143
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Ïðîãðàììà óñòàíîâêè òåïåðü ãîòîâà óñòàíîâèòü âûáðàííîå âàìè ÏÎ.",-2,21,1,275,8
+  LTEXT           "Íàæìèòå êíîïêó 'Äàëåå', ÷òîáû íà÷àòü óñòàíîâêó.",-1,21,16,275,8
+  ICON            "",IDC_STATIC,21,32,10,10,NOT WS_VISIBLE  
+  LTEXT           "Ïðèãîòîâüòå CD-ROM Microsoft Windows. Âî âðåìÿ óñòàíîâêè âîçìîæíî ïîòðåáóåòñÿ ïåðåïèñàòü ñ ýòîãî CD íåêîòîðûå ôàéëû.",IDC_TEXT1,38,33,258,16,NOT WS_VISIBLE
+  LTEXT           "",IDC_TEXT2,21,122,275,8
+  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,21,132,275,10
+END
+
+IDD_WIZPAGE5 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Setup complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Óñòàíîâêà óñïåøíî âûïîëíåíà.",-1,115,33,189,8
+  LTEXT           "Íàæìèòå êíîïêó 'Âûïîëíåíèå', ÷òîáû çàêðûòü ïðîãðàììó óñòàíîâêè.",-2,115,48,189,16
+  ICON            "",IDC_STATIC,115,72,10,10,NOT WS_VISIBLE
+  LTEXT           "Íåêîòîðûå îáíîâëåííûå ôàéëû â íàñòîÿùåå âðåìÿ èñïîëüçóþòñÿ, ïîýòîìó íåîáõîäèìî ïåðåçàïóñòèòü ñèñòåìó, ïðåæäå ÷åì íà÷àòü èñïîëüçîâàòü óñòàíîâëåííîå ÏÎ.",IDC_TEXT2,132,73,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE5 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Setup complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Óñòàíîâêà óñïåøíî âûïîëíåíà.",-1,115,40,189,8
+  LTEXT           "Íàæìèòå êíîïêó 'Âûïîëíåíèå', ÷òîáû çàêðûòü ïðîãðàììó óñòàíîâêè.",-2,115,55,189,16
+  ICON            "",IDC_STATIC,115,79,10,10,NOT WS_VISIBLE
+  LTEXT           "Íåêîòîðûå îáíîâëåííûå ôàéëû â íàñòîÿùåå âðåìÿ èñïîëüçóþòñÿ, ïîýòîìó íåîáõîäèìî ïåðåçàïóñòèòü ñèñòåìó, ïðåæäå ÷åì íà÷àòü èñïîëüçîâàòü óñòàíîâëåííîå ÏÎ.",IDC_TEXT2,132,80,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZPAGE6 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           ".",IDC_TEXT1,115,1,189,24
+  LTEXT           "Âû ñîáèðàåòåñü óäàëèòü èç Âàøåãî êîìïüþòåðà ñëåäóþùèå êîìïîíåíòû:",-1,115,33,189,16
+  ICON            "",IDC_STATIC,115,60,10,10
+  LTEXT           "",IDC_TEXT2,132,61,172,8
+  LTEXT           "Íàæìèòå êíîïêó 'Äàëåå', ÷òîáû îòìåíèòü óñòàíîâêó.",-2,115,81,189,8
+  LTEXT           "",IDC_TEXT3,115,165,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,165,189,10
+END
+
+IDD_WIZ97PAGE6 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           ".",IDC_TEXT1,115,8,189,24
+  LTEXT           "Âû ñîáèðàåòåñü óäàëèòü èç Âàøåãî êîìïüþòåðà ñëåäóþùèå êîìïîíåíòû:",-1,115,40,189,16
+  ICON            "",IDC_STATIC,115,67,10,10
+  LTEXT           "",IDC_TEXT2,132,68,172,8
+  LTEXT           "Íàæìèòå êíîïêó 'Äàëåå', ÷òîáû îòìåíèòü óñòàíîâêó.",-2,115,88,189,8
+  LTEXT           "",IDC_TEXT3,115,172,189,8
+//  CONTROL         "",IDC_PROGRESS,"msctls_progress32",0,115,172,189,10
+END
+
+IDD_WIZPAGE7 DIALOG DISCARDABLE 0, 0, 317, 179
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Sans Serif"
+BEGIN
+  CONTROL         ID_WATERMARK,-1,"Static",SS_BITMAP|SS_REALSIZEIMAGE,0,0,95,179
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,1,189,24
+  LTEXT           "Îòìåíà óñòàíîâêè óñïåøíî âûïîëíåíà.",-1,115,33,189,8
+  LTEXT           "Íàæìèòå êíîïêó 'Âûïîëíåíèå', ÷òîáû çàêðûòü ïðîãðàììó óñòàíîâêè.",-2,115,48,189,16
+  ICON            "",IDC_STATIC,115,72,10,10,NOT WS_VISIBLE
+  LTEXT           "Íåêîòîðûå ôàéëû â íàñòîÿùåå âðåìÿ èñïîëüçóþòñÿ è áóäóò ñòåðòû òîëüêî ïðè ñëåäóþùåì çàïóñêå ñèñòåìû.",IDC_TEXT2,132,73,172,40,NOT WS_VISIBLE
+END
+
+IDD_WIZ97PAGE7 DIALOG DISCARDABLE 0, 0, 317, 193
+STYLE WS_CHILD
+CAPTION TEXT_RUS_TITLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+  LTEXT           "Uninstall complete",IDC_TEXT1,115,8,189,24
+  LTEXT           "Îòìåíà óñòàíîâêè óñïåøíî âûïîëíåíà.",-1,115,40,189,8
+  LTEXT           "Íàæìèòå êíîïêó 'Âûïîëíåíèå', ÷òîáû çàêðûòü ïðîãðàììó óñòàíîâêè.",-2,115,55,189,16
+  ICON            "",IDC_STATIC,115,79,10,10,NOT WS_VISIBLE
+  LTEXT           "Íåêîòîðûå ôàéëû â íàñòîÿùåå âðåìÿ èñïîëüçóþòñÿ è áóäóò ñòåðòû òîëüêî ïðè ñëåäóþùåì çàïóñêå ñèñòåìû.",IDC_TEXT2,132,80,172,40,NOT WS_VISIBLE
+END
+#pragma code_page(DEFAULT)
+#endif
+

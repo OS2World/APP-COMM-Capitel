@@ -1,0 +1,36 @@
+From: "Peter" <peter@maice.com>
+Newsgroups: de.comp.os.ms-windows.programmer
+References: <387a50fa.3938603@news.oche.de>
+Subject: Re: caps-lock, num-lock und scroll lock manipulieren
+Date: Tue, 11 Jan 2000 14:25:43 +0100
+Lines: 22
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 5.00.2919.6600
+X-MimeOLE: Produced By Microsoft MimeOLE V5.00.2919.6600
+NNTP-Posting-Host: 212.144.200.5
+Message-ID: <387b2e7f.0@news.arcor-ip.de>
+X-Trace: 11 Jan 2000 14:22:07 +0100, 212.144.200.5
+Path: news.oche.de!news.rwth-aachen.de!akk.uni-karlsruhe.de!rz.uni-karlsruhe.de!newsfeed.nacamar.de!newsfeed.arcor-ip.de!news.arcor-ip.de!212.144.200.5
+Xref: news.oche.de de.comp.os.ms-windows.programmer:17627
+
+
+"Werner Fehn" <wfehn@popmail.oche.de> schrieb im Newsbeitrag
+news:387a50fa.3938603@news.oche.de...
+> hi,
+>
+> ich suche code oder hinweise, wie ich obige led's blinken lassen kann.
+>
+> danke schonmal
+> werner
+
+Hallo...
+
+Am einfachsten geht's mit getürkten Tastatureingaben mit Hilfe der
+API-Funktion "keybd_event".
+Beispiel: MSDN Article ID: Q177674.
+
+Tschau...
+Peter
+
+

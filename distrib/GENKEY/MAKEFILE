@@ -1,0 +1,12 @@
+!include <win32.mak>
+
+ccflags     = $(cflags) -D_MT -Zp1
+clflags_con = $(conflags)
+
+all: genkey.exe
+
+genkey.obj: makefile genkey.c
+            cl $(ccflags) genkey.c ..\..\util\source\register.c ..\..\..\units\win.src\os_win.c ..\..\..\units\common.src\cfg_file.c ..\..\..\units\common.src\util.c ..\..\..\units\common.src\num2nam.c /DWIN32
+
+genkey.exe: genkey.obj
+            $(link) $(clflags_con) genkey.obj num2nam.obj register.obj os_win.obj util.obj cfg_file.obj $(guilibsmt) shell32.lib

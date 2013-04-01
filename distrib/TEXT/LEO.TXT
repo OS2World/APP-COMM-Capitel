@@ -1,0 +1,14 @@
+Upload Information Template for ftp.leo.org
+===========================================
+
+Archive Name: ctel110.zip
+Program Description: CapiTel v1.10 (ISDN CAPI 1.1 Answering Machine for OS/2 PM)
+Operating System/Version: OS/2 v2 and up
+Program Source: authors
+Replaces: /pub/comp/os/os2/comm/ctel100.zip
+
+Your name: Carsten Wimmer
+Your email address: cawim@garrincha.oche.de
+
+Proposed directory for placement: /pub/comp/os/os2/comm
+

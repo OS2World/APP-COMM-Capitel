@@ -1,0 +1,9 @@
+
+#define RES_MAIN_ICON "..\\..\\setup\\source.win\\ico\\sfx1.ico"
+
+#define RES_COPY_AVI  "..\\..\\setup\\source.win\\avi\\copy.avi"
+
+#define SFX_COMMANDLINE  "setup.exe"
+#define SFX_CABINETNAME  "..\\..\\capitel\\obj.win\\selfx.cab"
+
+#include "..\..\setup\source.win\selfx.rc"

@@ -1,0 +1,27 @@
+
+ ==============================================================================
+
+                 ////// /////// ////// //  /////// ////// //
+                //     //   // //  // //     //   //     //
+               //     /////// ////// //     //   ////   //
+              //     //   // //     //     //   //     //
+             ////// //   // //     //     //   ////// //////
+
+                            The Mailing-List
+
+ ==============================================================================
+
+   There has been an Internet Mailing-List set up for CapiTel, where you can
+   discuss bugs etc. with other users and the authors themselves.
+
+   To subscribe, send an EMail to majordomo@sundancer.oche.de and
+   put "subscribe capitel" (without quotes of course) in its body. To
+   unsubscribe at a later time, do the same with "unsubscribe capitel".
+   If you want to get more help, use "help" in the message's body.
+
+   The address of the list is capitel@sundancer.oche.de
+
+   We hope to hear from you soon.
+
+ ==============================================================================
+

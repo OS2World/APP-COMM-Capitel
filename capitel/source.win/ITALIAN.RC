@@ -1,0 +1,521 @@
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+
+ID_MAIN ACCELERATORS MOVEABLE PURE
+BEGIN
+    "a",   IDM_SELECTALL        , ASCII, VIRTKEY, CONTROL
+    "a",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "A",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "c",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "C",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "p",   IDM_PLAY_ALL         , ASCII, ALT
+    "P",   IDM_PLAY_ALL         , ASCII, ALT
+    "n",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    "N",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    VK_F5, IDM_REGISTER         , ASCII, VIRTKEY, CONTROL, ALT
+END
+
+
+ID_MAIN MENU DISCARDABLE
+BEGIN
+    POPUP "&Generale"
+    BEGIN
+        MENUITEM "&Attiva Segreteria\tAlt+A", IDM_TOGGLEACTIVATION
+        MENUITEM "Nascondi &Controlli\tAlt+C"  , IDM_HIDEFRAMECONTROLS
+        MENUITEM "P&roprietà ..."               , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "E&sci"                         , IDM_EXIT
+    END
+    POPUP "&Call"
+    BEGIN
+        MENUITEM "&Ascolta\tEnter"                  , IDM_PLAY
+        MENUITEM "&Elimina\tDel"                  , IDM_DELETE
+        MENUITEM "&Salva con nome..."                  , IDM_SAVE_AS
+        MENUITEM "Aggiungi &Nuovo Chiamante\tAlt+N"     , IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "Ascolta &Tutti\tAlt+P"              , IDM_PLAY_ALL
+        MENUITEM "&Registra Benvenuto\tAlt+R"   , IDM_RECORD
+    END
+    POPUP "&Finestra"
+    BEGIN
+        MENUITEM "In Primo Pi&ano"                  , IDM_TOPMOST
+        MENUITEM "&Mostra nella Taskbar"         , IDM_SHOWTRAY
+        MENUITEM "&Nascondi quando Minimizzato"            , IDM_MINHIDE
+        MENUITEM SEPARATOR
+        MENUITEM "Seleziona &Tutto\tCtrl+A"             , IDM_SELECTALL
+        MENUITEM "&Inverti selezione"                   , IDM_INVERTSEL
+    END
+    POPUP "&Aiuto"
+    BEGIN
+        MENUITEM "L&eggimi"                       , IDM_README
+        MENUITEM "&Novità"                  , IDM_WHATSNEW
+        MENUITEM "&Licenza"                      , IDM_LICENSE
+        MENUITEM "Modulo d'&Ordine"              , IDM_ORDER
+        MENUITEM "Apri &Modulo d'Ordine BMT"    , IDM_ORDERBMT
+        MENUITEM "&Homepage sul Web"          , IDM_HOMEPAGE
+        MENUITEM SEPARATOR
+        MENUITEM "&Informazioni su..."                , IDM_ABOUT
+    END
+END
+
+ID_POPUP MENU DISCARDABLE
+BEGIN
+    POPUP "Context_1"
+    BEGIN
+        MENUITEM "&Ascolta"                          , IDM_PLAY
+        MENUITEM "&Elimina\tDel"                  , IDM_DELETE
+        MENUITEM "&Salva con nome..."                  , IDM_SAVE_AS
+        MENUITEM "Aggiungi &Nuovo Chiamante\tAlt+N"     , IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "Ascolta &Tutti\tAlt+P"              , IDM_PLAY_ALL
+        MENUITEM "&Registra Benvenuto\tAlt+R"   , IDM_RECORD
+        MENUITEM SEPARATOR
+        MENUITEM "&Attiva Segreteria\tAlt+A", IDM_TOGGLEACTIVATION
+        MENUITEM "Nascondi &Controlli\tAlt+C"  , IDM_HIDEFRAMECONTROLS
+        MENUITEM "P&roprietà ..."               , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "&Informazioni su..."                , IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "E&sci"                         , IDM_EXIT
+    END
+    POPUP "Context_2"
+    BEGIN
+        MENUITEM "&Nuovo.."                        , IDM_NEW
+        MENUITEM "&Modifica"                         , IDM_EDIT
+        MENUITEM "&Elimina"                       , IDM_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Attivo"                       , IDM_ACTIVE
+    END
+    POPUP "Tray_1"
+    BEGIN
+        MENUITEM "&Mostra CapiTel"                 , IDM_SHOW
+        MENUITEM "Ascolta &Tutti"              , IDM_PLAY_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "E&sci"                         , IDM_EXIT
+    END
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDM_TOGGLEACTIVATION  "Attiva o disattiva la segreteria."
+    IDM_HIDEFRAMECONTROLS "Mostra o nasconde il menu, la barra pulsanti e la barra di stato."
+    IDM_PROPERTIES        "Apre le impostazioni del programma."
+    IDM_PROP_PORTS        "Apre una lista di tutte le porte."
+    IDM_PROP_CALLERS      "Apre una lista di tutti i chiamanti conosciuti."
+    IDM_PROP_ACTIONS      "Apre una lista delle azioni controllate remotamente."
+    IDM_EXIT              "Chiude CapiTel."
+    IDM_PLAY              "Ascolta la chiamata selezionata."
+    IDM_PLAY_ALL          "Ascolta tutte le chiamate."
+    IDM_DELETE            "Elimina la chiamata selezionata."
+    IDM_SAVE_AS           "Salva la telefonata selezionata come file audio."
+    IDM_ADD_TO_CALLERS    "Aggiunge il numero della chiamata selezionata alla lista dei chiamanti."
+    IDM_RECORD            "Registra un nuovo messaggio di benvenuto."
+    IDM_README            "Apre ReadMe.Txt."
+    IDM_WHATSNEW          "Apre WhatsNew.Txt."
+    IDM_LICENSE           "Apre le Condizioni di Licenza."
+    IDM_ORDER             "Apre il modulo d'ordine."
+    IDM_ORDERBMT          "Apre il modulo d'ordine BMT."
+    IDM_HOMEPAGE          "Apre l'home page di CapiTel."
+    IDM_ABOUT             "Mostra le informazioni sul prodotto."
+    IDM_SHOW              "Attiva la finestra principale di CapiTel."
+    IDM_TOPMOST           "CapiTel rimane di fronte a tutte le altre finestre fino a quando viene minimizzato."
+    IDM_SHOWTRAY          "Mostra l'icona di stato nella barra delle applicazioni."
+    IDM_MINHIDE           "Nasconde CapiTel quando minimizzato."
+    IDM_SELECTALL         "Seleziona tutti gli oggetti nella finestra."
+    IDM_INVERTSEL         "Inverte gli oggetti selezionati con quelli non selezionati."
+    STR_MENUHELP_MAIN1    "Contiene i comandi per cambiare il comportamento di CapiTel."
+    STR_MENUHELP_MAIN2    "Contiene i comandi per ascoltare o eliminare le chiamate ricevute."
+    STR_MENUHELP_MAIN3    "Contiene i comandi per modificare la visualizzazione."
+    STR_MENUHELP_MAIN4    "Contiene i comandi per mostrare l'Aiuto."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  STR_ABOUT1              "Versione %s"
+  STR_ABOUT2              "Copyright (c) %s by"
+  STR_ABOUT3              "%s and %s"
+  STR_ABOUT_UNREG1        "Copia dimostrativa non registrata"
+  STR_ABOUT_UNREG2        "Registra CapiTel!"
+  STR_WINDOW_TITLE        APPSHORT
+  STR_TBAR_REG            "%s (Registrato da %s)"
+  STR_TBAR_UNREG          "%s (COPIA DIMOSTRATIVA NON REGISTRATA)"
+  STR_TBAR_FREE           "%s (eseguito come un Caller-ID gratuito)"
+  STR_TBAR_DEACTIVATED    "Segreteria disabilitata ..."
+  STR_TBAR_CONVERTING     "Conversione dei file wave in corso ..."
+  STR_TBAR_RECWELCOME     "Registrazione del messaggio di benvenuto ..."
+  STR_LIST_COL1           "Chiamante"
+  STR_LIST_COL2           "Data"
+  STR_LIST_COL3           "Ora"
+  STR_LIST_COL4           "Sec."
+  STR_LIST_COL5           "Destinazione"
+  STR_PRT_LIST_COL1       "Descrizione"
+  STR_PRT_LIST_COL2       "Numero chiamato (MSN)"
+  STR_CLR_LIST_COL1       "Nome"
+  STR_CLR_LIST_COL2       "Numero chiamante"
+  STR_ACT_LIST_COL1       "Sequenza DTMF"
+  STR_ACT_LIST_COL2       "Azione"
+  STR_REJECTCAUSE_D       "Impostazioni porta"
+  STR_REJECTCAUSE_0       "Normale"
+  STR_REJECTCAUSE_1       "Occupato"
+  STR_REJECTCAUSE_2       "Rifiuta"
+  STR_REJECTCAUSE_3       "Non disponibile"
+  STR_POPWIN_NONE         "Mai"
+  STR_POPWIN_TOPLEFT      "In alto a sinistra"
+  STR_POPWIN_TOPRIGHT     "In alto a destra"
+  STR_POPWIN_BOTTOMLEFT   "In basso a sinistra"
+  STR_POPWIN_BOTTOMRIGHT  "In basso a destra"
+  STR_LIST_ACTION_1       "Controllo remoto"
+  STR_LIST_ACTION_2       "Riavvio computer"
+  STR_LIST_ACTION_3       "Disattiva CapiTel"
+  STR_LIST_ACTION_4       "Esci da CapiTel"
+  STR_LIST_ACTION_5       "Cambia numero di richiamata"
+  STR_FDLG_WELCOME        "Seleziona testo di benvenuto"
+  STR_FDLG_WELCOME_FILT   "Testo di benvenuto\0*.WAV;*.ALW\0Tutti i file (*.*)\0*\0"
+  STR_FDLG_RINGING        "Seleziona la suoneria"
+  STR_FDLG_RINGING_FILT   "File wave\0*.WAV\0Tutti i file (*.*)\0*\0"
+  STR_FDLG_RECORD         "Salva testo di Benvenuto..."
+  STR_FDLG_RECORD_FILT    "Testo di Benvenuto\0*.ALW\0Tutti i file (*.*)\0*\0"
+  STR_FDLG_SAVEAS         "Salva la telefonata con nome"
+  STR_FDLG_SAVEAS_FILT    "File wave\0*.WAV\0Tutti i file (*.*)\0*\0"
+  STR_FDLG_SAVEAS_FILE    "Telefonata da %s.wav"
+  STR_POPTEXT_1           "Chiamata in arrivo"
+  STR_POPTEXT_2           "Da %s"
+  STR_POPTEXT_3           "A %s"
+  STR_ERROR               "Errore"
+  STR_WARNING             "Attenzione"
+  STR_MSG_REGOK           "Grazie per esserti registrato!"
+  STR_MSG_REGFAIL         "Il codice di registrazione non è valido.\n\nControllo di aver inserito il tuo nome e il codice correttamente."
+  STR_ERR_NONUMBER        "Inserisci il numero di telefono!"
+  STR_ERR_NODTMFCODE      "Inserisci una sequenza DTMF!"
+  STR_ASK_REALYDELETE     "Eliminare la chiamata selezionata?"
+  STR_ASK_REALYDELETE2    "Alcune telefonate non sono state ascoltate.\r\rSei sicuro di volerle eliminare?"
+  STR_ASK_REALYEXIT       "Vuoi chiudere CapiTel?"
+  STR_ASK_REALYEXIT_CHK   "Non chiedere più"
+  STR_HELP_README         "readme.txt"
+  STR_HELP_ORDER          "order.txt"
+  STR_HELP_ORDERBMT       "orderbmt.txt"
+  STR_HELP_LICENSE        "licence.txt"
+  STR_HELP_WHATSNEW       "whatsnew.txt"
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 219, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Informazioni su..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",-1,5,5,209,59
+    ICON            ID_MAIN,-1,17,20,21,20
+    LTEXT           "CapiTel per Windows",-1,55,15,115,8
+    LTEXT           ".",IDC_TEXT1,55,25,115,8
+    LTEXT           ".",IDC_TEXT2,55,40,115,8
+    LTEXT           ".",IDC_TEXT3,55,50,115,8
+    GROUPBOX        "Gli autori",-1,5,67,209,65
+    LTEXT           APP_AUTOR_1,-1,15,80,60,8
+    LTEXT           APP_WERNER_INET,-1,80,80,100,8
+    LTEXT           APP_CAWIM_INET,-1,80,105,130,8
+    LTEXT           APP_AUTOR_2,-1,15,105,60,8
+    LTEXT           APP_WERNER_WWW,-1,80,90,100,8
+    LTEXT           APP_CAWIM_WWW,-1,80,115,100,8
+    GROUPBOX        "Novità e aggiornamenti",IDC_TEXT4,5,137,209,25
+    CTEXT           APP_HOMEPAGE,IDC_TEXT5,12,148,196,8
+    PUSHBUTTON      "OK",IDOK,85,171,50,14
+END
+
+IDD_PROPPAGE1 DIALOG DISCARDABLE  0, 0, 210, 238
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Generale"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Accettazione della chiamata",-1,7,5,196,67
+    LTEXT           "&Rispondi dopo",-1,14,21,75,8
+    EDITTEXT        IDC_ANSWER_DELAY,95,19,25,13,ES_AUTOHSCROLL
+    LTEXT           "secondi",-1,125,21,60,8
+    LTEXT           "&Limita la registrazione a",-1,14,37,75,8
+    EDITTEXT        IDC_RECORD_TIME,95,35,25,13,ES_AUTOHSCROLL
+    LTEXT           "secondi",-1,125,37,60,8
+    LTEXT           "&Ferma la registrazione dopo",-1,14,53,90,8
+    EDITTEXT        IDC_SILENCE,106,51,25,13,ES_AUTOHSCROLL
+    LTEXT           "secondi di silenzio",-1,136,53,60,8
+    GROUPBOX        "Mostra",-1,7,75,196,155
+    CONTROL         "&Rispristina le finestre minimizzate ad una nuova chiamata",
+                    IDC_RESTORE_WINDOW,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,90,180,18
+    CONTROL         "&Mostra solo quelle chiamate dove il chiamante ha lasciato un messaggio",
+                    IDC_IGNORE_EMPTY,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,112,180,18
+    CONTROL         "&Se il chimante è sconosciuto, mostra l'area indicata dal prefisso (funziona solo in Germania)",
+                    IDC_EXPAND_CALLER_ID,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,134,180,18
+    CONTROL         "Mostra anche le chiamate &digitali (Fax, Dati)",
+                    IDC_IS_CALLER_ID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,156,180,10
+    CONTROL         "&Conferma l'eliminazione di una chiamata dalla lista",
+                    IDC_CONFIRM_DELETE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,170,180,10
+    LTEXT           "Se la finestra principale è minimizzata e arriva una chiamata, apri una finestra di avviso.",
+                    -1,14,188,170,16
+    LTEXT           "Mostra una finestra di avviso:",-1,14,211,95,8
+    COMBOBOX        IDC_POPUPWIN,115,209,70,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+END
+
+IDD_PROPPAGE2 DIALOG DISCARDABLE  0, 0, 210, 238
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Segreteria"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Testo di Benvenuto",-1,7,5,196,50
+    LTEXT           "Usa il file seguente come testo di &Benvenuto:",-1,
+                    14,18,180,8
+    EDITTEXT        IDC_WELCOME_TEXT,14,34,120,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Sfoglia ...",IDC_FILEDLG,140,33,55,14
+    GROUPBOX        "Squillo",-1,7,58,196,60
+    CONTROL         "&Esegui i seguenti file wave come 'squillo' per le chiamate in arrivo:",
+                    IDC_WAVE_RINGING,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,73,175,18
+    EDITTEXT        IDC_RINGING_WAVE,14,98,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Sfoglia ...",IDC_WAVEDLG,140,97,55,14
+    GROUPBOX        "Porte e chiamanti",-1,7,121,196,110
+    ICON            ID_PORT1,-1,14,134,20,20
+    LTEXT           "Usa la lista delle porte per inserire i numeri chiamanti con i quali la segreteria deve interagire.",
+                    -1,40,136,157,16
+    PUSHBUTTON      "Porte ...",IDC_EDIT_PORTS,105,158,90,14
+    ICON            ID_CALLER1,-1,14,178,20,20
+    LTEXT           "La lista dei Chiamanti contiene le persone con numeri telefonici conosciuti, così che CapiTel possa mostrarti i nomi.",
+                    -1,40,180,157,24
+    PUSHBUTTON      "Chiamanti conosciuti ...",IDC_EDIT_CALLERS,105,210,90,14
+END
+
+IDD_PROPPAGE3 DIALOG DISCARDABLE  0, 0, 210, 162
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Controllo remoto"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Controllo remoto",-1,7,5,196,89
+    CONTROL         "Abilita il riconoscimento dei toni &DTMF",IDC_DTMF_SUPPORT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,20,149,10
+    LTEXT           "Il controllo remoto permette di chiamare la segreteria e di ascoltare i messaggi ovunque. Inoltre, CapiTel può chiamarti quando arrivano nuovi messaggi.",
+                    -1,14,37,180,24
+    LTEXT           "Chiama automaticamente questo numero telefonico:",
+                    -1,14,69,95,16
+    EDITTEXT        IDC_FORWARD,110,73,85,13,ES_AUTOHSCROLL
+    GROUPBOX        "Azioni remote",-1,7,97,196,58
+    ICON            ID_ACTION1,-1,14,109,21,20
+    LTEXT           "Questa lista contiene azioni che possono essere attivate inserendo le sequenze DTMF corrispondenti.",
+                    -1,40,111,156,16
+    PUSHBUTTON      "Azioni di controllo remoto ...",IDC_EDIT_ACTIONS,95,133,
+                    100,14
+END
+
+IDD_PROPPAGE4 DIALOG DISCARDABLE  0, 0, 210, 95
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Altro"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Opzioni",-1,7,5,196,32
+    CONTROL         "I dati &vocali sono codificati µLaw (solo negli USA)",
+                    IDC_ULAW_CODEC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,
+                    20,180,10
+    GROUPBOX        "Logging",-1,7,40,196,48
+    LTEXT           "Tutte le chiamate verranno scritte sul seguente file:",
+                    -1,14,52,180,8
+    EDITTEXT        IDC_LOGFILE,14,67,180,12,ES_AUTOHSCROLL
+END
+
+IDD_EDITPORTLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Porte"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PORT_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Nuovo",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Modifica",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Elimina",IDM_DELETE,174,84,50,14
+END
+
+IDD_EDITPORT DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Porta"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "La &port è abilitata",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,70,10
+    LTEXT           "&Descrizione:",-1,14,25,85,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Numero telefonico (MSN):",-1,14,42,85,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Azione:",-1,14,59,85,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Lasciate vuoti i seguenti campi per usare le impostazioni predefinite per questa porta.",
+                    -1,14,77,160,16
+    LTEXT           "&Rispondi dopo",-1,14,103,75,8
+    EDITTEXT        IDC_DELAY,93,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "secondi",-1,122,103,69,8
+    LTEXT           "&Limita la registrazione a",-1,14,120,75,8
+    EDITTEXT        IDC_MAXTIME,93,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "secondi",-1,122,120,69,8
+    LTEXT           "Testo di &Benvenuto:",-1,14,137,65,8
+    EDITTEXT        IDC_FILENAME,83,135,79,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Sfoglia ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "&Squillo:",-1,14,154,65,8
+    EDITTEXT        IDC_WAVENAME,83,152,79,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Sfoglia ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "Chiamami &automaticamente al seguente numero telefonico:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Annulla",2,181,209,50,14
+END
+
+IDD_EDITCALLERLIST DIALOGEX 0, 0, 263, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Chiamanti conosciuti"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CALLER_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,192,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,206,7,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,206,24,50,14
+    PUSHBUTTON      "&Nuovo",IDM_NEW,206,50,50,14
+    PUSHBUTTON      "&Modifica",IDM_EDIT,206,67,50,14
+    PUSHBUTTON      "&Elimina",IDM_DELETE,206,84,50,14
+END
+
+IDD_EDITCALLER DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Chiamante"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "&Abilitato",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,66,10
+    LTEXT           "&Descrizione:",-1,14,25,80,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "Numero &chiamante:",-1,14,42,80,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Azione:",-1,14,59,80,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Lasciate vuoti i seguenti campi per usare le impostazioni predefinite per questo chiamante.",
+                    -1,14,77,160,16
+    LTEXT           "&Rispondi dopo",-1,14,103,75,8
+    EDITTEXT        IDC_DELAY,93,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "secondi",-1,122,103,69,8
+    LTEXT           "&Limita la registrazione a",-1,14,120,75,8
+    EDITTEXT        IDC_MAXTIME,93,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "secondi",-1,122,120,69,8
+    LTEXT           "Testo di &Benvenuto:",-1,14,137,65,8
+    EDITTEXT        IDC_FILENAME,83,135,79,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Sfoglia ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "&Squillo:",-1,14,154,65,8
+    EDITTEXT        IDC_WAVENAME,83,152,79,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Sfoglia ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "Chiamami &automaticamente al seguente numero telefonico:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Annulla",2,181,209,50,14
+END
+
+IDD_EDITACTIONLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Azioni del controllo remoto"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_ACTION_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Nuovo",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Modifica",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Elimina",IDM_DELETE,174,84,50,14
+END
+
+IDD_EDITACTION DIALOG DISCARDABLE  0, 0, 207, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Azione"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,192,195
+    CONTROL         "&Abilitata",IDC_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,7,70,10
+    LTEXT           "Codice &DTMF:",-1,14,25,50,8
+    EDITTEXT        IDC_DTMFCODE,75,23,50,13,ES_AUTOHSCROLL
+    LTEXT           "Quando digito questa sequenza DTMF, desidero ...",-1,
+                    14,47,165,8
+    CONTROL         "Controlla &remotamente la segreteria, ascoltando o eliminando i messaggi.",
+                    IDC_REMOTECONTROL,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE | WS_GROUP | WS_TABSTOP,14,62,175,18
+    CONTROL         "&Inserisci un nuovo numero telefonico da chiamare automaticamente quando ci sono nuovi messaggi.",
+                    IDC_SET_CALLBACK,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE,14,84,175,18
+    CONTROL         "&Disattiva la segreteria.",IDC_DEACTIVATE,
+                    "Button",BS_AUTORADIOBUTTON,14,106,175,10
+    CONTROL         "&Chiudi la segreteria.",IDC_QUIT,"Button",
+                    BS_AUTORADIOBUTTON,14,120,175,10
+    CONTROL         "Ri&avvia il computer.",IDC_REBOOT,"Button",
+                    BS_AUTORADIOBUTTON,14,134,175,10
+    CONTROL         "&Esegui un programma:",IDC_EXECUTE,"Button",
+                    BS_AUTORADIOBUTTON,14,148,175,10
+    LTEXT           "Pr&ogramma:",IDC_TEXT1,26,164,40,8
+    EDITTEXT        IDC_PROGRAM,70,163,120,13,ES_AUTOHSCROLL
+    LTEXT           "&Opzioni linea di comando:",IDC_TEXT2,26,180,82,8
+    EDITTEXT        IDC_ARGUMENTS,110,179,80,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,96,210,50,14
+    PUSHBUTTON      "Annulla",2,149,210,50,14
+END
+
+IDD_REGISTER DIALOG DISCARDABLE  0, 0, 207, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_VISIBLE
+CAPTION "Registrazione"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Nome:",-1,7,11,30,8
+    EDITTEXT        IDC_REGNAME,40,8,80,13,ES_AUTOHSCROLL
+    LTEXT           "&Codice:",-1,7,27,30,8
+    EDITTEXT        IDC_REGCODE,40,24,80,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,150,7,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,150,24,50,14
+END
+
+IDD_POPUP DIALOG DISCARDABLE  0, 0, 80, 37
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_TEXT1,5,5,70,8
+    LTEXT           "",IDC_TEXT2,5,15,70,8
+    LTEXT           "",IDC_TEXT3,5,25,70,8
+END
+
+
+IDD_MSGBOX DIALOG DISCARDABLE  0, 0, 275, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,45,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,45,50,14
+    PUSHBUTTON      "&No",IDNO,218,45,50,14
+    ICON            "",IDC_ICO,7,9,18,20
+    LTEXT           "",IDC_TEXT,40,9,228,24
+END
+
+IDD_MSGBOXEX DIALOG DISCARDABLE  0, 0, 275, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,50,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,50,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,50,50,14
+    PUSHBUTTON      "&No",IDNO,218,50,50,14
+    ICON            "",IDC_ICO,7,9,21,20
+    LTEXT           "",IDC_TEXT,40,9,228,8
+    CONTROL         "",IDC_CHECK,"Button",BS_AUTOCHECKBOX|WS_TABSTOP,40,28,228,10
+END

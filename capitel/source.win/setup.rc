@@ -1,0 +1,39 @@
+
+#define RES_MAIN_ICON       "..\\..\\setup\\source.win\\ico\\setup1.ico"
+
+#define RES_NEWWIZ_WATER1   "..\\..\\setup\\source.win\\bmp\\wizard1.bmp"
+#define RES_NEWWIZ_WATER2   "..\\..\\setup\\source.win\\bmp\\wizard2.bmp"
+#define RES_IMGLST_BITMAP   "..\\..\\setup\\source.win\\bmp\\sellist.bmp"
+
+
+#define TEXT_ENG_TITLE         "CapiTel for Windows Setup"
+#define TEXT_ENG_INSTALL       "This wizard installs CapiTel for Windows onto your computer, a full-featured and highly configurable answering machine for ISDN.\r\rCapiTel provides many handy functions which you can customise to your requirements.  You can configure personalised greetings for individual callers, call your mobile phone when new messages are left by specific callers and much more.\r\rPlease press Next to begin the installation."
+
+#define TEXT_GER_TITLE         "CapiTel für Windows Setup"
+#define TEXT_GER_INSTALL       "Dieser Assistent installiert CapiTel für Windows auf Ihrem Computer, einen komfortablen Anrufbeantworter für Ihren ISDN-Anschluß.\r\rCapiTel bietet eine Vielzahl von praktischen Funktionen, die Sie einfach an Ihre Bedürfnisse anpassen können. Sie können bestimmten Personen spezielle Ansagetexte zuordnen, sich bei neuen Anrufen automatisch benachrichtigen lassen, und vieles mehr.\r\rKlicken Sie auf 'Weiter', um die Installation zu beginnen."
+
+#define TEXT_FRE_TITLE         "Installation de CapiTel sous Windows"
+#define TEXT_FRE_INSTALL       "Cette procédure installe CapiTel sous Windows, répondeur automatique hautement configurable pour ligne RNIS, sur votre ordinateur.\r\rCapiTel offre une multitude de fonctions pratiques que vous pourrez configurer à votre guise. Vous pouvez configurer des messages d'acceuil personnalisés selon l'appelant, appeler votre téléphone mobile quand un nouveau message est laissé par une tierce personne, ainsi que beaucoup d'autres fonctions pratiques.\r\r Appuyez sur 'Suivant' pour lancer l'installation."
+
+#define TEXT_ITA_TITLE         "CapiTel per il setup di Windows"
+#define TEXT_ITA_INSTALL       "Questo assistente di Windows installa CapiTel sul vostro computer, una segreteria telefonica per ISDN completa esemplice da configurare.\r\rCapiTel offre una varietà di funzioni pratiche, chesi possono facilmente adeguare ad ogni esigenza. Si possono assegnare particolari annunci della segreteria telefonica ad utenti differenti, farsichiamare, ad esempio sul telefono cellulare, quando determinate persone hannolasciato un messaggio e molto di più.\r\rSelezionare 'Avanti' per iniziare l'installazione."
+
+#define TEXT_DUT_TITLE         "Capitel voor Windows setup"
+#define TEXT_DUT_INSTALL       "Deze Deze wizard installeert Capitel, een luxe antwoordapparaat voor uw ISDN-lijn, op uw computer.\r\rCapiTel biedt veel handige functies die u naar eigen behoefte kunt aanpassen. Zo kunt u specifieke welkomstboodschappen instellen voor bepaalde bellers en uw mobiele telefoon laten bellen wanneer een nieuwe boodschap is ontvangen. En nog veel meer...\r\rKlik op 'Volgende' om met de installatie te beginnen."
+
+#define TEXT_DAN_TITLE         "CapiTel for Windows Setup"
+#define TEXT_DAN_INSTALL       "Denne wizard installerer CapiTel på din computer, en luksori s telefonsvarer for din ISDN linie.\r\rCapiTel leverer en masse handy funktioner, du kan ændre efter dine behov. Du kan konfigurere velkomster til bestemte personer og CapiTel can ringe din mobil op, når der er en y besked. Og meget mere...\r\rTryk venligst på 'Næste' for at starte installationen."
+
+#define TEXT_FIN_TITLE         "CapiTel for Windows Asennus"
+#define TEXT_FIN_INSTALL       "Tämä asennusohjelma asentaa tietokoneeseesi monipuolisen ja helppokäyttöisen ISDN-puhelinvastaajan, CapiTel:n.\r\rCapiTel sisältää useita hyödyllisiä toimintoja, joita voit muokata omien tarpeittesi mukaisiksi. Voit esim. määritellä yksilöllisen vastaajatervehdyksen kullekin soittajalle, ohjelma voi soittaa matkapuhelimeesi kun tietty henkilö on jättänyt viestin ja paljon muuta...\r\rPaina Next-painiketta aloittaaksesi asennuksen."
+
+#define TEXT_NOR_TITLE         "CapiTel for Windows oppsett"
+#define TEXT_NOR_INSTALL       "Programmet vil installere CapiTel pådin PC, en lukseri s telefonsvarer for din ISDN-linje.\r\rCapiTel tilbyr en rekke funksjoner som du kan skreddersy for ditt behov. Du kan lage personlige til spesielle personer, og du kan ringe mobiltelefonen når nye meldinger er ankommet, plussmye mere...\r\rVennligst trykk 'Neste' for åinstallere CapiTel"
+
+#define TEXT_SPA_TITLE         "Instalación de CapiTel para Windows"
+#define TEXT_SPA_INSTALL       "Este asistente instala CapiTel para Windows en tu ordenador, un contestador automático para RDSI altamente configurable y con todas sus características.\r\rCapitel proporciona muchas funciones prácticas que pueden ser personalizadas según las necesidades. Se pueden configurar saludos personalizados para llamantes individuales, llamar a tu teléfono móvil cuando nuevos mensajes son dejados por llamantes específicos y mucho más.\r\rPor favor, pulsa Siguiente para iniciar la instalación."
+
+//#define TEXT_SWE_TITLE         "Installation av CapiTel under Windows"
+//#define TEXT_SWE_INSTALL       "Programmet installerar CapiTel på din dator. CapiTel är en fullödig telefonsvarare för din ISDN-lina.\r\rCapiTel har en mängd praktiska funktioner som kan anpassas efter behov. Du kan konfigurera välkomsttexten för olika personer och automatiskt ringa upp din mobiltelefon när ett meddelande inkommer. Och mycket mer...\r\rTryck 'Nästa' för att påbörja installationen."
+
+#include "..\..\setup\source.win\setup.rc"

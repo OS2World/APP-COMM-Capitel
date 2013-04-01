@@ -1,0 +1,371 @@
+010:Rotterdam
+0111:Zierikzee
+0113:Goes
+0114:Hulst
+0115:Terneuzen
+0117:Breskens
+0118:Middelburg
+013:Tilburg
+015:Delft
+0161:Gilze Rijen
+0162:Raamsdonksveer
+0164:Woensdrecht
+0165:Roosendaal
+0166:Tholen
+0167:Dinteloord
+0168:Zevenbergen
+0172:Bodegraven
+0174:Hoek van Holland
+0180:Ridderkerk
+0181:Hellevoetsluis
+0182:Gouda
+0183:Rijswijk nb
+0184:Hardinxveld-Giessendam
+0186:Zuid-Beijerland
+0187:Middelharnis
+020:Amsterdam
+0222:Texel
+0223:Den Helder
+0224:Callantsoog
+0226:Petten
+0227:Medemblik
+0228:Enkhuizen
+0229:Hoorn nh
+023:Hoofddorp 
+024:Nijmegen
+0251:Beverwijk
+0252:Sassenheim
+0255:IJmuiden
+026:Arnhem
+0294:Loenen a/d Vecht
+0297:Aalsmeer
+0299:Volendam
+030:Utrecht
+0313:Doesburg 
+0314:Doetinchem
+0315:Gaanderen
+0316:Zevenaar
+0317:Wageningen
+0318:Ede gld
+0320:Lelystad
+0321:Dronten
+033:Amersfoort 
+0341:Ermelo
+0342:Barneveld
+0343:Maarsbergen
+0344:Tiel
+0345:Leerdam
+0346:Maarssen
+0347:Vianen zh
+0348:Lopik
+035:Hilversum 
+036:Almere
+038:Zwolle 
+040:Eindhoven 
+0411:Boxtel
+0412:Oss
+0413:Volkel
+0416:Kaatsheuvel
+0418:Zaltbommel
+043:Maastricht 
+045:Heerlen 
+046:Geleen
+0475:Roermond
+0478:Venray
+0481:Oosterhout gld 
+0485:Vianen nb
+0486:Grave
+0487:Maasbommel
+0488:Dodewaard
+0492:Helmond
+0493:Deurne
+0495:Weert 
+0497:Bergeyk
+0499:Oirschot
+050:Groningen
+0511:Hardegarijp
+0512:Drachten
+0513:Heerenveen
+0514:Stavoren
+0515:Sneek
+0516:Appelscha
+0517:Harlingen
+0518:Berlikum fr
+0519:Dokkum
+0521:Steenwijk
+0522:Meppel
+0523:Slagharen
+0524:Coevorden
+0525:Elburg 
+0527:Urk
+0528:Hoogeveen
+0529:Nieuwleusen
+053:Haaksbergen
+0541:Denekamp
+0543:Winterswijk
+0544:Groenlo
+0545:Borculo
+0546:Almelo
+0547:Markelo
+0548:Nijverdal
+055:Apeldoorn
+0561:Wolvega
+0562:Terschelling / Vlieland
+0566:Akkrum
+0570:Deventer
+0571:Terwolde
+0572:Raalte
+0573:Laren gld
+0575:Zutphen 
+0577:Garderen
+0578:Vaassen
+058:Leeuwarden
+0591:Emmen dr
+0592:Assen
+0593:Westerbork
+0594:Grijpskerk
+0595:Oldenzijl
+0596:Delfzijl
+0597:Winschoten 
+0598:Hoogezand Sappemeer
+0599:Stadskanaal
+06:Mobiel Nummer
+070:Den Haag 
+071:Leiden 
+072:Alkmaar 
+073:'s-Hertogenbosch 
+074:Hengelo ov
+075:Zaandam 
+076:Breda 
+077:Venlo 
+078:Dordrecht 
+079:Zoetermeer
+001242:Bahamas
+001264:Anguilla
+001268:Antigua en Barbuda
+001345:Caymaninseln
+001441:Bermuda
+001664:Montserrat
+001758:St.Lucia
+001787:Puerto Rico
+001869:St. Kitts en Nevis
+001:USA/Canada
+0020:Egypte
+00212:Marokko
+00213:Algerien
+00216:Tunesien
+00218:Libyen
+00220:Gambia
+00221:Senegal
+00222:Mauretanien
+00223:Mali
+00224:Guinea
+00225:Ivoorkust
+00226:Burkina Faso
+00227:Niger
+00228:Togo
+00229:Benin
+00230:Mauritius
+00231:Liberia
+00232:Sierra Leone
+00233:Ghana
+00234:Nigeria
+00235:Tsjaad
+00236:Centraal Afrikaanse Republiek
+00237:Kamerun
+00238:Kap Verde
+00239:Sao Toma en Principe
+00240:aequatorialguinea
+00241:Gabun
+00242:Kongo
+00243:Zaire
+00244:Angola
+00245:Guinea-Bissau
+00247:Ascension
+00248:Seschellen/Seychellen
+00249:Sudan
+00250:Ruanda
+00251:Etheopië
+00252:Somalia
+00253:Dschibuti
+00254:Kenia
+00255:Tansania
+00256:Uganda
+00257:Burundi
+00258:Mosambik
+00260:Sambia
+00261:Madagaskar
+00262:Reunion
+00263:Simbabwe
+00264:Namibia
+00265:Malawi
+00266:Lesotho
+00267:Botsuana
+00268:Swasiland
+00269:Mayotte (Komoren)
+0027:Zuid Afrika
+00290:Saint Helena
+00291:Eritrea
+00297:Aruba
+00298:Faeroeer
+00299:Groenland
+0030:Griekenland
+0031:Nederland
+0032:Belgie
+00331:Paris
+0033:Frankrijk
+0034:Spanje
+00350:Gibraltar
+00351:Portugal
+00352:Luxemburg
+00353:Ierland
+00354:IJsland
+00355:Albanie
+00356:Malta
+00357:Cyprus
+00358:Finland
+00359:Bulgarije
+0036:Hongarije
+00370:Litauen
+00371:Lettland
+00372:Estland
+00373:Moldau Republik
+00374:Armenien
+00375172:Minsk
+00375:Belarus (Wit Russland)
+00376:Andorra
+00377:Monaco
+00378:San Marino
+0038044:Kiev
+00380:Ukraine
+00381:Joegoslawie/Montenegro/Servië
+00385:Kroatie
+00386:Slowenie
+00387:Bosnie-Herzegowina
+00389:Makedonie/Mazedonie
+0039541:San Marino
+00396:Vaticaanstad
+0039:Italie
+0040:Rumanie
+004175:Liechtenstein
+0041:Zwitserland
+00420:Tschechie/Tschechische Republiek
+00421:Slowakei/Slowakische Republiek
+0043:Oosterijk
+00441:London
+0044:Engeland/Noord Ierland
+0045:Denemarken
+0046:Zweden
+0047:Noorwegen
+0048:Polen
+0049:Duitsland
+00500:Falkland eilanden
+00501:Belize
+00502:Guatemala
+00503:El Salvador
+00504:Honduras
+00505:Nicaragua
+00506:Costa Rica
+00507:Panama
+00508:Saint Pierre und Miquelon
+00509:Haiti
+0051:Peru
+0052:Mexico
+00537:Havanna
+0053:Cuba
+0054:Argentinië
+0055:Brasilie
+0056:Chile
+0057:Colombia
+0058:Venezuela
+00590:Guadeloupe
+00591:Bolivie
+00592:Guyana
+00593:Ecuador
+00594:Frans-Guayana
+00595:Paraguay
+00596:Martinique
+00597:Suriname
+00598:Uruguay
+00599:Nederlandse Antillen
+0060:Malaysia
+0061:Australië
+0062:Indonesie
+0063:Philippinen
+0064:Nieuw Zeeland
+0065:Singapur
+00662:Bangkok
+0066:Thailand
+00670:Marianen
+00671:Guam
+0067210:Davis (Antartis)
+0067211:Mawson (Antartis)
+0067212:Casey (Antartis)
+0067213:Macquarrie Island (Antartis)
+006722:Kokos eilanden (Australie)
+006723:Norfolk eilanden (Australie)
+006724:Kerst-eiland (Australie)
+00673:Brunei Darussalam
+00674:Nauru
+00675:Papua-Neuguinea
+00676:Tonga
+00677:Salomonen
+00678:Vanuatu
+00679:Fidschi
+00680:Palau
+00682:Coocos Eilanden
+00684:Amerikaans-Samoa
+00685:Samoa
+00686:Kiribati
+00687:Neukaledonien
+00688:Tuvalu
+00689:Frans-Polynesie
+00691:Mikronesie
+00692:Marshall Eilanden
+007095:Moskau
+007812:St. Petersburg
+007:GUS (Russische Federatie)
+00813:Tokio
+0081:Japan
+0082:Korea (Republiek)
+0084:Vietnam
+00850:Korea (Democratische Volksrepubliek)
+00852:Hongkong
+00853:Macau
+00855:Kambodja
+00856:Laos
+008662:Taipei
+0086:China (Volksrepubliek)
+00871:Atlantische Oceaan (Oost)
+00872:Pazifische Oceaan
+00873:Indische Oceaan
+00874:Atlantische Oceaan (West)
+00880:Bangladesch
+00886:China (Taiwan)
+0090:Turkije/NoordCypres
+0091:Indie
+0092:Pakistan
+0093:Afghanistan
+0094:Sri Lanka
+0095:Myanmar (Birma)
+00960:Malediven
+00961:Libanon
+00962:Jordanie
+00963:Syrie
+00964:Irak
+00965:Koeweit
+00966:Saudi Arabiën
+00967:Jemen
+00968:Oman
+00971:Verenigte Arabische Emiraten
+00972:Israel
+00973:Bahrain
+00974:Katar
+00975:Bhutan
+00976:Mongolei
+00977:Nepal
+0098:Iran
+00993:Turkmenistan
+00994:Aserbaidschan
+00995:Georgien
+00996:Kirgisistan

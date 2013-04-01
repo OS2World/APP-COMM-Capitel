@@ -1,0 +1,442 @@
+
+ ==============================================================================
+
+                 ////// /////// ////// //  /////// ////// //
+                //     //   // //  // //     //   //     //
+               //     /////// ////// //     //   ////   //
+              //     //   // //     //     //   //     //
+             ////// //   // //     //     //   ////// //////
+
+                              What's new?
+
+
+ ==============================================================================
+
+ Version 3.60:
+
+   General:
+   ~~~~~~~~
+    - CapiTel is Freeware now...
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - %
+
+ ==============================================================================
+ Version 3.50:
+
+   General:
+   ~~~~~~~~
+    - some more debug info in capitel.deb.
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - hungary language added.
+    - support for some very uncompliant capi implementations added
+    - new install-routine
+
+ ==============================================================================
+
+ Version 3.43:
+
+   General:
+   ~~~~~~~~
+    - capi 2.0 only: capitel now can seperate between unknown isdn caller
+      and unknown analog caller ("Unknown ISDN" / "Unknown analog").
+      see capitel.cfg for more information. see faq on www.2tec.com
+      to give unknown isdn callers a special welcome message.
+
+    - capi 2.0 only: in capitel.cfg you can configurate the outgoing
+      number for callback function. see capitel.cfg "outgoing number"
+      for details.
+
+ ==============================================================================
+
+ Version 3.42:
+
+   General:
+   ~~~~~~~~
+    - callback only, when minimum time was recorded. see
+      "call_back_limit" in capitel.cfg.
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - %
+
+ ==============================================================================
+
+ Version 3.40:
+
+   General:
+   ~~~~~~~~
+    - more debug infos on capi level included.
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - new installation routine
+
+ ==============================================================================
+
+ Version 3.37:
+
+   General:
+   ~~~~~~~~
+    - fixed minor date bug in log-file
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - bug for "save as" on unknown callers fixed
+    - "select all" and "reverse selection" in view-menu
+
+
+ ==============================================================================
+
+ Version 3.36:
+
+   General:
+   ~~~~~~~~
+    - with "zero_behavior" in capitel.cfg you can setup the behavior
+      of the leading zero reported by capi in the caller-id.
+      see capitel.cfg for more information.
+
+    - swiss number-file (swiss.num) added.
+
+   OS/2:
+   ~~~~
+    - big bug in 3.35 fixed. causes not to run on capi 1.1 (teles)
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - NOTE: BEFORE RUN THIS VERSION: FIRST DELETE ALL CALLS!
+
+    - you can select more than one calls to play or delete them in
+      one time.
+
+    - if you want to delete a non-heared call, a warning window pops up.
+
+    - you can save a call in the contect-menu of the call.
+
+    - danish language added.
+
+ ==============================================================================
+
+ Version 3.35:
+
+   General:
+   ~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - Some mixed languages in dialogs fixed (only in v3.33)
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - %
+
+ ==============================================================================
+
+ Version 3.33:
+
+   General:
+   ~~~~~~~~
+    - Close confirmation dialog
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Bugfix: popup-dialog sometimes shows wrong caller.
+    - Bugfix for Windows 2000 RC2
+
+ ==============================================================================
+
+ Version 3.22:
+
+   General:
+   ~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Italian version
+
+ ==============================================================================
+
+ Version 3.20:
+
+   General:
+   ~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Fix for Win9x when adding a new caller
+    - Netherland version
+    - Norwegian version (bokmal)
+    - Finsh version
+    - Capitel now goes to the systray
+
+ ==============================================================================
+
+ Version 3.11:
+
+   General:
+   ~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Fix for the Hagenuk CAPI problem when shutting down Win95.
+
+ ==============================================================================
+
+ Version 3.10:
+
+   General:
+   ~~~~~~~~
+    - Callback implemented.
+    - Callback could be configurated timedependent
+    - Fixed some minor bugs.
+    - Fixed some bugs on time-dependent functions.
+    - Support of DDI (Direct Dial In)
+    - Year 2000 approved
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - New configuration shell.
+    - Fix one bug, when starting a program over dtmf.
+    - French version (autodetect)
+    - Spanish version (autodetect)
+
+ ==============================================================================
+
+ Version 3.01:
+
+   General:
+   ~~~~~~~~
+    - Capiel as Caller-ID now is FREEWARE!
+      (you have to set up ANSWER DELAY to 999 seconds)
+
+ ==============================================================================
+ Version 3.00:
+
+   General:
+   ~~~~~~~~
+    - Capiel is now also a full caller-ID programm
+
+ ==============================================================================
+
+ Version 2.29:
+
+   General:
+   ~~~~~~~~
+    - DTMF-borders configurable
+
+ ==============================================================================
+
+ Version 2.28:
+
+   General:
+   ~~~~~~~~
+    - Some bugfixes on time depending functions.
+    - New HELP-menu.
+    - After REMOTE-CONTROL CapiTel sends now "beep beep beep beep beep"
+      instead of "beeeeeeeeeeeeeeeeep".
+    - Switch for A-Law or U-Law codec's.
+    - Bug in german REMOTE CONTROL fixed.
+    - Some fixes for wrong input of the configuration.
+    - CapiTel now can beep, if new calls are available (see CapiTel.CFG).
+    - CAPI 2.0: "Unknown"-entry, if no CallerID is available.
+    - CAPI 2.0: some fixes on CallerID.
+    - CapiTel now can be deactivated on startup (see CapiTel.CFG).
+    - Some fixes on DTMF-Codes.
+    - Priority of CapiTel now can be set in CapiTel.CFG.
+    - CTI-support.
+
+   OS/2:
+   ~~~~
+    - CapiTel now can be installed and started multiple times.
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Deleted Calls now goes to Recycled-Bin.
+    - Fixed: protection fault on exit of CapiTel.
+    - Setup-program don't overwrites old configuration now.
+    - Fixed: wrong buttons in CapiTel.
+    - Fixed: "ignore empty calls" doesn't work.
+    - Now you can shut down also on Window/NT (if you have rights to do this).
+    - Fixed: parameter for dtmf-started programs don't work.
+    - Fixed: ENABLE/DISABLE-Flag on remote-actions don't work.
+    - New and better installation.
+
+ ==============================================================================
+
+ Version 2.27:
+
+   General:
+   ~~~~~~~
+    -
+
+   OS/2:
+   ~~~~
+    - Capitel fails on FAT-partitions.
+    - Workaround for Diehl CAPI 2.0 (100% CPU-load)
+
+   Win 95/NT:
+   ~~~~~~~~~
+    -
+
+ ==============================================================================
+
+ Version 2.26:
+
+   General:
+   ~~~~~~~
+    - New button/menu-entry to play ALL new calls
+    - New button/menu-entry to add an unknown number to the
+      Callers-Database
+
+   OS/2:
+   ~~~~
+    -
+
+   Win 95/NT:
+   ~~~~~~~~~
+    -
+
+ ==============================================================================
+
+
+ Version 2.25:
+
+   General:
+   ~~~~~~~
+    - Support of all versions (english, german and textmode) in one
+      distribution-archive.
+    - New installation procedure
+    - Small problem fixed, when capi*.dll is present, but driver is
+      not running.
+
+   OS/2:
+   ~~~~
+    - Capitel now can handle capi 1.1 and capi 2.0 in one exe-file.
+    - Automatic detection of capi 1.1 and capi 2.0.
+
+   Win 95/NT:
+   ~~~~~~~~~
+    -
+
+ ==============================================================================
+
+
+ Version 2.24:
+
+   General:
+   ~~~~~~~
+    -
+
+   OS/2:
+   ~~~~
+    - Support of capi20.dll (capi 2.0). Tested on Diehl DIVA Pro 2.0.
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - First german version.
+
+ ==============================================================================
+
+ Version 2.23:
+
+   General:
+   ~~~~~~~
+    - fixes the bug, that the maximum record time does not work.
+
+   OS/2:
+   ~~~~
+    - workaround for the os/2-bug, that sometimes capitel cannot play
+      the wav' from the incomming call.
+    - a little bug in the workaround of the change in 2.20.
+    - first german version (no german readme at this time)
+      (german w95/nt version is still in work).
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - fixes the problem, that capitel not accept wav's comming from
+      windows-recorder.
+    - capitel now runs on eicon/diehl-cards. (tested with
+      diehl diva pro 2.0).
+
+ ==============================================================================
+
+
+ Version 2.10:
+
+   General:
+   ~~~~~~~
+    - Important information in the ReadMe, under 'Availability':
+
+      You are explicitly allowed to distribute the unmodified CapiTel
+      ZIP-archive on the Internet, on Shareware CD-Roms, on Bulletin Board
+      Systems and so on.
+
+    - No more german special characters in CAPITEL.NUM
+    - Time dependent settings now also work in CAPITEL.CFG
+    - New entry in CAPITEL.CFG: debug_data_b3, set it to 1 if you want
+      to debug B3 Data Packets.
+
+   OS/2:
+   ~~~~
+    - EAZ 0 is usable again
+    - Callers-Container did not always refresh correctly
+    - Empty Strings in the Properties are now exchanged with correct values,
+      ie. '*' for default
+    - Bubble-Help was not available for the "Remote Actions"-Button
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Also listening to 3,1 KHZ Audio Service now
+    - "Max. Recording Time" and "Answer Delay" columns were mixed
+
+
+ ==============================================================================
+
+

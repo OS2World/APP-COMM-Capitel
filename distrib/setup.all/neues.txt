@@ -1,0 +1,439 @@
+
+ ==============================================================================
+
+                 ////// /////// ////// //  /////// ////// //
+                //     //   // //  // //     //   //     //
+               //     /////// ////// //     //   ////   //
+              //     //   // //     //     //   //     //
+             ////// //   // //     //     //   ////// //////
+
+                            Was gibt es Neues?
+
+ ==============================================================================
+
+ Version 3.60:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Capitel ist nun Freeware
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - %
+
+ ==============================================================================
+ Version 3.50:
+
+   Allgemein:
+   ~~~~~~~~~
+    - mehr debug information in capitel.deb eingefügt
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - ungarisch eingepflegt
+    - unterstützung einiger sehr schlechten capi-implementationen eingebaut
+    - neue installationsroutine
+
+ ==============================================================================
+
+ Version 3.43:
+
+   Allgemein:
+   ~~~~~~~~~
+    - nur capi 2.0: capitel kann nun zwischen unbekannten isdn anrufern
+      und unbekannten analogen anrufern unterscheiden ("Unknown ISDN"
+      / "Unknown analog"). Lesen sie die FAQ auf www.2tec.com um unbe-
+      kannten anrufern speziele ansagetexte zuzuordnen.
+
+    - nur capi 2.0: in capitel.cfg kann man nun eine abgehende rufnummer
+      für die rückrufoption einstellen. bitte in capitel.cfg für details
+      nachlesen.
+
+ ==============================================================================
+
+ Version 3.42:
+
+   Allgemein:
+   ~~~~~~~~~
+    - callback nur wenn mind. x sekunden aufgesprochen wurde.
+      siehe capitel.cfg "call_back_limit"
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - %
+
+ ==============================================================================
+
+ Version 3.40:
+
+   Allgemein:
+   ~~~~~~~~~
+    - mehr debuginfos für capi eingebaut
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - neue installationsroutine
+
+ ==============================================================================
+
+ Version 3.37:
+
+   Allgemein:
+   ~~~~~~~~~
+    - geringfügiges datumsproblem im logfile gefixt.
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - fehler beim sicher von unbekannten anrufern beseitigt
+    - "alles selektieren" und "auswahl umkehren" eingefügt.
+
+ ==============================================================================
+
+ Version 3.36:
+
+   Allgemein:
+   ~~~~~~~~~
+    - mit "zero_behavior" in capitel.cfg kann das verhalten der führenden
+      nullen configuriert werden, welche die capi bei der caller-id meldet.
+      nähere informationen in capitel.cfg.
+
+   OS/2:
+   ~~~~
+    - dicker fehler in 3.35 gefixt. 3.35 lief nicht auf capi 1.1 (teles).
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - HINWEIS: VOR DER BENUTZUNG DIESER VERSION: ZUERST ALLE ALTEN
+               RUFE LÖSCHEN!!!
+
+    - Es können mehrere Einträge gleichzeitg ausgewählt werden, um die
+      Anrufe auf einmal abzuspielen oder auf einmal zu löschen.
+
+    - Wenn ein nicht abgehörter Anruf gelöscht werden soll, erscheint immer
+      ein Warnung, auch wenn "Rückfrage beim Löschen" abgeschaltet ist.
+
+    - Anrufe lassen sich über den Menüpunkt "Call/Save As" unter beliegem
+      Namen als WAV-File speichern.
+
+    - Über einen Klick auf die Spaltenüberschriften lassen sich die
+      Einträge nach den entsprechenden Kriterien sortieren.
+
+    - Dänische Sprache hinzugefügt.
+
+ ==============================================================================
+
+ Version 3.35:
+
+   Allgemein:
+   ~~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - Sprachwirrwar in den dialogen eseitigt (nur in v3.33)
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - %
+
+ ==============================================================================
+
+ Version 3.33:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Schließdialog eingebaut.
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Capitel zeigt im popup-Fenster selten den falschen Anrufer.
+    - Bugfix für Windows 2000 RC2
+
+ ==============================================================================
+
+ Version 3.22:
+
+   Allgemein:
+   ~~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Italienische Version
+
+ ==============================================================================
+
+ Version 3.20:
+
+   Allgemein:
+   ~~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Fix für Win9x (zufügen eines neuen Anrufers)
+    - Niederländische Version
+    - Norwegische Version (Bokmal)
+    - Finnische version
+    - Capitel geht nun auch in den Systray
+
+ ==============================================================================
+ Version 3.11:
+
+   Allgemein:
+   ~~~~~~~~~
+    - %
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Fix für das Problem bei der Hagenuk CAPI beim Shutdown von Win95
+
+ ==============================================================================
+ Version 3.10:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Rückruf implementiert.
+    - Rückruf Zeitabhängig konfigurierbar
+    - Einige kleinere Fehler gefixt.
+    - Fehler bei den zeitabhängigen Funktionen beseitigt
+    - Unterstützung von DDI (Direct Dial In)
+    - Jahr 2000 getestet
+
+   OS/2:
+   ~~~~
+    - %
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Konfigurationsoberfläche überarbeitet.
+    - Absturz bei DTMF-gesteuerten Programmaufruf beseitigt
+    - Französische Version (Autodetect)
+    - Spanische Version (Autodetect)
+
+ ==============================================================================
+
+ Version 3.01:
+
+   Allgemein:
+   ~~~~~~~~~
+    - CapiTel als Caller-ID ist nun FREEWARE!
+      (Sie müssen VERZOEGERUNG auf 999 sekunden stellen)
+
+ ==============================================================================
+
+ Version 3.00:
+
+   Allgemein:
+   ~~~~~~~~~
+    - CapiTel ist nun ein volles Caller-ID Programm
+
+ ==============================================================================
+
+ Version 2.29:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Konfigurierbare DTMF-Schranken
+
+ ==============================================================================
+
+ Version 2.28:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Einige Bugfixes bei den zeitabhängigen Funktionen.
+    - Helpmenü überarbeitet.
+    - Nach der Fernabfrage CapiTel sendet nun ein "beep beep beep beep beep"
+      anstatt von "beeeeeeeeeeeeeeeeep".
+    - Umschaltung von A-Law nach U-Law Codes möglich.
+    - Fehler bei Fernabrage in der deutschen Version.
+    - "Add as new Caller"-Menüpunkt aktualisiert sofort den aktuellen Eintrag.
+    - Einige möglichen Fehleingaben in der Konfiguration abgefangen.
+    - Capitel kann nun piepsen, wenn rufe da sind (nur über CapiTel.CFG einstellbar).
+    - CAPI 2.0: Rufe ohne Caller-ID werden nun als "Unknown" angezeigt.
+    - CAPI 2.0: Fehler beim ausdecodieren der CallerID gefixt.
+    - CapiTel muss nun beim start nicht zwingend aktiviert sein (siehe neuen eintrag
+      in CapiTel.CFG).
+    - Fehler bei den DTMF-Codes gefixt.
+    - Priorität von Capitel über CapiTel.CFG einstellbar.
+    - CTI-Unterstützung eingebaut.
+
+   OS/2:
+   ~~~~
+    - CapiTel kann nun mehrfach installiert und gestartet werden.
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Gelöschte Wav's werden ins Recycle-BIN verschoben.
+    - FIX: Seltener Protection Fault beim beenden von Capitel.
+    - Setup-Programm überschreibt vorhandene CFG-Files nicht mehr.
+    - Falsche Reihenfolge der Menübuttons gefixt.
+    - Fehler bei "ignore empty calls" gefixt.
+    - DTMF-Reboot auch unter NT verfügbar (falls User die Rechte dazu hat).
+    - Parameterübergabe an gestartete Programme gefixt.
+    - Enable/Disable-Flag bei Remote-Actions funktioniert nun korrekt.
+    - Neue, noch einfachere Installation.
+
+ ==============================================================================
+
+ Version 2.27:
+
+   Allgemein:
+   ~~~~~~~~~
+    -
+
+   OS/2:
+   ~~~~
+    - Capitel funktionierte auf FAT-Partitionen nicht.
+    - Workaround fr Diehl Capi 2.0 (100% Prozessorlast).
+
+   Win 95/NT:
+   ~~~~~~~~~
+    -
+
+ ==============================================================================
+
+ Version 2.26:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Neuer Button/Menue-Eintrag, um alle neuen Anrufe abspielen zu koennen
+    - Neuer Button/Menue-Eintrag, um eine fremde Nummer neu in die
+      Anrufer-Datenbank zu uebernehmen
+
+   OS/2:
+   ~~~~
+    -
+
+   Win 95/NT:
+   ~~~~~~~~~
+    -
+
+ ==============================================================================
+
+ Version 2.25:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Alle Versionen (englisch, deutsch, Text-Modus) nun in einem Archiv.
+    - Neue Installation.
+    - Wenn zwar die CAPI*.DLL vorhanden war, aber kein Treiber, dann konnte
+      es zu kleinen Problemen kommen.
+
+   OS/2:
+   ~~~~
+    - Support fuer CAPI 1.1 und CAPI 2.0 nun in einer EXE-Datei.
+    - Automatische Erkennung von CAPI 1.1 und CAPI 2.0
+
+   Win 95/NT:
+   ~~~~~~~~~
+    -
+
+ ==============================================================================
+
+ Version 2.24:
+
+   Allgemein:
+   ~~~~~~~~~
+    -
+
+   OS/2:
+   ~~~~
+    - CAPI 2.0 Support (CAPI20.DLL). Getestet mit Diehl Diva Pro 2.0
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - Erste deutsche Version.
+
+ ==============================================================================
+
+ Version 2.23:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Max. Aufnahmezeit funktionierte nicht
+
+   OS/2:
+   ~~~~
+    - Workaround fuer den OS/2 Bug, dass manchmal die WAV-Dateien
+      nicht abgespielt werden konnten.
+    - Fehler beim Workaround aus Version 2.20 behoben
+    - Erste deutsche Version (es gibt noch kein deutsches ReadMe!)
+      (Die deutsche Win 95/NT Version ist noch in Arbeit)
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - CapiTel akzeptierte die WAV-Dateien vom Windows-Recorder nicht.
+    - Support fuer Eicon/Diehl-Karten (getestet mit Diehl Diva Pro 2.0)
+
+ ==============================================================================
+
+ Version 2.10:
+
+   Allgemein:
+   ~~~~~~~~~
+    - Wichtige Information im LiesMich, unter 'Verfuegbarkeit':
+
+      Ihnen ist es ausdruecklich gestattet, das unmodifizierte CapiTel
+      ZIP-Archiv im Internet, auf Shareware CD-Roms, in Mailboxen
+      usw. zu verbreiten.
+
+    - Keine deutschen Umlaute mehr in CAPITEL.NUM
+    - Zeitabhaengige Konfigurationen funktionieren nun auch in CAPITEL.CFG
+    - Neuer Eintrag in CAPITEL.CFG: debug_data_b3, setzen Sie es auf 1
+      wenn sie B3 Daten-Pakete analysieren wollen.
+
+   OS/2:
+   ~~~~
+    - EAZ 0 kann wieder benutzt werden
+    - Der Anrufer-Container wurde nicht immer korrekt aktualisiert
+    - Leere Eintraege in den Einstellungen werden nun mit korrekten
+      Werten ersetzt, z.B. '*' fuer die Default-Einstellung
+    - Die Hilfe-Blase funktionierte nicht beim Fernsteuerungs-Button
+
+   Win 95/NT:
+   ~~~~~~~~~
+    - CapiTel reagiert nun auch auf 3,1 KHZ Audio Dienste
+    - Die Spalten fuer die max. Aufnahmedauer und die Annahmeverzoegerung
+      waren vertauscht.
+
+ ==============================================================================
+
+

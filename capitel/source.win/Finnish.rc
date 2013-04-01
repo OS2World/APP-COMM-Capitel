@@ -1,0 +1,529 @@
+
+/*
+fin
+fin translation from: "Jaakko Järviluoma" <jaakkoj@saunalahti.fi>
+*/
+
+LANGUAGE LANG_FINNISH, SUBLANG_DEFAULT
+
+ID_MAIN ACCELERATORS MOVEABLE PURE
+BEGIN
+    "a",   IDM_SELECTALL        , ASCII, VIRTKEY, CONTROL
+    "a",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "A",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "c",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "C",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "p",   IDM_PLAY_ALL         , ASCII, ALT
+    "P",   IDM_PLAY_ALL         , ASCII, ALT
+    "n",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    "N",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    VK_F5, IDM_REGISTER         , ASCII, VIRTKEY, CONTROL, ALT
+END
+
+
+ID_MAIN MENU DISCARDABLE
+BEGIN
+    POPUP "&Yleistä"
+    BEGIN
+        MENUITEM "&Aktivoi vastaaja\tAlt+A"      , IDM_TOGGLEACTIVATION
+        MENUITEM "P&iilota valikot\tAlt+I"       , IDM_HIDEFRAMECONTROLS
+        MENUITEM "A&setukset ..."                , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "P&oistu"                       , IDM_EXIT
+    END
+    POPUP "&Puhelu"
+    BEGIN
+        MENUITEM "&Kuuntele\tEnter"              , IDM_PLAY
+        MENUITEM "P&oista\tDel"                  , IDM_DELETE
+        MENUITEM "&Tallenna nimellä ..."                  , IDM_SAVE_AS
+        MENUITEM "Lisää &Soittajiin\tAlt+S"      , IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "K&uuntele Kaikki\tAlt+U"       , IDM_PLAY_ALL
+        MENUITEM "&Äänitä (soita itse)\tAlt+Ä"   , IDM_RECORD
+    END
+    POPUP "&Ikkuna"
+    BEGIN
+        MENUITEM "&Aina päällimmäisenä"          , IDM_TOPMOST
+        MENUITEM "&Näytä tehtäväpalkissa"        , IDM_SHOWTRAY
+        MENUITEM "&Piilota pienennettäessä"      , IDM_MINHIDE
+        MENUITEM SEPARATOR
+        MENUITEM "Valitse K&aikki\tCtrl+A"       , IDM_SELECTALL
+        MENUITEM "K&äänteinen Valinta"           , IDM_INVERTSEL
+    END
+    POPUP "&Apua"
+    BEGIN
+        MENUITEM "&Esittely"                     , IDM_README
+        MENUITEM "&Mitä uutta?"                  , IDM_WHATSNEW
+        MENUITEM "&Lisenssi"                     , IDM_LICENSE
+        MENUITEM "&Tilauslomake"                 , IDM_ORDER
+        MENUITEM "&BMT Micro-Tilauslomake"       , IDM_ORDERBMT
+        MENUITEM "&Kotisivu Internetissä"        , IDM_HOMEPAGE
+        MENUITEM SEPARATOR
+        MENUITEM "Tietoja &CapiTel:sta"          , IDM_ABOUT
+    END
+END
+
+ID_POPUP MENU DISCARDABLE
+BEGIN
+    POPUP "Context_1"
+    BEGIN
+        MENUITEM "Kuuntele"                      , IDM_PLAY
+        MENUITEM "P&oista\tDel"                  , IDM_DELETE
+        MENUITEM "&Tallenna nimellä ..."                  , IDM_SAVE_AS
+        MENUITEM "Lisää &Soittajiin\tAlt+S"      , IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "&K&uuntele Kaikki\tAlt+U"      , IDM_PLAY_ALL
+        MENUITEM "&Äänitä (soita itse)\tAlt+Ä"   , IDM_RECORD
+        MENUITEM SEPARATOR
+        MENUITEM "&Aktivoi vastaaja\tAlt+A"      , IDM_TOGGLEACTIVATION
+        MENUITEM "P&iilota valikot\tAlt+I"       , IDM_HIDEFRAMECONTROLS
+        MENUITEM "As&etukset ..."                , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "Ti&etoja CapiTel:sta"          , IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "&Lopeta"                       , IDM_EXIT
+    END
+    POPUP "Context_2"
+    BEGIN
+        MENUITEM "&Uusi.."                       , IDM_NEW
+        MENUITEM "&Muokkaa"                      , IDM_EDIT
+        MENUITEM "&Poista"                       , IDM_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Aktivoi"                      , IDM_ACTIVE
+    END
+    POPUP "Tray_1"
+    BEGIN
+        MENUITEM "&Näytä CapiTel"                , IDM_SHOW
+        MENUITEM "&Kuuntele Kaikki"              , IDM_PLAY_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Lopeta"                       , IDM_EXIT
+    END
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDM_TOGGLEACTIVATION  "Vastaajatoiminto päälle tai pois päältä."
+    IDM_HIDEFRAMECONTROLS "Näyttää tai piilottaa valikot."
+    IDM_PROPERTIES        "Avaa Asetukset-ikkunan."
+    IDM_PROP_PORTS        "Avaa Porttiasetukset-ikkunan."
+    IDM_PROP_CALLERS      "Avaa Soittajat-tietokannan."
+    IDM_PROP_ACTIONS      "Avaa Kauko-ohjausasetukset -ikkunan."
+    IDM_EXIT              "Lopettaa CapiTel:n (sulkee ohjelman)."
+    IDM_PLAY              "Kuuntele valittu viesti."
+    IDM_PLAY_ALL          "Kuuntele kaikki viestit."
+    IDM_DELETE            "Poistaa valitun viestin."
+    IDM_SAVE_AS           "Tallentaa valitun viestin äänitiedostoksi."
+    IDM_ADD_TO_CALLERS    "Lisää valitun soittajan numeron tietokantaan."
+    IDM_RECORD            "Äänitä oma vastaajaviesti."
+    IDM_README            "Avaa ReadMe.Txt -tiedoston."
+    IDM_WHATSNEW          "Avaa WhatsNew.Txt -tiedoston."
+    IDM_LICENSE           "Avaa License Agreement -tiedot."
+    IDM_ORDER             "Avaa Tilauslomake."
+    IDM_ORDERBMT          "Avaa BMT Micro -Tilauslomake."
+    IDM_HOMEPAGE          "Avaa CapiTel-Kotisivun."
+    IDM_ABOUT             "Näytä Tietoja ohjelmasta."
+    IDM_SHOW              "Aktivoi CapiTel:n pääikkunan."
+    IDM_TOPMOST           "CapiTel pysyy päällimmäisenä, paitsi pienennettynä."
+    IDM_SHOWTRAY          "Näyttää tilakuvakkeen tehtäväpalkissa."
+    IDM_MINHIDE           "Piilota CapiTel pienennettynä."
+    IDM_SELECTALL         "Valitsee kaikki ikkunan kohteet."
+    IDM_INVERTSEL         "Valitsee ne objektit, joita ei ole valittu, ja poistaa valinnan niiltä objekteilta, jotka on jo valittu."
+
+    STR_MENUHELP_MAIN1    "CapiTel:n asetuksiin liittyvät toiminnot."
+    STR_MENUHELP_MAIN2    "Puheluihin liittyvät toiminnot."
+    STR_MENUHELP_MAIN3    "Ikkunan toiminnot."
+    STR_MENUHELP_MAIN4    "Ohjetiedostoihin liittyvät toiminnot."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  STR_ABOUT1              "Versio %s"
+  STR_ABOUT2              "Copyright (c) %s by"
+  STR_ABOUT3              "%s ja %s"
+  STR_ABOUT_UNREG1        "Rekisteröimätön kokeiluversio"
+  STR_ABOUT_UNREG2        "Ole hyvä ja rekisteröi CapiTel!"
+  STR_WINDOW_TITLE        APPSHORT
+  STR_TBAR_REG            "%s (Rekisteröity nimelle %s)"
+  STR_TBAR_UNREG          "%s (REKISTERÖIMÄTÖN KOKEILUVERSIO)"
+  STR_TBAR_FREE           "%s (toimii Caller-ID ilmaisohjelmana)"
+  STR_TBAR_DEACTIVATED    "Puhelinvastaaja pois päältä ..."
+  STR_TBAR_CONVERTING     "Muunnetaan wave-tiedostoja ..."
+  STR_TBAR_RECWELCOME     "Äänitetään vastaajaviestiä ..."
+  STR_LIST_COL1           "Soittaja"
+  STR_LIST_COL2           "Päivä"
+  STR_LIST_COL3           "Aika"
+  STR_LIST_COL4           "Kesto"
+  STR_LIST_COL5           "Kohde"
+  STR_PRT_LIST_COL1       "Kuvaus"
+  STR_PRT_LIST_COL2       "Oma puh.numero (MSN)"
+  STR_CLR_LIST_COL1       "Nimi"
+  STR_CLR_LIST_COL2       "Soittajan numero"
+  STR_ACT_LIST_COL1       "DTMF-koodi"
+  STR_ACT_LIST_COL2       "Tehtävä"
+  STR_REJECTCAUSE_D       "Porttiasetukset"
+  STR_REJECTCAUSE_0       "Normaali"
+  STR_REJECTCAUSE_1       "Varattu"
+  STR_REJECTCAUSE_2       "Torju"
+  STR_REJECTCAUSE_3       "Tavoittamattomissa"
+  STR_POPWIN_NONE         "Ei koskaan"
+  STR_POPWIN_TOPLEFT      "Ylävasemmalla"
+  STR_POPWIN_TOPRIGHT     "Yläoikealla"
+  STR_POPWIN_BOTTOMLEFT   "Alavasemmalla"
+  STR_POPWIN_BOTTOMRIGHT  "Alaoikealla"
+  STR_LIST_ACTION_1       "Kauko-ohjaus"
+  STR_LIST_ACTION_2       "Boottaa tietokone"
+  STR_LIST_ACTION_3       "CapiTel pois päältä"
+  STR_LIST_ACTION_4       "Sulje CapiTel"
+  STR_LIST_ACTION_5       "Muuta takaisinsoittonumero"
+  STR_FDLG_WELCOME        "Valitse Vastaajaviesti"
+  STR_FDLG_WELCOME_FILT   "Vastaajaviesti\0*.WAV;*.ALW\0All files (*.*)\0*\0"
+  STR_FDLG_RINGING        "Valitse soittoääni"
+  STR_FDLG_RINGING_FILT   "Wave-tiedosto\0*.WAV\0All files (*.*)\0*\0"
+  STR_FDLG_RECORD         "Tallenna Vastaajaviesti Nimellä"
+  STR_FDLG_RECORD_FILT    "Vastaajaviesti\0*.ALW\0All files (*.*)\0*\0"
+  STR_FDLG_SAVEAS         "Tallenna viesti nimellä"
+  STR_FDLG_SAVEAS_FILT    "Wave-tiedosto\0*.WAV\0All files (*.*)\0*\0"
+  STR_FDLG_SAVEAS_FILE    "Soittaja %s.wav"
+  STR_POPTEXT_1           "Saapuva puhelu"
+  STR_POPTEXT_2           "Soittaja %s"
+  STR_POPTEXT_3           "Kohteeseen %s"
+  STR_ERROR               "Virhe"
+  STR_WARNING             "Varoitus"
+  STR_MSG_REGOK           "Kiitos rekisteröinnistä!"
+  STR_MSG_REGFAIL         "Rekisteröintikoodi on virheellinen.\n\nTarkista että kirjoitit nimesi ja koodin oikein."
+  STR_ERR_NONUMBER        "Kirjoita puhelinnumero!"
+  STR_ERR_NODTMFCODE      "Kirjoita DTMF-koodi!"
+  STR_ASK_REALYDELETE     "Oletko varma että haluat poistaa valitun puhelun?"
+  STR_ASK_REALYDELETE2    "Et ole kuunnellut kaikkia valittuja viestejä. Haluatko varmasti poistaa ne siitä huolimatta?"
+  STR_ASK_REALYEXIT       "Suljetaanko CapiTel?"
+  STR_ASK_REALYEXIT_CHK   "Älä näytä tätä kyselyä enää"
+  STR_HELP_README         "readme.txt"
+  STR_HELP_ORDER          "order.txt"
+  STR_HELP_ORDERBMT       "orderbmt.txt"
+  STR_HELP_LICENSE        "licence.txt"
+  STR_HELP_WHATSNEW       "whatsnew.txt"
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 219, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Tietoja CapiTel:sta"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",-1,5,5,209,59
+    ICON            ID_MAIN,-1,17,20,21,20
+    LTEXT           "CapiTel for Windows",-1,55,15,115,8
+    LTEXT           ".",IDC_TEXT1,55,25,115,8
+    LTEXT           ".",IDC_TEXT2,55,40,115,8
+    LTEXT           ".",IDC_TEXT3,55,50,115,8
+    GROUPBOX        "Tekijät",-1,5,67,209,65
+    LTEXT           APP_AUTOR_1,-1,15,80,60,8
+    LTEXT           APP_WERNER_INET,-1,80,80,100,8
+    LTEXT           APP_CAWIM_INET,-1,80,105,130,8
+    LTEXT           APP_AUTOR_2,-1,15,105,60,8
+    LTEXT           APP_WERNER_WWW,-1,80,90,100,8
+    LTEXT           APP_CAWIM_WWW,-1,80,115,100,8
+    GROUPBOX        "Uutisia ja päivityksiä",IDC_TEXT4,5,137,209,25
+    CTEXT           APP_HOMEPAGE,IDC_TEXT5,12,148,196,8
+    PUSHBUTTON      "OK",IDOK,85,171,50,14
+END
+
+IDD_PROPPAGE1 DIALOG DISCARDABLE  0, 0, 210, 230
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Yleistä"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Puhelun hyväksyminen",-1,7,5,196,67
+    LTEXT           "&Vastaa kun kulunut",-1,14,21,70,8
+    EDITTEXT        IDC_ANSWER_DELAY,86,19,25,13,ES_AUTOHSCROLL
+    LTEXT           "sekuntia",-1,116,21,80,8
+    LTEXT           "&Rajoita viestin pituus",-1,14,37,70,8
+    EDITTEXT        IDC_RECORD_TIME,86,35,25,13,ES_AUTOHSCROLL
+    LTEXT           "sekuntiin",-1,116,37,75,8
+    LTEXT           "&Lopeta nauhoitus, kun",-1,14,53,70,8
+    EDITTEXT        IDC_SILENCE,86,51,25,13,ES_AUTOHSCROLL
+    LTEXT           "sekuntia hiljaista",-1,116,53,80,8
+    GROUPBOX        "Näyttö",-1,7,75,196,147
+    CONTROL         "&Palauta pienennetty ikkuna puhelun tullessa",
+                    IDC_RESTORE_WINDOW,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,90,180,10
+    CONTROL         "&Näytä vain puhelut, joissa soittaja on jättänyt viestin vastaajaan",
+                    IDC_IGNORE_EMPTY,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,104,180,18
+    CONTROL         "&Jos soittaja on tuntematon, näytä soittajan suunta, suuntanumeron perusteella (toimii vain Saksassa)",
+                    IDC_EXPAND_CALLER_ID,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,126,180,18
+    CONTROL         "Näytä myös &digitaalipuhelut (Fax, Data)",
+                    IDC_IS_CALLER_ID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,148,180,10
+    CONTROL         "V&ahvista puhelun poisto listalta",
+                    IDC_CONFIRM_DELETE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,162,180,10
+    LTEXT           "Jos pääikkuna on pienennettynä puhelun tullessa, voidaan näyttää popup-ikkuna.",
+                    -1,14,180,170,16
+    LTEXT           "Näytä popup-ikkuna:",-1,14,203,75,8
+    COMBOBOX        IDC_POPUPWIN,100,201,70,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+END
+
+IDD_PROPPAGE2 DIALOG DISCARDABLE  0, 0, 210, 238
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Puhelinvastaaja"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Vastaajaviesti",-1,7,5,196,50
+    LTEXT           "Käytä seuraavaa tiedostoa &vastaajaviestinä:",-1,
+                    14,18,180,8
+    EDITTEXT        IDC_WELCOME_TEXT,14,34,120,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Näytä ...",IDC_FILEDLG,140,33,55,14
+    GROUPBOX        "Soittoääni",-1,7,58,196,60
+    CONTROL         "Käytä seuraavaa tiedostoa &soittoäänenä, kun puhelu tulee:",
+                    IDC_WAVE_RINGING,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,73,175,18
+    EDITTEXT        IDC_RINGING_WAVE,14,98,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Näytä ...",IDC_WAVEDLG,140,97,55,14
+    GROUPBOX        "Portit ja soittajat",-1,7,121,196,110
+    ICON            ID_PORT1,-1,14,134,20,20
+    LTEXT           "Lisää Porttilistaan omat puhelinnumerosi, joihin tuleviin soittoihin haluat ohjelman reagoivan.",
+                    -1,40,136,157,16
+    PUSHBUTTON      "Portit ...",IDC_EDIT_PORTS,105,158,90,14
+    ICON            ID_CALLER1,-1,14,178,20,20
+    LTEXT           "Lisää Soittajat-listaan tuntemiesi soittajien tiedot, jotta CapiTel pystyy näyttämään sinulle soittajan nimen.",
+                    -1,40,180,157,24
+    PUSHBUTTON      "Soittajat ...",IDC_EDIT_CALLERS,105,210,90,14
+END
+
+IDD_PROPPAGE3 DIALOG DISCARDABLE  0, 0, 210, 178
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Kauko-ohjaus"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Kauko-ohjaus",-1,7,5,196,97
+    CONTROL         "Salli &DTMF-äänitaajuustunnistus",IDC_DTMF_SUPPORT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,20,149,10
+    LTEXT           "Kauko-ohjauksen avulla voit soittaa omaan vastaajaasi ja kuunnella siihen jätetyt viestit mistä tahansa. Lisäksi, CapiTel voi soittaa sinulle automaattisesti, kun vastaajaan tulee uusi viesti.",
+                    -1,14,37,180,32
+    LTEXT           "Uuden viestin tullessa, soita automaattisesti numeroon:",
+                    -1,14,77,95,16
+    EDITTEXT        IDC_FORWARD,110,81,85,13,ES_AUTOHSCROLL
+    GROUPBOX        "Kauko-ohjaustoiminnot",-1,7,105,196,66
+    ICON            ID_ACTION1,-1,14,117,21,20
+    LTEXT           "Tämä lista sisältää toiminnot, jotka voidaan aktivoida näppäilemällä vastaavat DTMF (äänitaajuus) -koodit.",
+                    -1,40,119,156,24
+    PUSHBUTTON      "Kauko-ohjaustoiminnot ...",IDC_EDIT_ACTIONS,95,149,
+                    100,14
+END
+
+IDD_PROPPAGE4 DIALOG DISCARDABLE  0, 0, 210, 95
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Muut"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Asetukset",-1,7,5,196,32
+    CONTROL         "&Puhe on µLaw koodattu (vain USA)",
+                    IDC_ULAW_CODEC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,
+                    20,180,10
+    GROUPBOX        "Loki",-1,7,40,196,48
+    LTEXT           "Kaikki soitot kirjataan seuraavaan tiedostoon:",
+                    -1,14,52,180,8
+    EDITTEXT        IDC_LOGFILE,14,67,180,12,ES_AUTOHSCROLL
+END
+
+IDD_EDITPORTLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Portit"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PORT_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Peruuta",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Uusi",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Muokkaa",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Poista",IDM_DELETE,174,84,50,14
+END
+
+IDD_EDITPORT DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Portti"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "&Portti käytössä",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,62,10
+    LTEXT           "&Kuvaus:",-1,14,25,80,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Oma puh. numero (MSN):",-1,14,42,80,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "Rea&gointi:",-1,14,59,80,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Jätä seuraavat kentät tyhjiksi jos haluat käyttää vastaavia oletusasetuksia tässä portissa.",
+                    -1,14,77,160,16
+    LTEXT           "&Vastaa kun kulunut",-1,14,103,67,8
+    EDITTEXT        IDC_DELAY,84,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "sekuntia",-1,112,103,69,8
+    LTEXT           "&Rajoita viestin pituus",-1,14,120,67,8
+    EDITTEXT        IDC_MAXTIME,84,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "sekuntiin",-1,112,120,69,8
+    LTEXT           "V&astaajaviesti:",-1,14,137,45,8
+    EDITTEXT        IDC_FILENAME,63,135,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Näytä ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "&Soittoääni:",-1,14,154,45,8
+    EDITTEXT        IDC_WAVENAME,63,152,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Näytä ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "&Uuden viestin tullessa, soita automaattisesti numeroon:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Peruuta",2,181,209,50,14
+END
+
+IDD_EDITCALLERLIST DIALOGEX 0, 0, 263, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Soittajat"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CALLER_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,192,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,206,7,50,14
+    PUSHBUTTON      "Peruuta",IDCANCEL,206,24,50,14
+    PUSHBUTTON      "&Uusi",IDM_NEW,206,50,50,14
+    PUSHBUTTON      "&Muokkaa",IDM_EDIT,206,67,50,14
+    PUSHBUTTON      "&Poista",IDM_DELETE,206,84,50,14
+END
+
+IDD_EDITCALLER DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Soittaja"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "&Käytä näitä asetuksia",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,83,10
+    LTEXT           "&Nimi:",-1,14,25,80,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "Soittajan &puhelinnumero:",-1,14,42,80,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "Rea&gointi:",-1,14,59,80,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Jätä seuraavat kentät tyhjiksi jos haluat käyttää vastaavia oletusasetuksia tälle soittajalle.",
+                    -1,14,77,160,16
+    LTEXT           "&Vastaa kun kulunut",-1,14,103,67,8
+    EDITTEXT        IDC_DELAY,84,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "sekuntia",-1,112,103,69,8
+    LTEXT           "&Rajoita viestin pituus",-1,14,120,67,8
+    EDITTEXT        IDC_MAXTIME,84,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "sekuntiin",-1,112,120,69,8
+    LTEXT           "V&astaajaviesti:",-1,14,137,45,8
+    EDITTEXT        IDC_FILENAME,63,135,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Näytä ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "&Soittoääni:",-1,14,154,45,8
+    EDITTEXT        IDC_WAVENAME,63,152,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Näytä ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "&Uuden viestin tullessa, soita automaattisesti numeroon:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Peruuta",2,181,209,50,14
+END
+
+IDD_EDITACTIONLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Kauko-ohjaustoiminnot"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_ACTION_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Peruuta",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Uusi",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Muokkaa",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Poista",IDM_DELETE,174,84,50,14
+END
+
+IDD_EDITACTION DIALOG DISCARDABLE  0, 0, 207, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Toiminnot"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,192,195
+    CONTROL         "&Toiminto käytössä",IDC_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,7,73,10
+    LTEXT           "&DTMF-koodi:",-1,14,25,50,8
+    EDITTEXT        IDC_DTMFCODE,75,23,50,13,ES_AUTOHSCROLL
+    LTEXT           "Kun näppäilen tämän DTMF-koodin, haluan ...",-1,
+                    14,47,165,8
+    CONTROL         "&Kauko-ohjata vastaajaa soittamaan tai poistamaan viestejä.",
+                    IDC_REMOTECONTROL,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE | WS_GROUP | WS_TABSTOP,14,62,160,18
+    CONTROL         "&Lisätä uuden numeron, jonne vastaaja soittaa minulle uuden viestin tullessa.",
+                    IDC_SET_CALLBACK,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE,14,84,160,18
+    CONTROL         "K&ytkeä vastaajan pois päältä.",IDC_DEACTIVATE,
+                    "Button",BS_AUTORADIOBUTTON,14,106,160,10
+    CONTROL         "&Sulkea CapiTel:n.",IDC_QUIT,"Button",
+                    BS_AUTORADIOBUTTON,14,120,160,10
+    CONTROL         "&Käynnistää tietokoneen uudelleen.",IDC_REBOOT,"Button",
+                    BS_AUTORADIOBUTTON,14,134,160,10
+    CONTROL         "K&äynnistää jonkin toisen ohjelman:",IDC_EXECUTE,"Button",
+                    BS_AUTORADIOBUTTON,14,148,160,10
+    LTEXT           "&Ohjelma:",IDC_TEXT1,26,164,40,8
+    EDITTEXT        IDC_PROGRAM,70,163,120,13,ES_AUTOHSCROLL
+    LTEXT           "&Parametrit:",IDC_TEXT2,26,180,40,8
+    EDITTEXT        IDC_ARGUMENTS,70,179,120,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,96,210,50,14
+    PUSHBUTTON      "Peruuta",2,149,210,50,14
+END
+
+IDD_REGISTER DIALOG DISCARDABLE  0, 0, 207, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_VISIBLE
+CAPTION "Rekisteröinti"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Nimi:",-1,7,11,30,8
+    EDITTEXT        IDC_REGNAME,40,8,80,13,ES_AUTOHSCROLL
+    LTEXT           "&Koodi:",-1,7,27,30,8
+    EDITTEXT        IDC_REGCODE,40,24,80,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,150,7,50,14
+    PUSHBUTTON      "Peruuta",IDCANCEL,150,24,50,14
+END
+
+IDD_POPUP DIALOG DISCARDABLE  0, 0, 80, 37
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_TEXT1,5,5,70,8
+    LTEXT           "",IDC_TEXT2,5,15,70,8
+    LTEXT           "",IDC_TEXT3,5,25,70,8
+END
+
+
+IDD_MSGBOX DIALOG DISCARDABLE  0, 0, 275, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,45,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,45,50,14
+    PUSHBUTTON      "&No",IDNO,218,45,50,14
+    ICON            "",IDC_ICO,7,9,18,20
+    LTEXT           "",IDC_TEXT,40,9,228,24
+END
+
+IDD_MSGBOXEX DIALOG DISCARDABLE  0, 0, 275, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,50,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,50,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,50,50,14
+    PUSHBUTTON      "&No",IDNO,218,50,50,14
+    ICON            "",IDC_ICO,7,9,21,20
+    LTEXT           "",IDC_TEXT,40,9,228,8
+    CONTROL         "",IDC_CHECK,"Button",BS_AUTOCHECKBOX|WS_TABSTOP,40,28,228,10
+END
+

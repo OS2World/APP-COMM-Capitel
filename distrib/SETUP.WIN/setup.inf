@@ -1,0 +1,97 @@
+
+[Version]
+Signature="$Chicago$"
+
+[Install]
+CopyFiles = CapiTelFiles, SetupFiles
+DelFiles = CapiTelOld
+MakeIcons = CapiTelIcons
+Uninstall = CapiTel, "CapiTel"
+
+[Remove]
+DelFiles = CapiTelFiles, CapiTelScratch, SetupFiles
+DelIcons = CapiTelIcons
+
+[CapiTelFiles]
+; the program himself
+capitel.exe
+capitelt.exe
+; user's config, don't overwrite
+capitel.act,,, 0x10
+capitel.cfg,,, 0x10
+capitel.nam,,, 0x10
+capitel.num,,, 0x10
+capitel.prt,,, 0x10
+; wave files, don't overwrite
+ringing.wav,,, 0x10
+welcome.wav,,, 0x10
+; just-for-info files, overwrite
+order.txt
+orderbmt.txt
+bestbmt.txt
+bestell.txt
+licence.txt
+lizenz.txt
+readme.txt
+liesmich.txt
+leame.txt
+whatsnew.txt
+neues.txt
+; number files for other countrys
+nl.num
+uk.num
+swiss.num
+
+[CapiTelOld]
+setup.exe
+setup.inf
+setupapi.dll
+cfgmgr32.dll
+unwise.exe
+uninst.isu
+install.log
+
+[CapiTelScratch]
+file_id.diz
+capitel.log
+ringing.alw
+welcome.alw
+
+[SetupFiles]
+; setup files
+setup.exe
+setup.inf
+setupapi.dll
+cfgmgr32.dll
+
+[CapiTelIcons]
+CPRG, "CapiTel\CapiTel", %32768%"\CapiTel.exe",,,,1
+CPRG, "CapiTel\"%ReadMeTxt%, %32768%"\"%ReadMeTxt%
+CPRG, "CapiTel\"%WhatsNewTxt%, %32768%"\"%WhatsNewTxt%
+CPRG, "CapiTel\"%LicenseTxt%, %32768%"\"%LicenseTxt%
+CPRG, "CapiTel\www.2tec.com", "http://www.2tec.com"
+
+[DestinationDirs]
+DefaultDestDir = 24, "CapiTel"
+CapiTelFiles = 32768
+CapiTelOld = 32768
+CapiTelScratch = 32768
+SetupFiles = 32768, "Setup"
+
+; englische strings (default)
+[Strings]
+ReadMeTxt = "readme.txt"
+WhatsNewTxt = "whatsnew.txt"
+LicenseTxt = "licence.txt"
+
+; deutsche strings
+[Strings.0407]
+ReadMeTxt = "liesmich.txt"
+WhatsNewTxt = "neues.txt"
+LicenseTxt = "lizenz.txt"
+
+; spanische strings
+[Strings.040a]
+ReadMeTxt = "leame.txt"
+WhatsNewTxt = "whatsnew.txt"
+LicenseTxt = "licence.txt"

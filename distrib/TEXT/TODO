@@ -1,0 +1,21 @@
+Bugs:
+ x Wenn WAV+IDX geloescht und Ruf wird abgespielt -> CRASH
+ x Wenn Kontext-Menue im Container offen war und ein Systembutton
+   betaetigt wurde -> PM haengt
+ - MMPM Bug
+
+Features:
+ - Button, um alle Anrufe abspielen zu koennen
+ - Spezielle Ansage fuer alle <unknown>'s
+ - Pro Port ein eigenes Verzeichnis
+ - Container konfigurierbar machen
+ - Vertical Slider abschalten
+ x Sound bei reinkommendem Ruf (general, port+caller spezifisch)
+ - Minimized Icon aendern bei Ruf
+ - Expire von Anrufen nach X Tagen
+ x Abgehoerte Anrufe kenntlich machen
+ - Launch Program after incoming call
+ - Dynamische Breite des Popups "Incoming Call.."
+ - Zeitabhaenige Ansagen
+ - Zufaellig ausgewaehlte Ansagen
+

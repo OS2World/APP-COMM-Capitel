@@ -1,0 +1,320 @@
+
+
+
+
+                 ////// /////// ////// //  /////// ////// //
+                //     //   // //  // //     //   //     //
+               //     /////// ////// //     //   ////   //
+              //     //   // //     //     //   //     //
+             ////// //   // //     //     //   ////// //////
+
+
+             Contestador Automático para RDSI basado en CAPI
+              e Identificador de Interlocutor para Windows 95,
+                      Windows 98 y Windows NT
+
+
+
+
+
+  Introducción:
+  ~~~~~~~~~~~~
+   CapiTel es un Contestador Automático e Identificador de Interlocutor de 32-Bit
+   para Windows 95, Windows 98 y Windows NT. Versiones gráficas y
+   en modo texto están disponibles para varios sistemas operativos.
+
+   ¡Gracias a todos los usuarios que nos enviaron sus bugs y sus ideas!
+
+   Agradecimiento a las siguientes personas:
+
+     - Kerstin Glodzinski
+     - Norbert Schulze
+     - Kolja Nowak
+     - Peter Franken
+     - Dirk Schreiber
+
+
+  Características principales:
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     - 32-Bit multi-hebra Contestador Automático (Shareware)
+     - 32-Bit Identificador de persona que llama (FREEWARE)
+     - Versiones gráficas y de modo Texto para Windows 95/NT, basados en CAPI 2.0
+     - Soporte completo para los archivos .WAV
+     - Funciones de control remoto controladas por tonos DTMF.
+     - Detector de silencio
+     - Completamente configurable
+     - Disponible en inglés y alemán (español y francés en versión Windows)
+     - Llamada de retorno
+     - Preparado para el año 2000
+
+
+  Instalación bajo Windows 95/NT:
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Descomprima el archivo de la distribución en un directorio temporal y
+   ejecute SETUP.EXE, esto instalará CapiTel en su ordenador y usted
+   podrá encontrarlo en el menu de Inicio.
+
+
+  Antes de que usted empiece:
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Este tema es muy importante, porque muchos de los usuarios desconfiguran
+   CapiTel antes de comprobar que funciona completamente.
+   Por consiguiente, antes de que usted empiece a jugar con todas las propiedades,
+   por favor ejecute CapiTel, deje las propiedades como están y llámese.
+   Si CapiTel funciona en su sistema, usted debe ver una llamada entrante de su propio
+   número. Por defecto deben aparecer todos los números.
+   Después de que esta pequeña prueba haya tenido éxito puede empezar a configurarse
+   CapiTel.
+
+   Si quisiera ejecutar CapiTel como un Identificador de interlocutor FREEWARE,
+   por favor configure el RETRASO de la RESPUESTA a 999 segundos.
+   ¡De esa manera CapiTel es GRATIS!
+
+
+  Configuración:
+  ~~~~~~~~~~~~~
+   Use la pestaña Propiedades para configurar CapiTel.
+
+
+   General: - Ejecuta el archivo WAV de Sonido
+              Si esta opción está seleccionada, el archivo WAV de sonido se ejecutará
+              cuando se detecte una llamada entrante.
+
+            - Genera Archivos .WAV de 16-Bit
+              Marque esta opción si su tarjeta de sonido lo soporta.
+
+            - Restaura la Ventana con una nueva Llamada
+              Si se detecta una llamada entrante aparece una ventana
+              de CapiTel
+
+            - Confirma el borrado de una llamada
+              Marque esta opción si usted quiere que CapiTel le pregunte antes
+              de borrar una llamada.
+
+            - Ignora las llamadas vacías
+              Si usted marca esta opción, todas las llamadas con una
+              grabación de 0 segundos serán ignoradas por CapiTel
+
+            - Código de Área extendido
+              Si el identificador de interlocutor detecta que no puede encontrar el
+              nombre de la persona que ha llamado en la base de datos de interlocutores,
+              se muestra el nombre de la ciudad de la llamada.
+
+            - Soporte de DTMF
+              Con esta opción usted puede desactivar totalmente el soporte DTMF
+              (control remoto)
+
+            - Usar Código-ulaw
+              Este interruptor es importante solamente para los usuarios en los Estados
+              Unidos de América. Habilitará el código ulaw en lugar del código alaw
+              que se usa en Europa.
+
+            - Retraso de la respuesta
+              Especifique el tiempo predefinido (en segundos) que CapiTel debe esperar
+              antes de responder a una llamada.
+
+            - Tiempo máximo de grabación
+              Especifique el tiempo máximo predefinido de grabación (en segundos).
+              CapiTel cuelga automáticamente si la persona que llama deja un mensaje y
+              ¡excede este límite!
+
+            - Detector de silencio
+              Especifique el tiempo de Silencio (en segundos).
+              El contestador automático de CapiTel cuelga si se deja de hablar cuando
+              se está dejando un mensaje ¡y se excede este límite!
+
+            - Mensaje WAV de bienvenida
+              El archivo predefinido se ejecuta cuando CapiTel contesta a una
+              llamada.
+
+            - Archivo WAV de sonido
+              El archivo predefinido suena en su ordenador cuando se detecta una
+              llamada.
+
+            - Archivo de registro
+              CapiTel puede anotar todas las llamadas en un archivo de registro.
+              Usted también puede especificar un nombre de ruta o un Dispositivo
+              (por ejemlo, su impresora) si su sistema operativo lo soporta.
+
+
+   Líneas:    Para editar, haga doble clic en la entrada o use el menú desplegable.
+              ¡Si no hay ninguna lista de líneas, CapiTel reaccionará en TODAS las
+              líneas disponibles!
+
+            Línea: Escriba una descripción corta para la línea.
+
+            EAZ/MSN: El EAZ o el MSN para esta línea. Si usted está usando
+                     CAPI 1.1, rellene el EAZ entre 0 y 9. Si usted está usando
+                     CAPI 2.0, proporcione un MSN completo (número de teléfono).
+
+            Archivo WAV/ALW de bienvenida: El archivo WAV o ALW que le sonará a la
+                                           persona que llama cuando le conteste el
+                                           contestador automático.
+                                           Use * para el valor por defecto.
+
+            Sonido WAV: El archivo WAV que sonará en su ordenador cuando se detecte
+                        una llamada entrante.
+                        Use * para el valor por defecto.
+
+            Reacción: CapiTel puede rechazar una llamada. Aquí usted define
+                      cómo debe comportarse: 'Normal' para el comportamiento normal,
+                      'Comunicando' para simular una línea ocupada, 'Rechazar' para negarse
+                      a la llamada y 'No contestar' para simular un servicio indisponible.
+                      Importante: La reacción que usted define aquí es sólo válida para la
+                      tarjeta de RDSI. Si Ud. tiene otro dispositivo (Por ejemplo,
+                      un teléfono de RDSI) también escuchará el EAZ/MSN, ¡la llamada
+                      no obtendrá la reacción de CapiTel! No hay nada que nosotros
+                      podamos hacer sobre esto. Ésa es la manera de trabajar de RDSI.
+
+            Retraso de la respuesta: El tiempo de espera para responder (en segundos)
+                                     para la línea.
+                                     Use * para el valor por defecto.
+
+            Tiempo máximo de grabación: El tiempo máximo de grabación (en segundos)
+                                        para la línea.
+                                        Use * para el valor por defecto.
+
+   Números conocidos: Para editar, haga doble clic en una entrada o use el menú
+                      desplegable.
+                      Si alguien le llama y su número se encuentra en esta lista,
+                      la llamada usará la descripción de ese número.
+
+            Nombre: Nombre de la persona que llama.
+
+            Número: Número de la persona que llama que se usará para identificar las
+                    llamadas entrantes. Usted puede usar el comodín * al final de un
+                    número (y sólo allí). Por ejemplo 024192090* casará TODOS los números
+                    que empiezan con 024192090.
+
+            Los otros campos se describen bajo las líneas.
+
+
+   Acciones del control remoto:
+            Para editar, haga doble clic en una entrada o use el menú desplegable.
+
+            Código DTMF: Si se detecta el Código DTMF, se ejecutará la acción
+                         apropiada.
+
+            Acción: Están disponibles las siguientes acciones:
+
+                    - El control remoto reproduce todas las llamadas que se han grabado.
+                      Use el botón * de su teléfono para anularlos.
+                    - Reiniciar el ordenador (no se olvide que si usted utiliza Windows
+                      NT necesita la entrada de contraseña al usar esta opción. Usted
+                      puede saltarse la entrada de contraseña si utiliza una utilidad
+                      como TweakUI)
+                    - Desactivar CapiTel
+                    - Salir de CapiTel
+                    - Ejecuta un programa en su máquina. Usted puede llenar el Programa,
+                      Argumentos y títulos de campo
+                    - Llamada de retorno. Con este código DTMF usted puede definir un
+                      nuevo número para la llamada de retorno. Si no pone ningún número
+                      se desactiva la llamada de retorno.
+
+            Título de la ventana: Éste es el título de la ventana de una acción a ejecutar.
+
+   Use "Grabar" para grabar la nueva configuración, o "Cancelar" para eliminarla.
+
+   Una nota sobre la configuración de la Línea/Llamada:
+   Si usted especifica algo para una llamada, toma prioridad sobre la configuración que
+   usted haya definido para una línea.
+
+  Uso:
+  ~~~
+   El contenido de la ventana principal de CapiTel es la parte más importante.
+   Allí verá todas las llamadas recibidas. Los campos se explican por sí mismos.
+
+   Si usted está usando CapiTel con los controles ocultos, puede acceder a
+   las funciones del menú con el menú desplegable que consigue haciendo
+   clic con el botón derecho de su ratón en la ventana principal.
+
+   Use la opción "Grabar" para grabar un nuevo mensaje de bienvenida llamándose.
+   Le aparecerá una ventana de diálogo para pedirle el nombre del archivo, BIENVENIDA.ALW
+   es el nombre por defecto. Usted puede usar los archivos ALW creados en la línea y
+   las Etiquetas de las llamadas de la pestaña de Propiedades.
+
+   ¡Usted puede crear un archivo .WAV y usarlo directamente!
+
+   Si alguien lo llama y quiere parar el mensaje de bienvenida .WAV, la pèrsona que lo
+   llama tiene que pulsar el botón # en su teléfono.
+
+   ¡Si usted tiene cualquier pregunta, avísenos!
+
+
+  Sugerencias para los Expertos:
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Casi todo en CapiTel puede configurarse según el día y la hora. Esto no puede
+   encontrarse en la pestaña de Propiedades, porque no hemos querido confundir
+   a los principiantes. Revise CAPITEL.CFG, CAPITEL.PRT, CAPITEL.NAM o CAPITEL.ACT
+   y modifique las entradas como sigue:
+
+     opción=<valor_por_defecto>[~<horario_1>][~<horario_2>]...[~<horario_n>]
+
+     horario_x=<de_día>-<a_día>,<de_hora>-<a_hora>,<valor_para_este_horario>
+
+   de_día/a_día pueden ser uno de: Mo, Tu, We, Th, Fr, Sa, Su.
+   El valor del Día más bajo debe estar el primero en los rangos del Día.
+   Por ejemplo ¡Fr-Mo no se permite!
+
+   de_hora/a_hora debe ser hh:mm (hh=horas, mm=minutos) en formato de 24 horas.
+
+   Capitel analiza los horarios de izquierda a derecha y se detiene cuando encuentra
+   alguno que coincide con la hora y día actuales. Este tipo de entradas no deben
+   exceder de 512 caracteres.
+
+   El valor por defecto se utiliza si no hay ningún horario coincidente.
+
+   Puede encontrar algunos ejemplos en CAPITEL.CFG
+
+   Si usted encuentra bugs con respecto a este rasgo, por favor envíenos un
+   informe DETALLADO del bug.
+
+
+  Lista de Mailing:
+  ~~~~~~~~~~~~~~~~
+   Hay una Lista de Mailing de Internet preparado para CapiTel, donde usted
+   puede discutir bugs, etc. con otros usuarios y con los autores.
+
+   Para subscribirse, envíe un EMail a majordomo@sundancer.oche.de y
+   ponga "subscribe capitel" (sin las comillas por supuesto) en su cuerpo.
+   Para anular su suscripción, haga lo mismo con "unsubscribe capitel"
+   Si usted quiere conseguir más ayuda, use "Help" en el cuerpo del mensaje.
+
+   La dirección de la lista es capitel@sundancer.oche.de
+
+
+  Disponibilidad:
+  ~~~~~~~~~~~~~~
+   Todas las versiones de CapiTel pueden encontrarse aquí:
+
+     - Web principal: http://www.2tec.com/
+       Web español:   http://www.jms.nu/pro/capitel.html
+
+   Está permitido distribuir el archivo ZIP de CapiTel sin
+   modificar (y el archivo EXE para la versión de Windows) en Internet,
+   en CD-ROM Shareware, en Sistemas de tablón de anuncios y demás.
+
+
+  Nota final:
+  ~~~~~~~~~~
+   Los comentarios e informes de bugs son bienvenidos. Pero, por favor, no se
+   olvide que CapiTel es de fácil uso y un contestador automático intuitivo, y
+   no ¡un buzón de voz complejo, un servidor de fax o un sistema CTI completo!
+
+
+
+   Diviértase,
+   los autores,
+
+
+            Werner Fehn            &            Carsten Wimmer
+
+            wf@2tec.com                          cw@2tec.com
+          www.2tec.com/wf                      www.2tec.com/cw
+        Fax: +49-241-9519041                 Fax: +49-241-9571314
+
+          Schuttenhofweg 220                   Trierer Str. 281a
+            52080 Aachen                          52078 Aachen
+               Germany                               Germany
+
+

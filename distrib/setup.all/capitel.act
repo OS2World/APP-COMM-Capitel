@@ -1,0 +1,72 @@
+#
+# CapiTel.ACT
+# Created and maintained by CapiTel
+#
+
+#######################################################################
+#                                                                     #
+# Hardcoded actions:                                                  #
+#                                                                     #
+#######################################################################
+#                                                                     #
+# First column:                                                       #
+# DTMF-code for the desired action. It must have 4 digits or more.    #
+# It can be one of "0123456789ABCD"                                   #
+#                                                                     #
+# Second column:                                                      #
+# "action". This can be one of:                                       #
+# REMOTECONTROL to play all recorded calls.                           #
+# REBOOT        to rebooting your computer.                           #
+# DEACTIVATE    to deactivating CapiTel.                              #
+# QUIT          to quit CapiTel.                                      #
+# SETCALLBACK   to overide callback number.                           #
+#                                                                     #
+# Third to fifth column:                                              #
+# Must be a blank.                                                    #
+#                                                                     #
+# Sixth column:                                                       #
+# Sets this entry active (=1) or not (=0)                             #
+#                                                                     #
+#######################################################################
+
+1111|REMOTECONTROL| | | |1
+1212|SETCALLBACK| | | |1
+1313|REBOOT| | | |1
+1414|DEACTIVATE| | | |1
+1515|QUIT| | | |1
+
+#######################################################################
+#                                                                     #
+# User actions:                                                       #
+#                                                                     #
+#######################################################################
+#                                                                     #
+# First column:                                                       #
+# DTMF-code for the desired action. It must have 4 digits or more.    #
+# It can be one of "0123456789ABCD"                                   #
+#                                                                     #
+# Second column:                                                      #
+# "action". This can be any programm or batch. Batches must be        #
+# started over command.com (or cmd.exe)                               #
+#                                                                     #
+# Third column:                                                       #
+# Is the paramerter for the program. If there is no parameter, fill   #
+# in a blank.                                                         #
+#                                                                     #
+# Fourth column:                                                      #
+# Is the name of the new window. This parameter ist only supported by #
+# OS/2. If you don't want to set up a window name, fill in a blank.   #
+#                                                                     #
+# Fifth column:                                                       #
+# Fill in a blank.                                                    #
+#                                                                     #
+# Sixth column:                                                       #
+# Sets this entry active (=1) or not (=0)                             #
+#                                                                     #
+#######################################################################
+
+1616|c:\os2\xcopy.exe|c:\*.* d:\*.* /s|BackUp| |1
+1717|c:\os2\mdos\command.com|/C c:\dos.bat|DOSBAT| |1
+1818|c:\windows\regedit.exe| | | |1
+1919|c:\winnt\regedit.exe| | | |1
+

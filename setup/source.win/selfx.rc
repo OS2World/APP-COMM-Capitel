@@ -1,0 +1,515 @@
+
+#include <windows.h>
+#include "selfx.h"
+
+/* ------------------------------------------------------------------------
+ * diese datei wird vom rc-file des benuters included. dort werden die
+ * makros SFX_COMMANDLINE, SFX_OPTIONS und SFX_CABINETNAME defniert.
+ *
+ * SFX_COMMANDLINE enthaelt die kommandozeile, die nach dem extrahieren der
+ * dateien ausgefuehrt werden soll. das zielverzeichnis wird als arbeits-
+ * verzeichnis verwendet.
+ *
+ * wenn das makro fehlt, werden die dateien in ein verzeichnes extrahiert,
+ * das der user auswaehlen muss.
+ *
+ * wenn dieses makro existiert, werden die dateien ins temp-verzeichnis
+ * ausgepackt, die befehlszeile ausgefuehrt und die dateien anschliessend
+ * wieder geloescht.
+ *
+ * SFX_OPTIONS ist eine zeichenkette die parameter enthaelt, die das
+ * extrahierverhalten kontrollieren. jeder parameter wird durch das
+ * vorhandensein des entsprechenden zeichens eingeschaltet (wie bei fopen).
+ *
+ *   q :   query target, der user wird nach dem zielverzeichnis gefragt.
+ *         dieses flag ist implizit gesetzt, wenn SFX_COMMANDLINE fehlt.
+ *   k :   keep, die dateien werden nach dem extrahieren und dem ausfuehren
+ *         der kommandozeile nicht geloescht. dieses flag ist implizit
+ *         gesetzt, wenn SFX_COMMANDLINE fehlt oder q gesetzt ist.
+ *
+ * SFX_CABINETNAME ist der name der cabinet-datei, die die zu extrahierenden
+ * dateien enthaelt.
+ *
+ * SFX_OS legt fest, dass das sfx nur fuer bestimmte betriebsystem-
+ * plattformem geeignet ist.
+ *
+ * die makros SFX_COMMANDLINE und SFX_OPTIONS koennen auch das suffix _GER
+ * oder _ENG enthalten, um verschiedene werte fuer deutsch und englisch zu
+ * definieren.
+ * ------------------------------------------------------------------------ */
+
+ID_MAINICO  ICON    RES_MAIN_ICON
+IDR_AVI     AVI     RES_COPY_AVI
+CABINET     RCDATA  SFX_CABINETNAME
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle englischen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_ENG
+  STR_OPTIONS             SFX_OPTIONS_ENG
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_ENG
+  STR_COMMANDLINE         SFX_COMMANDLINE_ENG
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Please select target directory:"
+  STR_PROGRESS_ACTFILE    "Extracting: %s"
+  STR_ERROR               "Extracting files failed!"
+  STR_DELETING_FILES      "Deleting temporary files ..."
+  STR_WRONG_OS            "Wrong operating system or operating system version for this application"
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Extracting Files ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,202,62,40,14
+    LTEXT           "Initializing ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,190,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Self-Extracting Archive"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Please enter the target directory where the files should be extracted. Or, search for the apropriate folder be clicking Browse.",-1,7,7,190,24
+    LTEXT           "&Target directory:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Extract",IDOK,207,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle deutschen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_GER
+  STR_OPTIONS             SFX_OPTIONS_GER
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_GER
+  STR_COMMANDLINE         SFX_COMMANDLINE_GER
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Bitte wählen Sie das Zielverzeichnis aus:"
+  STR_PROGRESS_ACTFILE    "Dekomprimiere: %s"
+  STR_ERROR               "Das Dekomprieren der Dateien ist fehlgeschlagen!"
+  STR_DELETING_FILES      "Lösche Temporärdateien ..."
+  STR_WRONG_OS            "Falsches Betriebssystem oder Betriebssystem-Version für diese Anwendung"
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dekomprimierung ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Abbrechen",IDCANCEL,192,62,50,14
+    LTEXT           "Initialisierung ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,176,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Selbstentpackendes Archiv"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Bitte geben Sie das Verzeichnis ein, in welches die Dateien entpackt werden sollen. Oder wählen Sie ein Verzeichnis aus, indem Sie auf Suchen klicken.",-1,7,7,190,24
+    LTEXT           "Ziel&verzeichnis:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Suchen...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Entpacken",IDOK,207,7,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle franzoesichen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_FRE
+  STR_OPTIONS             SFX_OPTIONS_FRE
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_FRE
+  STR_COMMANDLINE         SFX_COMMANDLINE_FRE
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Sélectionnez le répertoire cible :"
+  STR_PROGRESS_ACTFILE    "Décomprimer : %s"
+  STR_ERROR               "Erreur de décompactage des fichiers !"
+  STR_DELETING_FILES      "Suppression des fichiers temporaires ..."
+  STR_WRONG_OS            "OS, ou sa version d'OS incompatible avec l'application"
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Décompression ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Annuler",IDCANCEL,192,62,50,14
+    LTEXT           "Initialisation ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,176,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Archive autoextractante"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Entrez le répertoire dans lequel les fichiers doivent être extraits. Ou sélectionnez un répertoire différent en cliquant sur Parcourir.",-1,7,7,190,24
+    LTEXT           "Répertoire &cible :",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Parcourir...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Extraire",IDOK,207,7,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle italienischen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_ITA
+  STR_OPTIONS             SFX_OPTIONS_ITA
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_ITA
+  STR_COMMANDLINE         SFX_COMMANDLINE_ITA
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Selezionate una directory di destinazione:"
+  STR_PROGRESS_ACTFILE    "Estrazione: %s"
+  STR_ERROR               "Estrazione dei file fallita!"
+  STR_DELETING_FILES      "Cancellazione dei file temporanei ..."
+  STR_WRONG_OS            "SO o versione OS per applicazione errata."
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Estrazione dei file ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Annulla",IDCANCEL,202,62,40,14
+    LTEXT           "Inizializzazione ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,190,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Archivio auto scompattante"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Inserite la directory di destinazione all'interno della quale i file devono essere estratti. Se preferite scegliete la directory premendo Sfoglia.",-1,7,7,190,24
+    LTEXT           "&Directory di destinazione:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Sfoglia...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Estrai",IDOK,207,7,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle spanischen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_SPANISH, SUBLANG_NEUTRAL
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_SPA
+  STR_OPTIONS             SFX_OPTIONS_SPA
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_SPA
+  STR_COMMANDLINE         SFX_COMMANDLINE_SPA
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Por favor, elija el directorio de destino:"
+  STR_PROGRESS_ACTFILE    "Descompresión: %s"
+  STR_ERROR               "¡La descompresión de los archivos no ha sido posible!"
+  STR_DELETING_FILES      "Borrar los archivos temporales ..."
+  STR_WRONG_OS            "SO incorrecto o versión incorrecta para la aplicación."
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Descompresión ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancelar",IDCANCEL,192,62,50,14
+    LTEXT           "Inicio ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,176,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Archivo de autodescompresión"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Por favor, introduzca el directorio en el que desea descomprimir los archivos o seleccione un directorio haciendo clic en Buscar.",-1,7,7,190,24
+    LTEXT           "Directorio &de destino:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Buscar ...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Descomprimir",IDOK,207,7,50,14
+    PUSHBUTTON      "Cancelar",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle niederländischen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_DUTCH, SUBLANG_DUTCH
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_DUT
+  STR_OPTIONS             SFX_OPTIONS_DUT
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_DUT
+  STR_COMMANDLINE         SFX_COMMANDLINE_DUT
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Selecteer a.u.b. de doeldirectory:"
+  STR_PROGRESS_ACTFILE    "Bezig met decomprimeren: %s"
+  STR_ERROR               "Het decomprimeren van de bestanden is mislukt!"
+  STR_DELETING_FILES      "Bezig met wissen van tijdelijke bestanden ..."
+  STR_WRONG_OS            "Onjuiste (versie van) besturingssysteem voor toepassing."
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Decomprimering ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Afbreken",IDCANCEL,192,62,50,14
+    LTEXT           "Initialisering ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,176,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Zelfuitpakkend archief"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Voer a.u.b. de directory in, waarin de bestanden uitgepakt moeten worden. Of selecteer een directory door op Zoeken te klikken.",-1,7,7,190,24
+    LTEXT           "Doel&directory:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Zoeken...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Uitpakken",IDOK,207,7,50,14
+    PUSHBUTTON      "Afbreken",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle dänischen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_DANISH, SUBLANG_DEFAULT
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_DAN
+  STR_OPTIONS             SFX_OPTIONS_DAN
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_DAN
+  STR_COMMANDLINE         SFX_COMMANDLINE_DAN
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Vælg destinationsbibliotek:"
+  STR_PROGRESS_ACTFILE    "Dekomprimerer: %s"
+  STR_ERROR               "Filerne kunne ikke dekomprimeres!"
+  STR_DELETING_FILES      "Slet midlertidige filer ..."
+  STR_WRONG_OS            "Forkert OS eller OS-version til programmet."
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dekomprimering ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Afbryd",IDCANCEL,192,62,50,14
+    LTEXT           "Initialisering ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,176,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Selvudpakkende fil"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Angiv det bibliotek, filen skal pakkes ud i. Eller vælg et bibliotek ved at klikke på Søg.",-1,7,7,190,24
+    LTEXT           "Destinations&bibliotek:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Søg...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Udpak filer",IDOK,207,7,50,14
+    PUSHBUTTON      "Afbryd",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle norwegischen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_NORWEGIAN, SUBLANG_DEFAULT
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_NOR
+  STR_OPTIONS             SFX_OPTIONS_NOR
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_NOR
+  STR_COMMANDLINE         SFX_COMMANDLINE_NOR
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Velg målkatalog:"
+  STR_PROGRESS_ACTFILE    "Pakker ut: %s"
+  STR_ERROR               "Utpakking av filer mislyktes!"
+  STR_DELETING_FILES      "Sletting av midlertidige filer ..."
+  STR_WRONG_OS            "Feil OS eller OS versjon for applikasjonen."
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Extracting Files ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Avbryt",IDCANCEL,202,62,40,14
+    LTEXT           "Initialisering ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,190,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Self-Extracting Archive"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Angi målkatalogen der du vil at filene skal pakkes ut. Eller bla deg frem til katalogen ved hjelp av Browse.",-1,7,7,190,24
+    LTEXT           "&Målkatalog:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Bla gjennom...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Pakk ut",IDOK,207,7,50,14
+    PUSHBUTTON      "Avbryt",IDCANCEL,207,24,50,14
+END
+
+/* ------------------------------------------------------------------------
+ * jetzt kommen alle finnischen resourcen
+ * ------------------------------------------------------------------------ */
+LANGUAGE LANG_FINNISH, SUBLANG_DEFAULT
+
+STRINGTABLE FIXED IMPURE
+BEGIN
+#if defined SFX_OPTIONS_FIN
+  STR_OPTIONS             SFX_OPTIONS_FIN
+#elif defined SFX_OPTIONS
+  STR_OPTIONS             SFX_OPTIONS
+#endif
+#if defined SFX_COMMANDLINE_FIN
+  STR_COMMANDLINE         SFX_COMMANDLINE_FIN
+#elif defined SFX_COMMANDLINE
+  STR_COMMANDLINE         SFX_COMMANDLINE
+#endif
+#if defined SFX_OS
+  STR_TARGET_OS           SFX_OS
+#endif
+  STR_BROWSETITLE         "Valitse kohdehakemisto:"
+  STR_PROGRESS_ACTFILE    "Puretaan: %s"
+  STR_ERROR               "Tiedostojen purku epäonnistui!"
+  STR_DELETING_FILES      "Tilapäisiä tiedostoja poistetaan ..."
+  STR_WRONG_OS            "Käyttöjärjestelmän tai sovelluksen versio ei kelpaa."
+END
+
+IDD_MAIN DIALOG FIXED IMPURE  0, 0, 250, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Extracting Files ..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Peruuta",IDCANCEL,202,62,40,14
+    LTEXT           "Alustus ...",IDC_TEXT,7,38,236,8
+    CONTROL         "Generic1",IDC_PROGRESS,"msctls_progress32",0x0,7,62,190,8
+    CONTROL         "User1",IDC_AVI,"SysAnimate32",ACS_CENTER|ACS_TRANSPARENT|WS_TABSTOP,7,0,184,36
+END
+
+IDD_TARGET DIALOG DISCARDABLE  0, 0, 264, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Self-Extracting Archive"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Syötä kohdehakemisto, johon tiedostot puretaan. Voit myös etsiä oikean kansion napsauttamalla Selaa-painiketta.",-1,7,7,190,24
+    LTEXT           "&Kohdehakemisto:",-1,7,47,70,8
+    EDITTEXT        IDC_PATH,7,58,190,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Selaa...",IDC_BROWSE,207,57,50,14
+    DEFPUSHBUTTON   "Pura",IDOK,207,7,50,14
+    PUSHBUTTON      "Peruuta",IDCANCEL,207,24,50,14
+END
+
+
+// Polnisch:
+// STR_WRONG_OS "Nieprawid³owy OS lub wersja OS dla tej operacji."
+
+
+// Tschechisch:
+// STR_WRONG_OS "Nesprávný operaèní systém nebo jeho verze pro tuto aplikaci."
+
+
+// Russisch:
+// STR_WRONG_OS "Ïðèëîæåíèþ òðåáóåòñÿ äðóãàÿ îïåðàöèîííàÿ ñèñòåìà èëè âåðñèÿ ÎÑ."
+

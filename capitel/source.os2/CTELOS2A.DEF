@@ -1,0 +1,7 @@
+NAME CAPITEL WINDOWAPI
+DESCRIPTION 'CapiTel for OS/2 - (c) 1996-98 by Werner Fehn and Carsten Wimmer'
+STACKSIZE 32000
+SEGMENTS
+  '_MSGSEG32' CLASS 'CODE'
+
+

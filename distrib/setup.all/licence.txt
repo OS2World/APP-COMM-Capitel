@@ -1,0 +1,103 @@
+LICENSE AGREEMENT AND WARRANTY
+==============================
+
+1. Definitions
+--------------
+
+   At this point the meaning of certain terms contained in the following
+   provisions (of this agreement) shall be explained
+
+   - authors: Werner Fehn, Schuttenhofweg 220, 52080 Aachen
+              Carsten Wimmer, Trierer Str. 281a, 52078 Aachen
+
+   - end user: the person, who uses, distributes, copies or sells the program
+               or applies it in any other way, no matter if it concerns a
+               natural person or a person at law
+
+   - use: the appropriate employment of CapiTel,
+          beginning at loading the executable program
+
+
+2. Subject of contract
+----------------------
+
+2.1 The end user is allowed to use the programm according to the following
+    regulations.
+
+2.2 The software is owned by the authors and is protected by copyright law.
+    All rights are reserved.
+    The software may only be sold, copied or ditributed in unchanged version
+    and with supplement of this license agreement.
+    Sale, reproduction and distribution have to be free of charge. Sale,
+    reproduction and application is not free, if CapiTel is distributed with
+    other non-free objects, p.e. modems or journals. If this should take place
+    the permission of the authors is necessary.
+
+2.3 The end user is not allowed to decompile or disassemble the program or
+    create derivative works from the software without the permission of the
+    authors.
+
+2.4 The end user is allowed to use the programm for free within a 60-day trial
+    period. A further use outside this period requires registration.
+    A single user license for a natural person grants the right to use one copy
+    of CapiTel on a single computer. A licensed user may use the software on
+    different computers, but must not use it on more than one computer at the
+    same time. Persons at law have to acquire one license for every natural
+    persons who uses CapiTel.
+
+2.5 Registration follows after remittance of 25,00 DM (German Marks) of 12 Euro
+    to the account mentioned in ORDER.TXT. Within a following 4-week period the
+    end user will recieve a registration code from the authors. If not, the end
+    user has to contact the authors (at his own expense) to let them know.
+
+2.6 Registration guarantees the right to use the program as well as updates
+    (for which the same conditions are valid).
+    The authors are not obliged to develop the program or to adapt it to
+    changed operating characteristics of computer hardware or systems.
+
+
+3. Warranty
+-----------
+
+3.1 The end user is not entitled to developement or changes of CapiTel.
+
+3.2 The authors are only liable within the compass of german law's provisions.
+
+3.3 In case of errors or damage (including without limitation damages for loss
+    of business profits, business interruption, loss of business information
+    and equals) which do not base on missing program components, every kind
+    of claim for damages is impossible. (Exept damages which occured because
+    of the intention or gross negligement of the authors. If this should take
+    place the end user has claim on program replacement or refund of
+    license fee.)
+
+3.4 An end user's claim on improvement or an error-free program does not exist.
+
+3.5 The end user has to warrant on his own that CapiTel will be executable on
+    his hard- and software. The authors give no guarantee that the program will
+    be executable on every kind of hard- and software.
+
+3.6 The authors are not obliged to advise the end user or to support him in use
+    of the program. Nevertheless the authors try to attend to messages
+    concerning incompability or user problems as far as possible.
+
+
+4. General
+----------
+
+4.1 This agreement will be governed by the laws of Germany. Any dispute in
+    relation to this agreement will be determined by the court of Aachen,
+    Germany and every licensed user expressly attorns to the exclusive
+    jurisdiction of the german courts.
+
+4.2 If any provision of this agreement, including the breadth or scope of such
+    provision will be held by any court of competent jurisdiction to be invalid
+    or unenforceable, in whole or in part, such invalidity or unenforceability
+    will not affect the validity or enforceability of the remaining provisions
+    of this agreement. Such remaining provisions will remain enforceable and
+    binding. Such invalid or unenforceable parts will be replaced by (valid or
+    enforceable) corresponding parts or regulations.
+
+4.3 Provisions different to this license agreement have to be stipulated in
+    writing. This is also possible by using a telefax.
+

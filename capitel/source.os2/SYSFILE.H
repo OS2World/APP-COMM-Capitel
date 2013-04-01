@@ -1,0 +1,2 @@
+short checkSystemFile( void );
+

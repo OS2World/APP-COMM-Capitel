@@ -1,0 +1,374 @@
+
+
+
+                 ////// /////// ////// //  /////// ////// //
+                //     //   // //  // //     //   //     //
+               //     /////// ////// //     //   ////   //
+              //     //   // //     //     //   //     //
+             ////// //   // //     //     //   ////// //////
+
+
+                  ISDN CAPI basierter Anrufbeantworter
+                  und Caller-ID fuer OS/2, Windows 95,
+                       Windows 98 und Windows NT
+
+
+
+
+
+  Einfuehrung:
+  ~~~~~~~~~~~
+   CapiTel ist ein 32-Bit Anrufbeantworter und Caller-ID fuer OS/2,
+   Windows 95, Windows 98 und Windows NT. Grafische und Text-Modus
+   Versionen sind fuer alle Betriebssysteme verfuegbar.
+
+   Ein Dank an alle Benutzer, die uns Fehlerberichte und Ideen zugeschickt
+   haben. Auf keinen Fall mit dieser tollen Resonanz aufhoeren! Danke!
+
+   Ein ganz besonderer Dank geht an die folgenden Personen:
+
+     - Kerstin Glodzinski
+     - Norbert Schulze
+     - Kolja Nowak
+     - Peter Franken
+     - Dirk Schreiber
+
+
+  Haupt Merkmale:
+  ~~~~~~~~~~~~~~
+     - 32-Bit Multi-Threaded Anrufbeantworter (als Shareware)
+     - 32-Bit Caller-ID (als FREEWARE)
+     - Grafische und Text-Modus Versionen fuer OS/2, basierend
+       auf CAPI 1.1 und CAPI 2.0
+     - Grafische und Text-Modus Versionen fuer Windows 95/NT,
+       basierend auf CAPI 2.0
+     - Komplette Unterstuetzung fuer .WAV Audio-Dateien
+     - Fernsteuerungs-Funktionen (z.B. Fernabfrage), mit Hilfe
+       von DTMF Toenen
+     - Ruhe-Erkennung
+     - Komplett konfigurierbar
+     - Rückruf
+     - Jahr 2000 getestet
+     - Sprachen:
+       - englisch
+       - deutsch
+       - französisch          (nur Windows)
+       - spanisch             (nur Windows)
+       - norwegisch (bokmal)  (nur Windows)
+       - norwegisch (nynorsk) (nur Windows)
+       - niederländisch       (nur Windows)
+       - italienisch          (nur Windows)
+       - ungarisch            (nur Windows)
+       - finnisch             (nur Windows)
+       - dänisch              (nur Windows)
+
+
+  Installation unter OS/2:
+  ~~~~~~~~~~~~~~~~~~~~~~~
+   Bevor CapiTel benutzt werden kann, muss der OS/2 Multimedia Manager
+   namens MMPM/2 und ein CAPI 1.1 bzw. CAPI 2.0 faehiger Treiber fuer
+   Ihre ISDN-Karte installiert sein.
+
+   Die Installation ansich ist sehr einfach. Das komplette ZIP-Archiv
+   muss in ein beliebiges Ziel-Verzeichnis entpackt werden. Dann starten
+   Sie INSTALL.CMD, damit die gewuenschte Sprache gewaehlt und
+   ein Objekt auf der Arbeitsoberflaeche erzeugt wird.
+
+   Wenn Sie selber ein CapiTel Objekt erzeugen moechten, dann vergessen
+   Sie bitte nicht, das Arbeitsverzeichnis des Objektes entsprechend
+   zu setzen!
+
+   CAPI 1.1 ist nicht dazu faehig, dass mehrere Applikationen auf einer
+   EAZ arbeiten. Deswegen: Wenn Sie CapiTel benutzen, dann stellen Sie
+   sicher, dass es alleine auf die konfigurierte EAZ hoert.
+   Bei CAPI 2.0 gibt es dieses Problem nicht.
+
+
+  Installation unter Win 95/NT:
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Entpacken Sie das ZIP-Archiv in ein temporaeres Verzeichnis und
+   starten Sie SETUP.EXE. Es wird CapiTel auf Ihrer Maschine
+   installieren und Sie werden einen entsprechenden Eintrag im Start-Menue
+   finden.
+
+
+  Bevor Sie beginnen:
+  ~~~~~~~~~~~~~~~~~~
+   Dieser Punkt ist sehr wichtig, weil viele Benutzer ihr CapiTel falsch
+   konfigurieren bevor sie ueberhaupt wissen, dass CapiTel bei ihnen
+   auch richtig funktioniert. Deswegen sollten Sie sich zuerst einmal
+   selbst anrufen, bevor Sie mit all den Einstellungen spielen. Wenn
+   alles korrekt funktioniert, dann sollten Sie einen eingehenden Ruf
+   von Ihrer eigenen Nummer aus sehen. CapiTel horcht standardmaessig
+   auf all Ihre Nummern.
+   Wenn dieser kurze Test erfolgreich verlaufen ist, dann konfigurieren
+   Sie CapiTel nach Belieben.
+
+   Wenn Sie CapiTel als FREEWARE Caller-ID einsetzen wollen, setzen Sie
+   VERZOEGERUNG auf 999 sekunden. Nun ist CapiTel FREE!
+
+
+  Konfiguration:
+  ~~~~~~~~~~~~~
+   Benutzen Sie die Einstellungen, um CapiTel zu konfigurieren.
+
+
+   Allgemein: - Spiele Klingel-WAV
+                Wenn dieser Eintrag selektiert ist, dann wird das
+                Klingel-WAV bei jedem eingehenden Anruf abgespielt.
+
+              - Generiere 16-Bit .WAV Dateien
+                Selektieren Sie den Punkt, wenn Ihre Sound-Karte
+                dies unterstuetzt.
+
+              - Restauriere Fenster bei neuem Anruf
+                Wenn ein eingehender Ruf erkannt wird, dann springt
+                das CapiTel Fenster in den Vordergrund. Unter OS/2
+                wird der Tastatur-Fokus nicht veraendert!
+
+              - Rueckfrage bei Rufloeschung
+                Selektieren Sie diesen Punkt, wenn Sie eine Abfrage
+                wuenschen, bevor CapiTel einen Ruf loescht.
+
+              - Ignoriere leere Rufe
+                Alle Rufe mit einer Dauer von 0 Sekunden werden
+                ignoriert.
+
+              - Erweitere Rufnummer
+                Wenn eine Rufnummer bei einem eingehenden Ruf angezeigt
+                wird, und sie kann nicht in der Anrufer-Datenbank
+                gefunden werden, dann wird zusaetzlich zur Nummer auch
+                noch die Stadt des Anrufers ausgegeben.
+
+              - DTMF Unterstuetzung
+                Hier kann die DTMF Unterstuetzung (Fernsteuerung) komplett
+                abgeschaltet werden.
+
+              - ulaw-Codec
+                Benutzer in den Vereinigten Staaten von Amerika sollten diesen
+                Punkt aktivieren. Dann wird der ulaw-Codec an Stelle des
+                alaw-Codecs benutzt.
+
+              - Verzoegerung
+                Angabe der Zeit in Sekunden, die CapiTel standardmaessig
+                wartet, bevor ein Ruf entgegengenommen wird.
+
+              - Max. Aufnahmezeit
+                Angabe der max. Zeit in Sekunden, die ein Anrufer
+                standardmaessig auf den Anrufbeantworter sprechen darf.
+
+              - Ruheerkennung
+                Angabe der Ruheerkennung in Sekunden.
+                Es wird automatisch aufgelegt, wenn ein Anrufer schweigt
+                und diese Zeit ueberschreitet.
+
+              - Ans.-WAV/ALW
+                Die Ansage-Datei, die ein Anrufer standardmaessig hoert.
+
+              - Klingel-WAV
+                Die WAV-Datei, die bei jedem eingehenden Anruf abgespielt wird.
+
+              - Logdatei
+                CapiTel kann alle Anrufe in einer Text-Datei auflisten.
+                Wenn Ihr Betriebssystem dies unterstuetzt, dann koennen Sie
+                hier auch eine Pipe oder ein Geraet (z.B. einen Drucker)
+                angeben.
+
+
+   Ports:   Doppel-Klick auf einen Eintrag oder das Popup-Menue benutzen,
+            um einen Eintrag zu editieren. Wenn kein Port eingetragen
+            ist, dann reagiert CapiTel auf ALLE Ports!
+
+            Port: Eine kurze Beschreibung fuer den Port.
+
+            EAZ/MSN: Die EAZ oder MSN fuer diesen Port. Wenn Sie einen
+                     CAPI 1.1 Treiber benutzen, dann tragen Sie hier
+                     eine EAZ zwischen 0 und 9 ein. Bei CAPI 2.0 tragen
+                     Sie hier die komplette MSN ein.
+
+            Ansage WAV/ALW: Die WAV oder ALW Datei, die einem Anrufer auf
+                            diesem Port vorgespielt wird. Tragen Sie '*'
+                            fuer die Standard-Datei ein.
+
+            Klingel WAV: Die WAV Datei, die bei jedem eingehenden Ruf
+                         abgespielt wird. Tragen Sie '*' fuer die
+                         Standard-Datei ein.
+
+            Reaktion: Mit CapiTel ist es moeglich, einen Ruf abzulehnen.
+                      Hier koennen Sie das Verhalten konfigurieren: 'Normal'
+                      fuer normales Verhalten, 'Besetzt' um ein Besetzt-Zeichen
+                      zu simulieren, 'Ablehnen' zu Ablehnen des Rufes, und
+                      'Unerreichbar' um einen nicht verfuegbaren Dienst
+                      vorzugaukeln.
+                      Wichtig: Die hier eingestellte Reaktion ist nur gueltig
+                      fuer die ISDN-Karte. Wenn ein anderes Geraet (z.B. ein
+                      ISDN Telefon) auf die gleiche EAZ/MSN horcht, dann
+                      bekommt der Anrufer von CapiTel's Reaktion nichts mit.
+                      Daran koennen wir leider nichts aendern. So ist ISDN.
+
+            Annahmeverzoegerung: Angabe der Zeit in Sekunden, die CapiTel
+                                 auf diesem Port wartet, bevor ein Ruf
+                                 entgegengenommen wird. Tragen Sie '*'
+                                 fuer die Standard-Datei ein.
+
+            Max. Aufnahmedauer: Angabe der max. Zeit in Sekunden, die ein
+                                Anrufer auf diesem Port auf den Anruf-
+                                beantworter sprechen darf. Tragen Sie '*'
+                                fuer die Standard-Datei ein.
+
+
+   Anrufer: Doppel-Klick auf einen Eintrag oder das Popup-Menue benutzen,
+            um einen Eintrag zu editieren. Wenn Sie angerufen werden und
+            die Nummer des Anrufers befindet sich in dieser Datenbank,
+            dann werden die Anrufer-spezifischen Einstellungen benutzt.
+
+            Name: Der Name des Anrufers.
+
+            Nummer: Die Nummer zur Identifizierung des Anrufers. Sie koennen
+                    auch den * Platzhalter am Ende einer Nummer benutzen.
+                    z.B. 024192090* steht fuer alle Nummern, die mit
+                    024192090 anfangen.
+
+            Die anderen Felder wurden schon unter Ports beschrieben.
+
+
+   Fernsteuerung:
+            Doppel-Klick auf einen Eintrag oder das Popup-Menue benutzen,
+            um einen Eintrag zu editieren.
+
+            DTMF Nummer: Wenn diese DTMF Nummer erkannt wird, dann wird
+                         die entsprechende Aktion gestartet.
+
+            Aktion: Die folgenden Aktionen sind verfuegbar:
+
+                    - Fernabfrage spielt alle Rufe ab, die bisher aufgezeichnet
+                      wurden. Benutzen Sie die *-Taste auf Ihrem Telefon,
+                      um alle Rufe zu loeschen.
+                    - Neustart des Rechners
+                    - CapiTel deaktivieren
+                    - CapiTel beenden
+                    - Ausfuehren startet ein Programm auf Ihrem Computer.
+                      Sie muessen die Programm, Parameter und Titel Felder
+                      korrekt ausfuellen!
+                    - Rückruf. Hier köennen Sie eine neue Rückrufnummer
+                      eingeben, unter der Capitel Sie zurückruft. Keine
+                      Eingabe beendet den Rückruf.
+
+            Fenster Titel: Dies ist der Titel den ein Fenster bekommt,
+                           wenn CapiTel ein Programm startet.
+
+
+   Klicken Sie auf "Sichern" um die neuen Einstellungen zu uebernehmen,
+   oder "Abbruch" um sie zu verwerfen.
+
+   Eine Bemerkung zu den Port/Anrufer spezifischen Einstellungen:
+   Wenn Sie etwas fuer einen Anrufer konfigurieren, dann hat diese
+   Einstellung eine hoehere Prioritaet als die eines Ports!
+
+
+  Benutzung:
+  ~~~~~~~~~
+   Der wichtigste Teil von CapiTel ist der sogenannte Container im
+   Hauptfenster. Hier werden alle eingehenden Anrufe angezeigt, angehoert
+   und geloescht. Die Felder sind selbsterklaerend.
+   Unter OS/2 koennen Sie Farben und Schriftarten nach Belieben in das
+   Fenster per Drag&Drop reinschmeissen. Sie werden abgespeichert.
+
+   Wenn Sie CapiTel mit versteckten Controls benutzen, dann koennen Sie
+   alle Funktionen ueber das PopUp-Menue erreichen. Sie oeffnen es, indem
+   Sie mit der rechten Maustaste im Container klicken. Unter OS/2 kann
+   das Fenster verschoben werden, indem Sie den Fensterrand mit der
+   rechten Maustaste anklicken, die Maustaste festhalten und dann
+   verschieben.
+
+   Benutzen Sie den Selbstanruf, um einen neuen Ansagetext ueber Ihr
+   eigenes Telefon aufzunehmen. Ein Dialogfenster wird sich oeffnen
+   und Sie nach dem neuen Dateinamen fragen. Standardmaessig wird hier
+   WELCOME.ALW verwendet. Die dann erzeugte ALW Datei kann dann in
+   den Ports und in den Anrufer Einstellungen nach Belieben benutzt
+   werden.
+
+   Natuerlich koennen Sie auch selber .WAV Dateien erzeugen und sie
+   direkt benutzen!
+
+   Wenn Sie jemand anruft und er nicht den Ansage-Text hoeren will, dann
+   kann er ihn mit der #-Taste auf dem Telefon abbrechen.
+
+   Setzen Sie sich mit uns in Verbindung, wenn Sie Fragen haben!
+
+
+  Tip fuer Experten:
+  ~~~~~~~~~~~~~~~~~
+   Fast alles kann in CapiTel auch zeitabhaengig konfiguriert werden.
+   Allerdings kann man dies nicht direkt in den Einstellungen vornehmen,
+   weil wir Neulinge nicht verwirren und abschrecken wollen.
+   Editieren Sie CAPITEL.CFG, CAPITEL.PRT, CAPITEL.NAM oder CAPITEL.ACT
+   und modifizieren Sie die Eintraege wie folgt:
+
+     eintrag=<default_wert>[~<chunk_1>][~<chunk_2>]...[~<chunk_n>]
+
+     chunk_x=<vonTag>-<bisTag>,<vonZeit-bisZeit>,<wert_fuer_diesen_chunk>
+
+   vonTag/bisTag kann sein: Mo, Tu, We, Th, Fr, Sa, Su
+   (dies sind die Abkuerzungen fuer die Tage in englischer Sprache!)
+
+   Der kleinere Tag-Wert muss als erstes angegeben wwerden, z.B.
+   ist Fr-Mo nicht erlaubt!
+
+   vonZeit/bisZeit hat das 24-Stunden Format xx:yy (xx=Stunden, yy=Minuten).
+
+   CapiTel liest die Chunks von links nach rechts ein und stoppt beim
+   ersten Treffer.
+   Zeitabhaengige Eintraege duerfen nicht laenger als 512 Zeichen sein.
+   Der Default-Wert wird benutzt, falls es keinen Treffer gibt.
+
+   Einige Beispiele kann man in CAPITEL.CFG finden.
+
+   Sollten in diesem Umfeld Fehler auftreten, dann schicken Sie uns bitte
+   DETAILLIERTE Fehler-Beschreibung!
+
+
+
+  Lizenz Vereinbarung:
+  ~~~~~~~~~~~~~~~~~~~
+   Die Lizenz Vereinbarung koennen Sie in LIZENZ.TXT bzw. LICENSE.TXT
+   (in englisch) nachlesen. Wenn Sie CapiTel im Einsatz haben, akzeptieren
+   Sie die Lizenz Vereinbarung.
+
+
+
+  Verfuegbarkeit:
+  ~~~~~~~~~~~~~~
+   Alle CapiTel Versionen koennen hier gefunden werden:
+
+     - World Wide Web: www.2tec.com
+
+
+   Ihnen ist es ausdruecklich gestattet, das unmodifizierte CapiTel ZIP-Archiv
+   (bzw. EXE-Archiv fuer die Windows Version) im Internet, auf Shareware
+   CD-Roms, in Mailboxen usw. zu verbreiten.
+
+
+  Abschliessende Bemerkung:
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+   Kommentare, Ideen und Fehlerberichte sind willkommen!  Aber bitte nicht
+   vergessen, dass CapiTel ein einfach zu bedienender und intuitiver
+   Anruf-Beantworter ist und bleiben soll, und keine Voice-Mailbox,
+   Fax-Server oder volle CTI Applikation.
+
+
+
+   Viel Spass,
+   die Autoren,
+
+
+            Werner Fehn            &            Carsten Wimmer
+
+            wf@2tec.com                          cw@2tec.com
+          www.2tec.com/wf                      www.2tec.com/cw
+        Fax: +49-241-9519041                 Fax: +49-241-9571314
+
+          Schuttenhofweg 220                   Trierer Str. 281a
+            52080 Aachen                          52078 Aachen
+               Germany                               Germany
+

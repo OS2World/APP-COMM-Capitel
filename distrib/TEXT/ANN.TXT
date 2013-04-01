@@ -1,0 +1,65 @@
+
+
+
+                 ////// /////// ////// //  /////// ////// //
+                //     //   // //  // //     //   //     //
+               //     /////// ////// //     //   ////   //
+              //     //   // //     //     //   //     //
+             ////// //   // //     //     //   ////// //////
+
+
+                   ISDN CAPI based Answering Machine
+                  and Caller-ID for OS/2, Windows 95,
+                       Windows 98 and Windows NT
+
+
+
+
+
+  Introduction:
+  ~~~~~~~~~~~~
+   CapiTel is a 32-Bit Answering Machine and Caller-ID for OS/2, Windows 95,
+   Windows 98 and Windows NT. Graphical and Text-Mode Versions are available
+   for all operating systems.
+
+
+  Main Features:
+  ~~~~~~~~~~~~~
+     - 32-Bit Multi-Threaded Answering Machine (as Shareware)
+     - 32-Bit Caller-ID (as FREEWARE)
+     - Graphical and Text-Mode versions for OS/2, based on CAPI 1.1 and 2.0
+     - Graphical and Text-Mode versions for Win 95/NT, based on CAPI 2.0
+     - Complete Support for .WAV-Files
+     - Remote Control Functions, controlled by DTMF tones.
+     - Silence Detection
+     - Completely configurable
+     - Available in english and german
+
+
+  Availability:
+  ~~~~~~~~~~~~
+   All CapiTel versions can be found here:
+
+     - World Wide Web: http://www.oche.de/~cawim/capitel.html
+                       http://www.bmtmicro.com
+
+     - BBS: Programmers' Heaven, +49-241-9519012 (ISDN), Area CAPITEL
+
+     - FidoNet FileRequest: Zottelbox
+       Line 1  :  2:2432/518   VFC/V34/FAX      +49-5233-99527   2400-28800
+       Line 2+3:  2:2432/518   X75  (RINGDOWN)  +49-5233-99527   64000
+       Line 4  :  2:2432/519   V32bis           +49-5233-99528   2400-14400
+       Limits  :  50 Files / 4 MB                  NoReq.:  3:30-4:29 (ZMH)
+
+       Magics    CTELOS2 for the OS/2   versions (capi 1.1/2.0)
+                 CTELWIN for the W95/NT versions (capi 2.0)
+
+     - BMTMicro: http://www.bmtmicro.com
+
+   You are explicitly allowed to distribute the unmodified CapiTel
+   ZIP-archive on the Internet, on Shareware CD-Roms, on Bulletin Board
+   Systems and so on.
+
+
+
+

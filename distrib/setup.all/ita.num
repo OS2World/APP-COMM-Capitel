@@ -1,0 +1,474 @@
+0333:TIM
+0334:TIM
+0335:TIM Business
+0336:TIM Business
+0337:TIM Business
+0338:TIM Family
+0339:TIM Family
+0330:TIM ETACS Family
+0360:TIM ETACS Family
+0368:TIM ETACS Family
+0340:OMNITEL
+0347:OMNITEL Family
+0349:Omnitel Family
+0348:OMNITEL Business
+0349:OMNITEL
+0328:Wind Business
+0329:Wind Family
+0380:BLU
+0388:BLU
+0389:BLU
+071:Ancona
+0721:Pesaro
+0722:Urbino
+0731:Jesi
+0732:Fabriano
+0733:Macerata
+0734:Fermo
+0735:S. Benedetto del Tronto
+0736:Ascoli Piceno
+0737:Camerino
+080:Bari
+0831:Brindisi
+0832:Lecce
+0833:Gallipoli
+0835:Matera
+0836:Maglie
+0881:Foggia
+0882:S. Severo
+0883:Andria
+0884:Manfredonia
+0885:Cerignola
+099:Taranto
+051:Bologna
+0521:Parma
+0522:Reggio nell' Emilia
+0523:Piacenza
+0524:Fidenza
+0525:Fornovo di Taro
+0526:farra di ferrara
+0532:Ferrara
+0533:Comacchio
+0534:Porretta Terme
+0535:Mirandola
+0536:Sassuolo
+0541:Rimini
+0542:Imola
+0543:Forlç
+0544:Ravenna
+0545:Lugo
+0546:Faenza
+0547:Cesena
+0549:S. Marino
+059:Modena
+0471:Bolzano
+0472:Bressanone
+0473:Merano
+0474:Brunico
+070:Cagliari
+0781:Iglesias
+0782:Lanusei
+0783:Oristano
+0784:Nuoro
+0785:Macomer
+0789:Olbia
+079:Sassari
+090:Messina
+0931:Siracusa
+0932:Ragusa
+0933:Caltagirone
+0934:Caltanissetta
+0935:Enna
+0941:Patti
+0942:Taormina
+095:Catania
+0961:Catanzaro
+0962:Crotone
+0963:Vibo Valentia
+0964:Locri
+0965:Reggio di Calabria
+0966:Palmi
+0967:Soverato
+0968:Lamezia Terme
+0981:Castrovillari
+0982:Paola
+0983:Rossano
+0984:Cosenza
+0985:Scalea
+055:Firenze
+0571:Empoli
+0572:Montecatini Terme
+0573:Pistoia
+0574:Prato
+0575:Arezzo
+0577:Siena
+0578:Chianciano Terme
+010:Genova
+0182:Albenga
+0183:Imperia
+0184:San Remo
+0185:Rapallo
+0187:La Spezia
+019:Savona
+02:Milano
+030:Brescia
+031:Como
+0321:Novara
+0322:Arona
+0323:Baveno
+0324:Domodossola
+0331:Busto Arsizio
+0332:Varese
+0341:Lecco
+0342:Sondrio
+0343:Chiavenna
+0344:Menaggio
+0345:S. Pellegrino Terme
+0346:Clusone
+035:Bergamo
+0362:Seregno
+0363:Treviglio
+0364:Breno
+0365:Salï
+0371:Lodi
+0372:Cremona
+0373:Crema
+0374:Soresina
+0375:Casalmaggiore
+0376:Mantova
+0377:Codogno
+0381:Vigevano
+0382:Pavia
+0383:Voghera
+0384:Mortara
+0385:Stradella
+0386:Ostiglia
+039:Monza
+081:Napoli
+0823:Caserta
+0824:Benevento
+0825:Avellino
+0827:S. Angelo dei Lombardi
+0828:Battipaglia
+089:Salerno
+091:Palermo
+0921:Cefaló
+0922:Agrigento
+0923:Trapani
+0924:Alcamo
+0925:Sciacca
+0742:Foligno
+0743:Spoleto
+0744:Terni
+075:Perugia
+0763:Orvieto
+085:Pescara
+0861:Teramo
+0862:L' Aquila
+0863:Avezzano
+0864:Sulmona
+0865:Isernia
+0871:Chieti
+0872:Lanciano
+0873:Vasto
+0874:Campobasso
+0875:Termoli
+050:Pisa
+0564:Grosseto
+0565:Piombino
+0566:Follonica
+0583:Lucca
+0584:Viareggio
+0585:Massa
+0586:Livorno
+0587:Pontedera
+0588:Volterra
+0971:Potenza
+0972:Melfi
+0973:Lagonegro
+0974:Vallo della Lucania
+0975:Sala Consilina
+0976:Muro Lucano
+06:Roma
+0746:Rieti
+0761:Viterbo
+0765:Poggio Mirteto
+0766:Civitavecchia
+0771:Formia
+0773:Latina
+0774:Tivoli
+0775:Frosinone
+0776:Cassino
+011:Torino
+0121:Pinerolo
+0122:Susa
+0123:Lanzo Torinese
+0124:Rivarolo Canavese
+0125:Ivrea
+0131:Alessandria
+0141:Asti
+0142:Casale Monferrato
+0143:Novi Ligure
+0144:Acqui Terme
+015:Biella
+0161:Vercelli
+0163:Borgosesia
+0165:Aosta
+0166:St. Vincent
+0171:Cuneo
+0172:Savigliano
+0173:Alba
+0174:Mondovç
+0175:Saluzzo
+040:Trieste
+0481:Gorizia
+041:Venezia (Mestre)
+0421:S. DonÖ di Piave
+0422:Treviso
+0423:Montebelluna
+0424:Bassano del Grappa
+0425:Rovigo
+0426:Adria
+0427:Spilimbergo
+0428:Tarvisio
+0429:Este
+0431:Cervignano nel Friuli
+0432:Udine
+0433:Tolmezzo
+0434:Pordenone
+0435:Pieve di Cadore
+0436:Cortina d' Ampezzo
+0437:Belluno
+0438:Conegliano
+0439:Feltre
+049:Padova
+0442:Legnago
+0444:Vicenza
+0445:Schio
+045:Verona
+0461:Trento
+0462:Cavalese
+0463:Cles
+0464:Rovereto
+0465:Tione di Trento
+001:USA
+007:Russia
+0020:Egypt
+0027:South Africa
+0030:Greece
+0031:Netherlands
+0032:Belgium
+0033:France
+0034:Spain
+0036:Hungary
+0040:Romania
+0041:Switzerland
+0043:Austria
+0044:U.K.
+0045:Denmark
+0046:Sweden
+0047:Norway
+0048:Poland
+0049:Germany
+0051:Peru
+0052:Mexico
+0053:Cuba
+0054:Argentina
+0055:Brazil
+0056:Chile
+0057:Colombia
+0058:Venezuela
+0060:Malaysia
+0061:Australia
+0062:Indonesia
+0063:Philippines
+0064:New Zealand
+0065:Singapore
+0066:Thailand
+0081:Japan
+0082:Korea South
+0084:Vietnam
+0086:China
+0087:Inmarsat
+0090:Turkey
+0091:India
+0092:Pakistan
+0093:Afghanistan
+0094:Sri Lanka
+0095:Myanmar
+0098:Iran
+00210:Marocco
+00211:Marocco
+00212:Marocco
+00213:Algeria
+00214:Algeria
+00215:Algeria
+00216:Tunisia
+00217:Tunisia
+00218:Libya
+00219:Libya
+00220:Gambia
+00221:Senegal
+00222:Mauritania
+00223:Mali
+00224:Guinea
+00225:Cote d'Ivoire
+00226:Burkina Faso
+00227:Niger
+00228:Togo
+00229:Benin
+00230:Mauritius
+00231:Liberia
+00232:Sierra Leone
+00233:Ghana
+00234:Nigeria
+00235:Chad
+00236:Central African Rep
+00237:Cameroon
+00238:Cape Verde Islands
+00239:Sao Tome & Principe
+00240:Equatorial Guinea
+00241:Gabon
+00242:Congo
+00243:Zaire
+00244:Angola
+00245:Guinea-Bissau
+00246:Diego Garcia
+00247:Ascension Island
+00248:Seychelles island
+00249:Sudan
+00250:Rwanda
+00251:Ethiopia
+00252:Somalia
+00253:Djibouti
+00254:Kenya
+00255:Tanzania
+00256:Uganda
+00257:Burundi
+00258:Mozambique
+00259:Zanzibar
+00260:Zambia
+00261:Madagascar
+00262:Reunion islands
+00263:Zimbabwe
+00264:Namibia
+00265:Malawi
+00266:Lesotho
+00267:Botswana
+00268:Swaziland
+00269:Comoros & Mayotte
+00289:Tristan Da Cunda
+00290:St. Helena
+00291:Eritrea
+00297:Aruba
+00298:Faroe Islands
+00299:Greenland
+00350:Gibraltar
+00351:Portugal
+00352:Luxembourg
+00353:Ireland
+00354:Iceland
+00355:Albania
+00356:Malta
+00357:Cyprus
+00358:Finland
+00359:Bulgaria
+00370:Lithuania
+00371:Latvia
+00372:Estonia
+00373:Moldova
+00374:Armenia
+00375:Belarus
+00376:Andorra
+00377:Monaco
+00378:Italy, San Marino
+00379:Italy, Vatican City
+00380:Ukraine
+00381:Serbia-Yugoslavia
+00385:Croatia
+00386:Slovenia
+00387:Bosnia-Hercegovina
+00389:Macedonia
+00420:Czech Republic
+00421:Slovak Republic
+00422:Czech Republic, Prague
+00423:Liechtenstein
+00500:Falkland Islands
+00501:Belize
+00502:Guatemala
+00503:El Salvador
+00504:Honduras
+00505:Nicaragua
+00506:Costa Rica
+00507:Panama
+00508:St. Pierre & Miquelon
+00509:Haiti
+00590:Guadeloupe
+00591:Bolivia
+00592:Guyana
+00593:Ecuador
+00594:French Guiana
+00595:Paraguay
+00596:Martinique
+00597:Suriname
+00598:Uruguay
+00599:Netherlands Antilles
+00670:Northern Marianas
+00671:Guam
+00672:Antarctica-Casey
+00673:Brunei Darussalam
+00674:Nauru
+00675:Papua New Guinea
+00676:Tonga Islands
+00677:Solomon Islands
+00678:Uzbekistan
+00679:Fiji Islands
+00680:Palau
+00681:Wallis & Futuna
+00682:Cook Islands
+00683:Niue Island
+00684:Samoa (USA)
+00685:Western Samoa
+00686:Kiribati
+00687:New Caledonia
+00688:Tuvalu
+00689:French Polynesia
+00690:Tokelau
+00691:Micronesia
+00692:Marshall islands
+00694:Wake Island
+00850:Korea North
+00851:Dominican Republic
+00852:Hong Kong
+00853:Macao
+00854:St. Vincent & Grenadines
+00855:Cambodia
+00856:Laos
+00880:Bangladesh
+00886:Taiwan
+00960:Maldives
+00961:Lebanon
+00962:Jordan
+00963:Syria
+00964:Iraq
+00965:Kuwait
+00966:Saudi Arabia
+00967:Yemen
+00968:Oman
+00971:United Arab Emirates
+00972:Israel
+00973:Bahrain
+00974:Qatar
+00975:Bhutan
+00976:Mongolia
+00977:Nepal
+00992:Tajikistan
+00993:Turkmenistan
+00994:Azerbaijan
+00995:Georgia
+00996:Kyrgyzstan
+00998:Uzbekistan
+006993:Wake Island
+006998:Midway Islands
+008816:Iridium
+008817:Iridium

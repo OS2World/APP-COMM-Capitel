@@ -1,0 +1,529 @@
+
+
+/*
+ * nederlands
+dutch translation from: "Theo Fokkema" <theo@tonewheel.demon.nl>
+ */
+
+LANGUAGE LANG_DUTCH, SUBLANG_DUTCH
+
+ID_MAIN ACCELERATORS MOVEABLE PURE
+BEGIN
+    "a",   IDM_SELECTALL        , ASCII, VIRTKEY, CONTROL
+    "a",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "A",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "c",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "C",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "p",   IDM_PLAY_ALL         , ASCII, ALT
+    "P",   IDM_PLAY_ALL         , ASCII, ALT
+    "n",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    "N",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    VK_F5, IDM_REGISTER         , ASCII, VIRTKEY, CONTROL, ALT
+END
+
+
+ID_MAIN MENU DISCARDABLE
+BEGIN
+    POPUP "&Algemeen"
+    BEGIN
+        MENUITEM "&Antwoordapparaat actief\tAlt+A", IDM_TOGGLEACTIVATION
+        MENUITEM "Verberg s&chermbediening\tAlt+C", IDM_HIDEFRAMECONTROLS
+        MENUITEM "&Eigenschappen..."              , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "A&fsluiten"                     , IDM_EXIT
+    END
+    POPUP "&Oproep"
+    BEGIN
+        MENUITEM "Afspe&len\tEnter"                   , IDM_PLAY
+        MENUITEM "&Wissen\tDel"                       , IDM_DELETE
+        MENUITEM "&Opslaan als ..."                   , IDM_SAVE_AS
+        MENUITEM "Toevoegen als &nieuwe beller\tAlt+N", IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "Alles afs&pelen\tAlt+P"             , IDM_PLAY_ALL
+        MENUITEM "Meldtekst opnemen\tAlt+R"           , IDM_RECORD
+    END
+    POPUP "&Bekijk"
+    BEGIN
+        MENUITEM "&Altijd zichtbaar"               , IDM_TOPMOST
+        MENUITEM "&Statusicoon in taakbalk"         , IDM_SHOWTRAY
+        MENUITEM "&Verbergen bij minimaliseren"    , IDM_MINHIDE
+        MENUITEM SEPARATOR
+        MENUITEM "Alles &selecteren\tCtrl+A"             , IDM_SELECTALL
+        MENUITEM "Selectie o&mkeren"                     , IDM_INVERTSEL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&LeesMij"                         , IDM_README
+        MENUITEM "&Wat is nieuw?"                   , IDM_WHATSNEW
+        MENUITEM "L&icentie"                        , IDM_LICENSE
+        MENUITEM "&Bekijk bestelformulier"          , IDM_ORDER
+        MENUITEM "Bekijk BMT &Micro bestelformulier", IDM_ORDERBMT
+        MENUITEM "&Homepage op het Web"             , IDM_HOMEPAGE
+        MENUITEM SEPARATOR
+        MENUITEM "&Over CapiTel"                    , IDM_ABOUT
+    END
+END
+
+ID_POPUP MENU DISCARDABLE
+BEGIN
+    POPUP "Context"
+    BEGIN
+        MENUITEM "Afspelen"                           , IDM_PLAY
+        MENUITEM "&Wissen\tDel"                       , IDM_DELETE
+        MENUITEM "&Opslaan als ..."                   , IDM_SAVE_AS
+        MENUITEM "Toevoegen als &nieuwe beller\tAlt+N", IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "Alles afs&pelen\tAlt+P"             , IDM_PLAY_ALL
+        MENUITEM "Meldtekst opnemen\tAlt+R"           , IDM_RECORD
+        MENUITEM SEPARATOR
+        MENUITEM "&Antwoordapparaat actief\tAlt+A", IDM_TOGGLEACTIVATION
+        MENUITEM "Verberg s&chermbediening\tAlt+C", IDM_HIDEFRAMECONTROLS
+        MENUITEM "&Eigenschappen..."              , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "&Over CapiTel"                    , IDM_ABOUT
+    END
+    POPUP "Context2"
+    BEGIN
+        MENUITEM "&Nieuw.."                        , IDM_NEW
+        MENUITEM "&Bewerken"                         , IDM_EDIT
+        MENUITEM "&Wissen"                       , IDM_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Actief"                       , IDM_ACTIVE
+    END
+    POPUP "Tray_1"
+    BEGIN
+        MENUITEM "&Toon CapiTel"                 , IDM_SHOW
+        MENUITEM "Alles afs&pelen"               , IDM_PLAY_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "A&fsluiten"                    , IDM_EXIT
+    END
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDM_TOGGLEACTIVATION  "Activeert of deactiveert het antwoordapparaat."
+    IDM_HIDEFRAMECONTROLS "Toont of verbergt het menu, de werkbalk en de statusbalk"
+    IDM_PROPERTIES        "Opent de instellingen van het programma."
+    IDM_PROP_PORTS        "Opent een lijst met alle poorten."
+    IDM_PROP_CALLERS      "Opent een lijst met alle bekende bellers."
+    IDM_PROP_ACTIONS      "Opent een lijst met op afstand bedienbare functies."
+    IDM_EXIT              "Sluit Capitel af."
+    IDM_PLAY              "Speelt de geselecteerde oproep af."
+    IDM_PLAY_ALL          "Speelt alle oproepen af."
+    IDM_DELETE            "Wist de geselecteerde oproep."
+    IDM_SAVE_AS           "Opslaan van de geselekteerde oproep in een geluidsbestand."
+    IDM_ADD_TO_CALLERS    "Voegt het telefoonnummer van de geselecteerde oproep toe aan het telefoonboek."
+    IDM_RECORD            "Neemt een nieuwe meldtekst op."
+    IDM_README            "Opent ReadMe.Txt."
+    IDM_WHATSNEW          "Opent WhatsNew.Txt."
+    IDM_LICENSE           "Opent de licentie-overeenkomst."
+    IDM_ORDER             "Opent het bestelformulier."
+    IDM_ORDERBMT          "Opent het BMT Micro bestelformulier."
+    IDM_HOMEPAGE          "Opent de CapiTel homepage."
+    IDM_ABOUT             "Toont productinformatie."
+    IDM_SHOW              "Activeert het hoofdvenster van CapiTel."
+    IDM_TOPMOST           "CapiTel blijft zichtbaar behalve bij minimaliseren."
+    IDM_SHOWTRAY          "Toont een statusicoon in de taakbalk."
+    IDM_MINHIDE           "Verberg CapiTel bij minimaliseren."
+    IDM_SELECTALL         "Selecteert alle items in het venster."
+    IDM_INVERTSEL         "Keert de selectie om."
+    STR_MENUHELP_MAIN1    "Bevat functies om het functioneren van CapiTel te beinvloeden."
+    STR_MENUHELP_MAIN2    "Bevat functies om oproepen af te spelen en te wissen"
+    STR_MENUHELP_MAIN3    "Bevat functies om de zichtbaarheid van CapiTel te beinvloeden."
+    STR_MENUHELP_MAIN4    "Bevat hulpfuncties"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  STR_ABOUT1              "Versie %s"
+  STR_ABOUT2              "Copyright (c) %s by"
+  STR_ABOUT3              "%s en %s"
+  STR_ABOUT_UNREG1        "Ongeregistreerde probeerversie"
+  STR_ABOUT_UNREG2        "Registreer CapiTel alstublieft!"
+  STR_WINDOW_TITLE        APPNAME
+  STR_TBAR_REG            "%s (Geregistreerd op naam van %s)"
+  STR_TBAR_UNREG          "%s (ONGEREGISTREERDE PROBEERVERSIE)"
+  STR_TBAR_FREE           "%s (loopt als freeware Caller-ID)"
+  STR_TBAR_DEACTIVATED    "Antwoordapparaat gedeactiveerd ..."
+  STR_TBAR_CONVERTING     "Conversie wav-bestanden  ..."
+  STR_TBAR_RECWELCOME     "Opname van meldtekst ..."
+  STR_LIST_COL1           "Oproeper"
+  STR_LIST_COL2           "Datum"
+  STR_LIST_COL3           "Tijd"
+  STR_LIST_COL4           "Sec."
+  STR_LIST_COL5           "Bestemming"
+  STR_PRT_LIST_COL1       "Omschrijving"
+  STR_PRT_LIST_COL2       "Roepnummer (MSN)"
+  STR_CLR_LIST_COL1       "Naam"
+  STR_CLR_LIST_COL2       "Oproep nummer"
+  STR_ACT_LIST_COL1       "DTMF-code"
+  STR_ACT_LIST_COL2       "Actie"
+  STR_REJECTCAUSE_D       "Poortinstelling"
+  STR_REJECTCAUSE_0       "Normaal"
+  STR_REJECTCAUSE_1       "Bezet"
+  STR_REJECTCAUSE_2       "Weiger"
+  STR_REJECTCAUSE_3       "Niet beschikbaar"
+  STR_POPWIN_NONE         "Nooit"
+  STR_POPWIN_TOPLEFT      "Linksboven"
+  STR_POPWIN_TOPRIGHT     "Rechtsboven"
+  STR_POPWIN_BOTTOMLEFT   "Linksonder"
+  STR_POPWIN_BOTTOMRIGHT  "Rechtsonder"
+  STR_LIST_ACTION_1       "Afstandsbediening"
+  STR_LIST_ACTION_2       "Herstart computer"
+  STR_LIST_ACTION_3       "Deactiveer CapiTel"
+  STR_LIST_ACTION_4       "Sluit CapiTel"
+  STR_LIST_ACTION_5       "Verander terugbelnummer"
+  STR_FDLG_WELCOME        "Selecteer meldtekst"
+  STR_FDLG_WELCOME_FILT   "Meldtekst\0*.WAV;*.ALW\0Alle bestanden (*.*)\0*\0"
+  STR_FDLG_RINGING        "Selecteer rinkelen"
+  STR_FDLG_RINGING_FILT   "Wave-bestand\0*.WAV\0Alle bestanden (*.*)\0*\0"
+  STR_FDLG_RECORD         "Save Welcome Text As"
+  STR_FDLG_RECORD_FILT    "Meldtekst\0*.ALW\0Alle bestanden (*.*)\0*\0"
+  STR_FDLG_SAVEAS         "Oproep opslaan als"
+  STR_FDLG_SAVEAS_FILT    "Wave-bestand\0*.WAV\0Alle bestanden (*.*)\0*\0"
+  STR_FDLG_SAVEAS_FILE    "Oproep van %s.wav"
+  STR_POPTEXT_1           "Inkomende oproep"
+  STR_POPTEXT_2           "Van %s"
+  STR_POPTEXT_3           "Naar %s"
+  STR_ERROR               "Fout"
+  STR_WARNING             "Attentie"
+  STR_MSG_REGOK           "Bedankt voor uw registratie!"
+  STR_MSG_REGFAIL         "De ingevulde registratiecode is ongeldig.\n\nControleer of uw naam en de code correct zijn ingevuld."
+  STR_ERR_NONUMBER        "Vul alstublieft een telefoonnummer in!"
+  STR_ERR_NODTMFCODE      "Vul alstublieft een DTMF-code in!"
+  STR_ASK_REALYDELETE     "Weet u zeker dat u de geselecteerde oproep wilt verwijderen?"
+  STR_ASK_REALYDELETE2    "U heeft één of meer van de geselecteerde oproepen nog niet afgeluisterd.\r\rWeet u zeker dat u ze wil verwijderen?"
+  STR_ASK_REALYEXIT       "CapiTel afsluiten?"
+  STR_ASK_REALYEXIT_CHK   "Deze vraag niet opnieuw tonen"
+  STR_HELP_README         "readme.txt"
+  STR_HELP_ORDER          "order.txt"
+  STR_HELP_ORDERBMT       "orderbmt.txt"
+  STR_HELP_LICENSE        "licence.txt"
+  STR_HELP_WHATSNEW       "whatsnew.txt"
+END
+
+
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 219, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Over CapiTel"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",-1,5,5,209,59
+    ICON            ID_MAIN,-1,17,20,21,20
+    LTEXT           "CapiTel voor Windows",-1,55,15,115,8
+    LTEXT           ".",IDC_TEXT1,55,25,115,8
+    LTEXT           ".",IDC_TEXT2,55,40,115,8
+    LTEXT           ".",IDC_TEXT3,55,50,115,8
+    GROUPBOX        "De auteurs",-1,5,67,209,65
+    LTEXT           APP_AUTOR_1,-1,15,80,60,8
+    LTEXT           APP_WERNER_INET,-1,80,80,100,8
+    LTEXT           APP_CAWIM_INET,-1,80,105,130,8
+    LTEXT           APP_AUTOR_2,-1,15,105,60,8
+    LTEXT           APP_WERNER_WWW,-1,80,90,100,8
+    LTEXT           APP_CAWIM_WWW,-1,80,115,100,8
+    GROUPBOX        "Nieuws en updates",IDC_TEXT4,5,137,209,25
+    CTEXT           APP_HOMEPAGE,IDC_TEXT5,12,148,196,8
+    PUSHBUTTON      "OK",IDOK,85,171,50,14
+END
+
+IDD_PROPPAGE1 DIALOG DISCARDABLE  0, 0, 210, 230
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Algemeen"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Oproepacceptatie",-1,7,5,196,67
+    LTEXT           "&Telefoon opnemen na",-1,14,21,75,8
+    EDITTEXT        IDC_ANSWER_DELAY,91,19,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconden",-1,121,21,80,8
+    LTEXT           "&Beperk opnametijd tot",-1,14,37,75,8
+    EDITTEXT        IDC_RECORD_TIME,91,35,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconden",-1,121,37,75,8
+    LTEXT           "&Stop opname na",-1,14,53,65,8
+    EDITTEXT        IDC_SILENCE,81,51,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconden stilte",-1,111,53,80,8
+    GROUPBOX        "Schermweergave",-1,7,75,196,147
+    CONTROL         "&Herstel geminimaliseerd scherm bij nieuwe oproepen",
+                    IDC_RESTORE_WINDOW,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,90,180,10
+    CONTROL         "Toon &alleen oproepen waarbij een boodschap is achtergelaten",
+                    IDC_IGNORE_EMPTY,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,104,180,18
+    CONTROL         "Als de beller &onbekend is gebied tonen aan de hand van meegestuurd netnummer",
+                    IDC_EXPAND_CALLER_ID,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,126,180,18
+    CONTROL         "Ook &digitale oproepen (fax, data) laten zien",
+                    IDC_IS_CALLER_ID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,148,180,10
+    CONTROL         "&Verwijderen van oproepen uit de lijst bevestigen",
+                    IDC_CONFIRM_DELETE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,162,180,10
+    LTEXT           "Als het hoofdvenster geminimaliseerd is en er komt een oproep binnen kan er een popup-venster worden getoond",
+                    -1,14,180,185,16
+    LTEXT           "Toon popup-venster:",-1,14,203,75,8
+    COMBOBOX        IDC_POPUPWIN,100,201,70,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+END
+
+IDD_PROPPAGE2 DIALOG DISCARDABLE  0, 0, 210, 238
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Antwoordapparaat"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Meldtekst",-1,7,5,196,50
+    LTEXT           "Gebruik dit bestand als &meldtekst:",-1,
+                    14,18,180,8
+    EDITTEXT        IDC_WELCOME_TEXT,14,34,120,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Bladeren ...",IDC_FILEDLG,140,33,55,14
+    GROUPBOX        "Rinkelen",-1,7,58,196,60
+    CONTROL         "&Speel dit bestand af als 'rinkelende telefoon' bij inkomende oproepen:",
+                    IDC_WAVE_RINGING,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,73,175,18
+    EDITTEXT        IDC_RINGING_WAVE,14,98,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Bladeren ...",IDC_WAVEDLG,140,97,55,14
+    GROUPBOX        "Poorten en telefoonnummers",-1,7,121,196,110
+    ICON            ID_PORT1,-1,14,134,20,20
+    LTEXT           "Gebruik de poortlijst om de nummers waarop CapiTel moet reageren in te vullen.",
+                    -1,40,136,157,16
+    PUSHBUTTON      "Poorten ...",IDC_EDIT_PORTS,105,158,90,14
+    ICON            ID_CALLER1,-1,14,178,20,20
+    LTEXT           "De bekende bellers-lijst bevat telefoonnummers waarbij de naam van de oproeper bekend is, zodat Capitel deze kan weergeven.",
+                    -1,40,180,157,24
+    PUSHBUTTON      "Bekende bellers ...",IDC_EDIT_CALLERS,105,210,90,14
+END
+
+IDD_PROPPAGE3 DIALOG DISCARDABLE  0, 0, 210, 178
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Afstandsbediening"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Afstandsbediening",-1,7,5,196,97
+    CONTROL         "Herkennen van &DTMF-tonen inschakelen",IDC_DTMF_SUPPORT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,20,149,10
+    LTEXT           "Afstandsbediening stelt u in staat uw antwoordapparaat overal vandaan te bellen en berichten af te luisteren. Verder kan CapiTel u automatisch bellen zodra er een nieuw bericht is achtergelaten.",
+                    -1,14,37,180,32
+    LTEXT           "Automatisch bellen naar het volgende telefoonnummer:",
+                    -1,14,77,95,16
+    EDITTEXT        IDC_FORWARD,110,81,85,13,ES_AUTOHSCROLL
+    GROUPBOX        "Afstandsbediening",-1,7,105,196,66
+    ICON            ID_ACTION1,-1,14,117,21,20
+    LTEXT           "In deze lijst staan functies die geactiveerd kunnen worden door de bijbehorende DTMF-code in te toetsen op de telefoon.",
+                    -1,40,119,156,24
+    PUSHBUTTON      "Op afstand bedienbare functies ...",IDC_EDIT_ACTIONS,75,149,
+                    120,14
+END
+
+IDD_PROPPAGE4 DIALOG DISCARDABLE  0, 0, 210, 103
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Overig"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Opties",-1,7,5,196,32
+    CONTROL         "Spr&aakdata is µLaw-gecodeerd (alleen in de USA)",
+                    IDC_ULAW_CODEC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,
+                    20,180,10
+    GROUPBOX        "Logboek",-1,7,40,196,56
+    LTEXT           "Alle oproepen worden naar het volgende bestand geschreven:",
+                    -1,14,52,180,16
+    EDITTEXT        IDC_LOGFILE,14,75,180,12,ES_AUTOHSCROLL
+END
+
+IDD_EDITPORTLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Poorten"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PORT_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Annuleren",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Nieuw",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Bewerken",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Wissen",IDM_DELETE,174,84,50,14
+END
+
+IDD_EDITPORT DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Poort"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "&Poort is ingeschakeld",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,83,10
+    LTEXT           "&Omschrijving:",-1,14,25,80,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Roepnummer (MSN):",-1,14,42,80,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Reactie:",-1,14,59,80,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Laat de volgende velden leeg als de standaardinstellingen voor deze poort gebruikt moeten worden.",
+                    -1,14,77,200,16
+    LTEXT           "Be&antwoord na",-1,14,103,70,8
+    EDITTEXT        IDC_DELAY,88,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconden",-1,117,103,69,8
+    LTEXT           "&Beperk opnametijd tot",-1,14,120,70,8
+    EDITTEXT        IDC_MAXTIME,88,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconden",-1,117,120,69,8
+    LTEXT           "&Meldtekst:",-1,14,137,45,8
+    EDITTEXT        IDC_FILENAME,63,135,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "B&laderen ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "R&inkel:",-1,14,154,45,8
+    EDITTEXT        IDC_WAVENAME,63,152,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Bladeren ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "&Automatisch bellen naar het volgende telefoonnummer:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Annuleren",2,181,209,50,14
+END
+
+IDD_EDITCALLERLIST DIALOGEX 0, 0, 263, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Bekende bellers"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CALLER_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,192,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,206,7,50,14
+    PUSHBUTTON      "Annuleren",IDCANCEL,206,24,50,14
+    PUSHBUTTON      "&Nieuw",IDM_NEW,206,50,50,14
+    PUSHBUTTON      "&Bewerken",IDM_EDIT,206,67,50,14
+    PUSHBUTTON      "&Wissen",IDM_DELETE,206,84,50,14
+END
+
+IDD_EDITCALLER DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Oproepers"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "&Regel is ingeschakeld",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,85,10
+    LTEXT           "&Omschrijving:",-1,14,25,80,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Telefoonnummer oproeper:",-1,14,42,80,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Reactie:",-1,14,59,80,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Laat een of meer van de volgende velden leeg als hiervoor de standaardinstellingen gebruikt moeten worden.",
+                    -1,14,77,200,16
+    LTEXT           "Be&antwoord na",-1,14,103,70,8
+    EDITTEXT        IDC_DELAY,88,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconden",-1,117,103,69,8
+    LTEXT           "&Beperk opnametijd tot",-1,14,120,70,8
+    EDITTEXT        IDC_MAXTIME,88,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "seconden",-1,117,120,69,8
+    LTEXT           "&Meldtekst:",-1,14,137,45,8
+    EDITTEXT        IDC_FILENAME,63,135,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Bladeren ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "R&inkel:",-1,14,154,45,8
+    EDITTEXT        IDC_WAVENAME,63,152,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Bladeren ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "&Automatisch bellen naar het volgende telefoonnummer:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Annuleren",2,181,209,50,14
+END
+
+IDD_EDITACTIONLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Afstandsbedieningsfuncties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_ACTION_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Annuleren",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Nieuw",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Bewerken",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Wissen",IDM_DELETE,174,84,50,14
+END
+
+IDD_EDITACTION DIALOG DISCARDABLE  0, 0, 207, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Functie"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,192,195
+    CONTROL         "&Functie is ingeschakeld",IDC_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,7,90,10
+    LTEXT           "&DTMF-code:",-1,14,25,50,8
+    EDITTEXT        IDC_DTMFCODE,75,23,50,13,ES_AUTOHSCROLL
+    LTEXT           "Deze DTMF-code heeft de volgende functie:",-1,
+                    14,47,165,8
+    CONTROL         "Het &antwoordapparaat op afstand bedienen, berichten beluisteren of wissen.",
+                    IDC_REMOTECONTROL,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE | WS_GROUP | WS_TABSTOP,14,62,160,18
+    CONTROL         "Een nieuw &telefoonnummer invoeren wat gebeld wordt als er nieuwe berichten zijn.",
+                    IDC_SET_CALLBACK,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE,14,84,160,18
+    CONTROL         "Het antwoordapparaat &uitschakelen.",IDC_DEACTIVATE,
+                    "Button",BS_AUTORADIOBUTTON,14,106,160,10
+    CONTROL         "&CapiTel afsluiten.",IDC_QUIT,"Button",
+                    BS_AUTORADIOBUTTON,14,120,160,10
+    CONTROL         "De computer opnieuw &opstarten.",IDC_REBOOT,"Button",
+                    BS_AUTORADIOBUTTON,14,134,160,10
+    CONTROL         "Een &extern programma starten:",IDC_EXECUTE,"Button",
+                    BS_AUTORADIOBUTTON,14,148,160,10
+    LTEXT           "Pr&ogramma:",IDC_TEXT1,26,164,40,8
+    EDITTEXT        IDC_PROGRAM,70,163,120,13,ES_AUTOHSCROLL
+    LTEXT           "Ar&gumenten:",IDC_TEXT2,26,180,40,8
+    EDITTEXT        IDC_ARGUMENTS,70,179,120,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,96,210,50,14
+    PUSHBUTTON      "Annuleren",2,149,210,50,14
+END
+
+IDD_REGISTER DIALOG DISCARDABLE  0, 0, 207, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_VISIBLE
+CAPTION "Registratie"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Naam:",-1,7,11,30,8
+    EDITTEXT        IDC_REGNAME,40,8,80,13,ES_AUTOHSCROLL
+    LTEXT           "&Code:",-1,7,27,30,8
+    EDITTEXT        IDC_REGCODE,40,24,80,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,150,7,50,14
+    PUSHBUTTON      "Annuleren",IDCANCEL,150,24,50,14
+END
+
+IDD_POPUP DIALOG DISCARDABLE  0, 0, 80, 37
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_TEXT1,5,5,70,8
+    LTEXT           "",IDC_TEXT2,5,15,70,8
+    LTEXT           "",IDC_TEXT3,5,25,70,8
+END
+
+
+
+IDD_MSGBOX DIALOG DISCARDABLE  0, 0, 275, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,45,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,45,50,14
+    PUSHBUTTON      "&No",IDNO,218,45,50,14
+    ICON            "",IDC_ICO,7,9,18,20
+    LTEXT           "",IDC_TEXT,40,9,228,24
+END
+
+IDD_MSGBOXEX DIALOG DISCARDABLE  0, 0, 275, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,50,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,50,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,50,50,14
+    PUSHBUTTON      "&No",IDNO,218,50,50,14
+    ICON            "",IDC_ICO,7,9,21,20
+    LTEXT           "",IDC_TEXT,40,9,228,8
+    CONTROL         "",IDC_CHECK,"Button",BS_AUTOCHECKBOX|WS_TABSTOP,40,28,228,10
+END

@@ -1,0 +1,183 @@
+offen:
+
+
+-------------------------------------------------------------------------------
+
+c - reboot+login-problematik bei nt ins readme. FIXED
+
+c - feature wuensche willkommen, aber...
+     - CT ist nur AB
+     - easy to use/configure
+    FIXED!
+
+c - WIN: 0 Byte WAVs nicht ins Recycle Bin schieben. FIXED!
+
+c - OS2: informational compiler warnings in capitel.c. FIXED!
+
+c - OS2: mehrmals starten. FIXED!     -> 2 installationen, 2x starten, funzt!
+
+c - OS/2: neue help-menue eintraege (readme, webseite etc.) FIXED!
+
+c - OS2: alaw/ulaw umschaltung, CAPITEL_CODEC_ULAW (0 oder 1). FIXED!
+c - WIN: alaw/ulaw umschaltung, CAPITEL_CODEC_ULAW (0 oder 1). FIXED!
+
+c - code generator eq-test einbauen. FIXED!
+
+c - win: delete to recycle bin. FIXED!
+
+c - falsche deutsche tokens bei den dtmf actions
+    FIXED !
+
+c - Pixel-Fehler in der Win Version
+    Tritt nur bei mir auf, vielleicht grafik-treiber problem
+
+c - Der "Tip fuer Experten" in den Einstellungen ist breiter als das Fenster.
+    Nicht nachvollziehbar, unwichtig
+
+c - Die Bubble-Help erscheint bei mir genau UNTER der Maus, wird also von der
+    Maus verdeckt.
+    Nicht nachvollziehbar, unwichtig
+
+c - Im Register "Ports" müsste es jetzt statt EAZ natürlich MSN heissen.
+    User hatte vielleicht eine veraltete Version. Derzeit wird korrekt
+    EAZ/MSN (OS/2) bzw. MSN (Win) angezeigt
+
+c-  "Add as new Caller" bei Win95 verhaelt sich anders
+    FIXED !
+
+c - w32: flasche reihenfolge der buttons.
+    FIXED !
+
+c - "anachronism used" warnings in loadwc20.c und capi20.h
+    FIXED !
+
+c - "ignore empty calls" ignoriert *alle* calls! FIXED !
+
+c - dtmf reboot funktioniert nicht (nt only) FIXED !
+
+c - * abfangen in caller-liste als nummer. FIXED !
+
+c - w32 abot-box: copyright/web-addresse. FIXED !
+
+c - readme+webadresse etc. in help menue. FIXED !
+
+c - answer_stop_beep() einbauen FIXED !
+
+
+w - Anrufer ohne Rufnummer sind immer "". FIXED !
+
+w - Crash wenn man per DTMF ein Programm startet (vielleicht erst
+    nach Auflegen?!) FIXED !
+
+w - wfehn?: numbering plan os2 diva. w95? FIXED!
+
+w - Parameter Uebergabe funzt nicht bei Execute Program. FIXED !
+
+w - copyright auf 1998 erweitern. FIXED !
+
+w - capitel_active_on_startup. FIXED !
+
+w - DTMF:
+    o Ich habe die DTMF-Unterstuetzung eingestellt
+    o Es war der Eintrag 'Capitel deaktivieren' mit dem DTMF-Code 1515
+      eingetragen.
+    o Diesen Eintrag habe ich deaktiviert (Das Symbol wurde grau).
+    o Dann habe ich den Eintrag 'Fernabfrage' mit dem Code 15151
+      eingetragen und aktiviert.
+    o Beim Testen mittels Selbstanruf und Eingabe von 15151 hat Capitel
+      allerdings schon auf den DTMF-Code 1515 'Capitel deaktivieren'
+      reagiert, obwohl dieser Eintrag deaktiviert war.
+    FIXED !
+
+w - Remote Actions: enable/disable klappt nicht
+    In capitel.act wird 0/1 korrekt eingetragen. FIXED !
+
+w - beep_on_calls (answer_stop_beep() in oberfläche fehlt noch). FIXED !
+
+w - prio vom EXE aendern (kojac's code einbauen) FIXED !
+
+w - prio vom os2 exe aendern. FIXED
+
+w - win nt: konfigurierbarkeit affinity. FIXED
+
+w - regcode ändern. FIXED.
+
+w - numbering plan besser machen. FIXED
+
+w - funzt reboot noch unter win95? FIXED
+
+w - CTI. FIXED!
+
+w - alaw/ulaw unten. FIXED!
+
+w - Win: Direkt installerbares EXE, statt ZIP. FIXED!
+
+w - install: kein ueberschreiben von cfg/nam/prt/act files. FIXED!
+
+------------------------------------------------------------------------------------
+
+Ideen:
+
+ - Spezielle Ansage fuer alle <unknown>'s
+ - Pro Port ein eigenes Verzeichnis
+ - Container konfigurierbar machen
+ - Vertical Slider abschalten
+ - Sound bei reinkommendem Ruf (general, port+caller spezifisch)
+ - Minimized Icon aendern bei Ruf
+ - Expire von Anrufen nach X Tagen
+ - Abgehoerte Anrufe kenntlich machen
+ - Launch Program after incoming call
+ - Dynamische Breite des Popups "Incoming Call.."
+ - Zeitabhaenige Ansagen
+ - Zufaellig ausgewaehlte Ansagen
+ - Rexx Interface
+ - Rufweiterschaltung / Pager-Unterstuetzung
+ - Skipping von Nachrichten per #-Taste beim Abhören
+ - Ansage des Aufnahmezeitpunkts von Nachrichten
+ - Mehrere calls markieren und dann nur diese loeschen/abspielen
+ - Abspielen stoppen
+ - Play all / add as new caller - Features ins ReadMe
+ - In der About-Box: Die eMail- und Web-Adressen koennten markierbar
+   (Cut&Paste!) sein.
+ - CapiTel starten koennen, auch wenn keine CAPI installiert ist
+ - Vom Container aus direkt zum entsprechenden Caller-Setting springen
+ - Confirmation bevor deaktiviert wird
+ - Kontextsens. Hilfe
+ - Volume Control
+ - Sortieren der einzelnen Spalten im Container
+ - Win: Tray Icon only
+ - Win: CapiTel als Service
+ - Match bei anrufender Nummer: 01234 sollte vor 0123* matchen!
+ - mehrmals starten, konfigurierbar (auch in distrib)
+
+ - Loop parameter for each ringing-wav
+   (Today: I have to make LARGE wav files to let it ring for a while).
+ - Larger popup dialogbox when calls arrive!. Important!
+   (Today: too small on 1024x768)
+ - a GUI for advanced features ("chunks") in cfg file!
+ - storing of container size/position
+ - stop ringing-wav when call is picked up (by handset)
+ - a graphical user interface for call-log; button in toolbar,
+   statistics for call-log (calls per user, average call time and so on)
+ - possibility to take over call (by handset)
+ - CTI; starting program when call is arriving; i.e. showing picture
+   of person calling
+ - Parameter to turn off all welcome-WAVs (except the default).
+ - Parameter for playing default-WAV before personal welcome-message
+ - Voice-Box (Scripting abilities. Caller is presented a menu; like telebanking)
+ - Show both number and caller in container/call list
+
+ - remote control:
+    1. activate port,
+    2. play only calls to the attached port (default), play calls to
+       all ports (with DTMF)
+    3. play only new calls (default), play all calls (with DTMF)
+    4. One call forward, one call backward (one time repeat, two times one
+       call back, three times 2 calls back ...)
+    5. delete one call (i.e. last played)
+    6. record and play announcement
+    7. a program play with parameter info.wav (i.e.)
+
+
+
+

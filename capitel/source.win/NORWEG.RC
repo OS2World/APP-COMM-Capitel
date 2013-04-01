@@ -1,0 +1,536 @@
+/*
+ * Norsk (Norwegian bokmal)
+norwegian translation from:  "Stale Pedersen" <stale@tr.telia.no>
+ */
+
+LANGUAGE LANG_NORWEGIAN, SUBLANG_NORWEGIAN_BOKMAL
+
+ID_MAIN ACCELERATORS MOVEABLE PURE
+BEGIN
+    "a",   IDM_SELECTALL        , ASCII, VIRTKEY, CONTROL
+    "a",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "A",   IDM_TOGGLEACTIVATION , ASCII, ALT
+    "c",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "C",   IDM_HIDEFRAMECONTROLS, ASCII, ALT
+    "p",   IDM_PLAY_ALL         , ASCII, ALT
+    "P",   IDM_PLAY_ALL         , ASCII, ALT
+    "n",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    "N",   IDM_ADD_TO_CALLERS   , ASCII, ALT
+    VK_F5, IDM_REGISTER         , ASCII, VIRTKEY, CONTROL, ALT
+END
+
+
+ID_MAIN MENU DISCARDABLE
+BEGIN
+    POPUP "&Hovedmeny"
+    BEGIN
+        MENUITEM "&Telefonsvarer Aktiv\tAlt+A", IDM_TOGGLEACTIVATION
+        MENUITEM "&Skjul Vindu Kontroller\tAlt+C"  , IDM_HIDEFRAMECONTROLS
+        MENUITEM "I&nnstillinger"               , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "S&lutt"                         , IDM_EXIT
+    END
+    POPUP "&Ringing"
+    BEGIN
+        MENUITEM "H&ør\tEnter"                  , IDM_PLAY
+        MENUITEM "&Slett\tDel"                  , IDM_DELETE
+        MENUITEM "&Lagre som ..."                  , IDM_SAVE_AS
+        MENUITEM "Legg Til N&y\tAlt+N"     , IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "&Hør Alt\tAlt+P"              , IDM_PLAY_ALL
+        MENUITEM "&Spill Inn Melding\tAlt+R"   , IDM_RECORD
+    END
+    POPUP "&Vis"
+    BEGIN
+        MENUITEM "&Alltid Fremst"                  , IDM_TOPMOST
+        MENUITEM "&Vis Status I Oppgavelinjen"     , IDM_SHOWTRAY
+        MENUITEM "&Skjul Ved Minimering"           , IDM_MINHIDE
+        MENUITEM SEPARATOR
+        MENUITEM "Select &Alle\tCtrl+A"            , IDM_SELECTALL
+        MENUITEM "&Fjer Merking"                   , IDM_INVERTSEL
+    END
+    POPUP "&Hjelp"
+    BEGIN
+        MENUITEM "&Les Meg"                       , IDM_README
+        MENUITEM "&Nyheter"                  , IDM_WHATSNEW
+        MENUITEM "&Lisens"                      , IDM_LICENSE
+        MENUITEM "&Bestillingsblankett"              , IDM_ORDER
+        MENUITEM "BMT B&estillingblankett"    , IDM_ORDERBMT
+        MENUITEM "&Hjemmeside"          , IDM_HOMEPAGE
+        MENUITEM SEPARATOR
+        MENUITEM "&Om CapiTel"                , IDM_ABOUT
+    END
+END
+
+ID_POPUP MENU DISCARDABLE
+BEGIN
+    POPUP "Meny I"
+    BEGIN
+        MENUITEM "Hør"                          , IDM_PLAY
+        MENUITEM "&Slett\tDel"                  , IDM_DELETE
+        MENUITEM "&Lagre som ..."                  , IDM_SAVE_AS
+        MENUITEM "Legg Til &Ny\tAlt+N"     , IDM_ADD_TO_CALLERS
+        MENUITEM SEPARATOR
+        MENUITEM "H&ør Alt\tAlt+P"              , IDM_PLAY_ALL
+        MENUITEM "&Spill Inn Melding\tAlt+R"   , IDM_RECORD
+        MENUITEM SEPARATOR
+        MENUITEM "&Telefonsvarer Aktiv\tAlt+A", IDM_TOGGLEACTIVATION
+        MENUITEM "&Skjul Vindu Og Kontroller\tAlt+C"  , IDM_HIDEFRAMECONTROLS
+        MENUITEM "E&iendom ..."               , IDM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "&Info"                         , IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "&Om CapiTel"                , IDM_ABOUT
+    END
+    POPUP "Meny II"
+    BEGIN
+        MENUITEM "&Ny.."                        , IDM_NEW
+        MENUITEM "&Endre"                         , IDM_EDIT
+        MENUITEM "&Slett"                       , IDM_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Aktiv"                       , IDM_ACTIVE
+    END
+    POPUP "Meny III"
+    BEGIN
+        MENUITEM "&Vis CapiTel"                 , IDM_SHOW
+        MENUITEM "&Hør Alle"               , IDM_PLAY_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "S&lutt"                         , IDM_EXIT
+    END
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDM_TOGGLEACTIVATION  "Slå Telefonsvarer Av/ På."
+    IDM_HIDEFRAMECONTROLS "Meny Og Statuslinje Av/ På."
+    IDM_PROPERTIES        "Programinnstillinger."
+    IDM_PROP_PORTS        "Portinnstillinger."
+    IDM_PROP_CALLERS      "Kjente Innringere."
+    IDM_PROP_ACTIONS      "Fjernstyringsinnstilling."
+    IDM_EXIT              "Steng CapiTel."
+    IDM_PLAY              "Hør Valgt Samtale."
+    IDM_PLAY_ALL          "Hør Alle Samtaler."
+    IDM_DELETE            "Slett Valgt Samtale."
+    IDM_SAVE_AS           "Lagrer det valgte anropet til en lydfil."
+    IDM_ADD_TO_CALLERS    "Legg Telefonnummer i Ringelisten."
+    IDM_RECORD            "Lag Ny Velkomstmelding."
+    IDM_README            "Les LesMeg.Txt."
+    IDM_WHATSNEW          "Les Nyheter.Txt."
+    IDM_LICENSE           "Les Lisensavtale."
+    IDM_ORDER             "Les Bestillingsblanketten."
+    IDM_ORDERBMT          "Les BMT Mikro Bestillingsblankett."
+    IDM_HOMEPAGE          "Vis CapiTel Hjemmeside."
+    IDM_ABOUT             "Vis Produktinformasjon."
+    IDM_SHOW              "Vis CapiTel's Hovedvindu."
+    IDM_TOPMOST           "CapiTel Er Fremste Vindu Dersom Den Ikke Minimeres."
+    IDM_SHOWTRAY          "Vis Statusikon I Oppgavelinja."
+    IDM_MINHIDE           "Skjul CapiTel Ved Minimering."
+    IDM_SELECTALL         "Velg alle element i vinduet"
+    IDM_INVERTSEL         "Fjern de valgte element"
+    STR_MENUHELP_MAIN1    "Kommandosett For CapiTel."
+    STR_MENUHELP_MAIN2    "Spill/ Slettekommandoer."
+    STR_MENUHELP_MAIN3    "Kommandoer For Endring Av Visning."
+    STR_MENUHELP_MAIN4    "Hjelpefilkommandoer."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  STR_ABOUT1              "Versjon %s"
+  STR_ABOUT2              "Kopirett (c) %s Av"
+  STR_ABOUT3              "%s Og %s"
+  STR_ABOUT_UNREG1        "UREGISTRERT Kopi"
+  STR_ABOUT_UNREG2        "Vennligst Registrer CapiTel!"
+  STR_WINDOW_TITLE        APPNAME
+  STR_TBAR_REG            "%s (Registrert Til %s)"
+  STR_TBAR_UNREG          "%s (UREGISTRERT KOPI)"
+  STR_TBAR_FREE           "%s (kjører som freeware Ringer-ID)"
+  STR_TBAR_DEACTIVATED    "Telefonsvarer Avslått ..."
+  STR_TBAR_CONVERTING     "Konverterer WAVE Filer ..."
+  STR_TBAR_RECWELCOME     "Spiller Inn Velkomstmelding ..."
+  STR_LIST_COL1           "Ringer"
+  STR_LIST_COL2           "Dato"
+  STR_LIST_COL3           "Tid"
+  STR_LIST_COL4           "Sek."
+  STR_LIST_COL5           "Mottaker"
+  STR_PRT_LIST_COL1       "Beskrivelse"
+  STR_PRT_LIST_COL2       "Ringt Nummer (MSN)"
+  STR_CLR_LIST_COL1       "Navn"
+  STR_CLR_LIST_COL2       "Oppringt Nummer"
+  STR_ACT_LIST_COL1       "DTMF Kode"
+  STR_ACT_LIST_COL2       "Handling"
+  STR_REJECTCAUSE_D       "Port Oppsett"
+  STR_REJECTCAUSE_0       "Normal"
+  STR_REJECTCAUSE_1       "Opptatt"
+  STR_REJECTCAUSE_2       "Avvis"
+  STR_REJECTCAUSE_3       "Stengt"
+  STR_POPWIN_NONE         "Aldri"
+  STR_POPWIN_TOPLEFT      "Topp Venstre"
+  STR_POPWIN_TOPRIGHT     "Topp Høyre"
+  STR_POPWIN_BOTTOMLEFT   "Bunn Venstre"
+  STR_POPWIN_BOTTOMRIGHT  "Bunn Høyre"
+  STR_LIST_ACTION_1       "Fjernkontroll"
+  STR_LIST_ACTION_2       "Omstart"
+  STR_LIST_ACTION_3       "Steng CapiTel"
+  STR_LIST_ACTION_4       "Avslutt CapiTel"
+  STR_LIST_ACTION_5       "Endre Ring Tilbakenummer"
+  STR_FDLG_WELCOME        "Velg Velkommentekst"
+  STR_FDLG_WELCOME_FILT   "Velkommentekst\0*.WAV;*.ALW\0All files (*.*)\0*\0"
+  STR_FDLG_RINGING        "Velg Ringing"
+  STR_FDLG_RINGING_FILT   "WAVE fil\0*.WAV\0Alle Filer (*.*)\0*\0"
+  STR_FDLG_RECORD         "Lagre Velkommentekst Som"
+  STR_FDLG_RECORD_FILT    "Velkommentekst\0*.ALW\0Alle Filer (*.*)\0*\0"
+  STR_FDLG_SAVEAS         "Lagre anrop som"
+  STR_FDLG_SAVEAS_FILT    "WAVE fil\0*.WAV\0Alle Filer (*.*)\0*\0"
+  STR_FDLG_SAVEAS_FILE    "Anrop fra %s.wav"
+  STR_POPTEXT_1           "Inngående Ring"
+  STR_POPTEXT_2           "Fra %s"
+  STR_POPTEXT_3           "Til %s"
+  STR_ERROR               "FEIL"
+  STR_WARNING             "Advarsel"
+  STR_MSG_REGOK           "Takk For Registrering!"
+  STR_MSG_REGFAIL         "FEIL Registreringskode.\n\nVennligst Tast Inn Navn og Kode Korrekt."
+  STR_ERR_NONUMBER        "Oppgi Et Telefonnummer!"
+  STR_ERR_NODTMFCODE      "Oppgi En DTMF Kode!"
+  STR_ASK_REALYDELETE     "Vil Du Slette Gjeldende Samtale?"
+  STR_ASK_REALYDELETE2    "Du har ikke h rt på noen av de valgte anropene.\r\rVil du slette de uansett?"
+  STR_ASK_REALYEXIT       "nsker du og avslutte CapiTel?"
+  STR_ASK_REALYEXIT_CHK   "Ikke vis denne meldingen igjen"
+  STR_HELP_README         "lesmeg.txt"
+  STR_HELP_ORDER          "bestill.txt"
+  STR_HELP_ORDERBMT       "besBMT.txt"
+  STR_HELP_LICENSE        "lisens.txt"
+  STR_HELP_WHATSNEW       "nyhet.txt"
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 219, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Om CapiTel"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",-1,5,5,209,59
+    ICON            ID_MAIN,-1,17,20,21,20
+    LTEXT           "CapiTel For Windows",-1,55,15,115,8
+    LTEXT           ".",IDC_TEXT1,55,25,115,8
+    LTEXT           ".",IDC_TEXT2,55,40,115,8
+    LTEXT           ".",IDC_TEXT3,55,50,115,8
+    GROUPBOX        "Rettighetshaver",-1,5,67,209,65
+    LTEXT           APP_AUTOR_1,-1,15,80,60,8
+    LTEXT           APP_WERNER_INET,-1,80,80,100,8
+    LTEXT           APP_CAWIM_INET,-1,80,105,130,8
+    LTEXT           APP_AUTOR_2,-1,15,105,60,8
+    LTEXT           APP_WERNER_WWW,-1,80,90,100,8
+    LTEXT           APP_CAWIM_WWW,-1,80,115,100,8
+    GROUPBOX        "Nyheter",IDC_TEXT4,5,137,209,25
+    CTEXT           APP_HOMEPAGE,IDC_TEXT5,12,148,196,8
+    PUSHBUTTON      "OK",IDOK,85,171,50,14
+END
+
+IDD_PROPPAGE1 DIALOG DISCARDABLE  0, 0, 210, 214
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Hovedmeny"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Ring Godtatt",-1,7,5,196,67
+    LTEXT           "&Aktiver Svarer Etter",-1,14,21,75,8
+    EDITTEXT        IDC_ANSWER_DELAY,91,19,25,13,ES_AUTOHSCROLL
+    LTEXT           "Sekunder",-1,121,21,80,8
+    LTEXT           "&Opptakstid Begrenset Til",-1,14,37,75,8
+    EDITTEXT        IDC_RECORD_TIME,91,35,25,13,ES_AUTOHSCROLL
+    LTEXT           "Sekunder",-1,121,37,75,8
+    LTEXT           "&Stopp Opptak Etter",-1,14,53,75,8
+    EDITTEXT        IDC_SILENCE,91,51,25,13,ES_AUTOHSCROLL
+    LTEXT           "Sekunder Stillhet",-1,121,53,80,8
+    GROUPBOX        "Vis",-1,7,75,196,131
+    CONTROL         "&Gjenopprett Vindu Ved Ny Samtale",
+                    IDC_RESTORE_WINDOW,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,90,180,10
+    CONTROL         "Vis &Kun Ring Hvor Det Er lagt Melding På Svareren",
+                    IDC_IGNORE_EMPTY,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,104,180,10
+    CONTROL         "&Ved Ukjent Samtale - Vis Retningsnummer (Fungerer Kun I Tyskland)",
+                    IDC_EXPAND_CALLER_ID,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,118,180,18
+    CONTROL         "Vis &Også samtaler Som (Faks, Data)",
+                    IDC_IS_CALLER_ID,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,140,180,10
+    CONTROL         "&Bekreft Sletting Av Poster i Ringelisten",
+                    IDC_CONFIRM_DELETE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    14,154,180,10
+    LTEXT           "Skal CapiTel Åpne Vindu Ved Innkomne Ring?",
+                    -1,14,172,170,8
+    LTEXT           "Vis Vindu:",-1,14,187,75,8
+    COMBOBOX        IDC_POPUPWIN,100,185,70,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+END
+
+
+IDD_PROPPAGE2 DIALOG DISCARDABLE  0, 0, 210, 222
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Telefonsvarer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Velkommentekst",-1,7,5,196,50
+    LTEXT           "Bruk Følgende &Velkomstekst:",-1,
+                    14,18,180,8
+    EDITTEXT        IDC_WELCOME_TEXT,14,34,120,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Finn ...",IDC_FILEDLG,140,33,55,14
+    GROUPBOX        "Ring",-1,7,58,196,52
+    CONTROL         "&Spill 'Ringer' Ved Inngående Samtaler:",
+                    IDC_WAVE_RINGING,"Button",BS_AUTOCHECKBOX | BS_TOP |
+                    BS_MULTILINE | WS_TABSTOP,14,73,175,10
+    EDITTEXT        IDC_RINGING_WAVE,14,90,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Finn ...",IDC_WAVEDLG,140,89,55,14
+    GROUPBOX        "Porter Og Navn",-1,7,113,196,102
+    ICON            ID_PORT1,-1,14,126,20,20
+    LTEXT           "Bruk Port-listen For Og Angi Hvilket Tlf.nr. Som Skal Benytte Telefonsvareren.",
+                    -1,40,128,157,16
+    PUSHBUTTON      "Porter ...",IDC_EDIT_PORTS,105,150,90,14
+    ICON            ID_CALLER1,-1,14,170,20,20
+    LTEXT           "Ringelisten Har Kjente Navn - CapiTel Kan Vise Deg Navnet I Stede For Telefonnummer.",
+                    -1,40,172,157,16
+    PUSHBUTTON      "Kjent Innringer ...",IDC_EDIT_CALLERS,105,194,90,14
+END
+
+
+
+IDD_PROPPAGE3 DIALOG DISCARDABLE  0, 0, 210, 170
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Fjernkontroll"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Fjernkontroll",-1,7,5,196,97
+    CONTROL         "Sett &DTMF Gjenkjenning",IDC_DTMF_SUPPORT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,20,149,10
+
+    LTEXT           "Ved Fjernkontroll Kan Du Ringe Opp Telefonsvareren Og Hør Innleste Beskjeder. I Tillegg Kan CapiTel Automatisk Ringe Til Et Oppgitt Nummer Når En Beskjed Er Lagt Inn På Telefonsvareren.",
+                    -1,14,37,180,32
+    LTEXT           "Automatisk Tilbakering Til Følgende Telefonnummer:",
+                    -1,14,77,95,16
+    EDITTEXT        IDC_FORWARD,110,81,85,13,ES_AUTOHSCROLL
+    GROUPBOX        "Fjernkontroll",-1,7,105,196,58
+    ICON            ID_ACTION1,-1,14,117,21,20
+    LTEXT           "Listen Inneholder Kommandorer Som Kan Aktiveres Med DTMF-Koder.",
+                    -1,40,119,156,16
+    PUSHBUTTON      "Fjernkontroll: Handling ...",IDC_EDIT_ACTIONS,95,141,
+                    100,14
+END
+
+
+
+IDD_PROPPAGE4 DIALOG DISCARDABLE  0, 0, 210, 95
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Annet"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Tillegg",-1,7,5,196,32
+    CONTROL         "Sn&akking Er µLaw Koder (Kun i USA)",
+                    IDC_ULAW_CODEC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,
+                    20,180,10
+    GROUPBOX        "Logger",-1,7,40,196,48
+    LTEXT           "Alle Ring Vil Bli Skrevet Til Fila:",
+                    -1,14,52,180,8
+    EDITTEXT        IDC_LOGFILE,14,67,180,12,ES_AUTOHSCROLL
+END
+
+
+
+IDD_EDITPORTLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Porter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PORT_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Avbryt",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Ny",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Endre",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Slett",IDM_DELETE,174,84,50,14
+END
+
+
+
+IDD_EDITPORT DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Port"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "&Port Er Koblet",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,59,10
+    LTEXT           "&Beskrivelse:",-1,14,25,80,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Ringt Nummer (MSN):",-1,14,42,80,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Reaksjon:",-1,14,59,80,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Blankt Felt = Standardverdier.",
+                    -1,14,81,160,8
+    LTEXT           "Ta &Av Etter",-1,14,103,62,8
+    EDITTEXT        IDC_DELAY,80,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "Sekunder",-1,109,103,69,8
+    LTEXT           "&Begrens Opptak Til",-1,14,120,62,8
+    EDITTEXT        IDC_MAXTIME,80,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "Sekunder",-1,109,120,69,8
+    LTEXT           "&Velkommen:",-1,14,137,45,8
+    EDITTEXT        IDC_FILENAME,63,135,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Finn ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "R&ing:",-1,14,154,45,8
+    EDITTEXT        IDC_WAVENAME,63,152,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Finn ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "&Ring Automatisk Dette Telefonnummer:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Avbryt",2,181,209,50,14
+END
+
+IDD_EDITCALLERLIST DIALOGEX 0, 0, 263, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Kjente Personer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CALLER_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,192,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,206,7,50,14
+    PUSHBUTTON      "Avbryt",IDCANCEL,206,24,50,14
+    PUSHBUTTON      "&Ny",IDM_NEW,206,50,50,14
+    PUSHBUTTON      "&Endre",IDM_EDIT,206,67,50,14
+    PUSHBUTTON      "&Slett",IDM_DELETE,206,84,50,14
+END
+
+IDD_EDITCALLER DIALOG DISCARDABLE  0, 0, 238, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Innringer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,224,195
+    CONTROL         "&Feltet Er Aktivt",IDC_ENABLED,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,14,7,62,10
+    LTEXT           "&Beskrivelse:",-1,14,25,80,8
+    EDITTEXT        IDC_DESCRIPTION,100,23,100,13,ES_AUTOHSCROLL
+    LTEXT           "Innringers Telefonnummer:",-1,14,42,80,8
+    EDITTEXT        IDC_MSN,100,40,100,13,ES_AUTOHSCROLL
+    LTEXT           "&Reaksjon:",-1,14,59,80,8
+    COMBOBOX        IDC_REACTION,100,57,100,80,CBS_DROPDOWNLIST | WS_VSCROLL |
+                    WS_TABSTOP
+    LTEXT           "Blankt Felt = Gjeldende Innstilling For Denne Personen.",
+                    -1,14,81,160,8
+    LTEXT           "Ta &Av Etter",-1,14,103,62,8
+    EDITTEXT        IDC_DELAY,80,101,25,13,ES_AUTOHSCROLL
+    LTEXT           "Sekunder",-1,109,103,69,8
+    LTEXT           "&Begrens Opptak Til",-1,14,120,62,8
+    EDITTEXT        IDC_MAXTIME,80,118,25,13,ES_AUTOHSCROLL
+    LTEXT           "Sekunder",-1,109,120,69,8
+    LTEXT           "&Velkommen:",-1,14,137,45,8
+    EDITTEXT        IDC_FILENAME,63,135,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Finn ...",IDC_FILEDLG,168,134,55,14
+    LTEXT           "R&ing:",-1,14,154,45,8
+    EDITTEXT        IDC_WAVENAME,63,152,99,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Finn ...",IDC_WAVEDLG,168,152,55,14
+    LTEXT           "&Ring Automatisk Følgende Telefonnummer:",
+                    -1,15,177,105,16
+    EDITTEXT        IDC_FORWARD,128,180,95,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,128,209,50,14
+    PUSHBUTTON      "Avbryt",2,181,209,50,14
+END
+
+IDD_EDITACTIONLIST DIALOGEX 0, 0, 231, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fjernstyring"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_ACTION_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL |
+                    LVS_SORTASCENDING | WS_TABSTOP,7,7,160,180,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Avbryt",IDCANCEL,174,24,50,14
+    PUSHBUTTON      "&Ny",IDM_NEW,174,50,50,14
+    PUSHBUTTON      "&Endre",IDM_EDIT,174,67,50,14
+    PUSHBUTTON      "&Slett",IDM_DELETE,174,84,50,14
+END
+
+IDD_EDITACTION DIALOG DISCARDABLE  0, 0, 207, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Handling"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        " ",-1,7,7,192,195
+    CONTROL         "&Handling Er Aktiv",IDC_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,7,71,10
+    LTEXT           "&DTMF Kode:",-1,14,25,50,8
+    EDITTEXT        IDC_DTMFCODE,75,23,50,13,ES_AUTOHSCROLL
+    LTEXT           "Ved Ringing Med Disse DTMF Koder, Ønsker Jeg ...",-1,
+                    14,47,165,8
+    CONTROL         "&Fjernstyre Telefonsvareren - m/ Avspilling Eller Sletting Av Meldinger.",
+                    IDC_REMOTECONTROL,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE | WS_GROUP | WS_TABSTOP,14,62,160,18
+    CONTROL         "&Oppgi Et Telefonnummer Som Det Ringes Når Det Er Nye Meldinger I Svareren.",
+                    IDC_SET_CALLBACK,"Button",BS_AUTORADIOBUTTON | BS_TOP |
+                    BS_MULTILINE,14,84,160,18
+    CONTROL         "&Slå Av Telefonsvareren.",IDC_DEACTIVATE,
+                    "Button",BS_AUTORADIOBUTTON,14,106,160,10
+    CONTROL         "&Lukk Telefonsvareren.",IDC_QUIT,"Button",
+                    BS_AUTORADIOBUTTON,14,120,160,10
+    CONTROL         "Om&start Datamaskinen.",IDC_REBOOT,"Button",
+                    BS_AUTORADIOBUTTON,14,134,160,10
+    CONTROL         "&Start Et Eksternt Program:",IDC_EXECUTE,"Button",
+                    BS_AUTORADIOBUTTON,14,148,160,10
+    LTEXT           "Pr&ogram:",IDC_TEXT1,26,164,40,8
+    EDITTEXT        IDC_PROGRAM,70,163,120,13,ES_AUTOHSCROLL
+    LTEXT           "Ar&gument:",IDC_TEXT2,26,180,40,8
+    EDITTEXT        IDC_ARGUMENTS,70,179,120,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,96,210,50,14
+    PUSHBUTTON      "Avbryt",2,149,210,50,14
+END
+
+IDD_REGISTER DIALOG DISCARDABLE  0, 0, 207, 46
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_VISIBLE
+CAPTION "Registrering"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Nave:",-1,7,11,30,8
+    EDITTEXT        IDC_REGNAME,40,8,80,13,ES_AUTOHSCROLL
+    LTEXT           "&Kode:",-1,7,27,30,8
+    EDITTEXT        IDC_REGCODE,40,24,80,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,150,7,50,14
+    PUSHBUTTON      "Avbryt",IDCANCEL,150,24,50,14
+END
+
+IDD_POPUP DIALOG DISCARDABLE  0, 0, 80, 37
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_TEXT1,5,5,70,8
+    LTEXT           "",IDC_TEXT2,5,15,70,8
+    LTEXT           "",IDC_TEXT3,5,25,70,8
+END
+
+
+IDD_MSGBOX DIALOG DISCARDABLE  0, 0, 275, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,45,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,45,50,14
+    PUSHBUTTON      "&No",IDNO,218,45,50,14
+    ICON            "",IDC_ICO,7,9,18,20
+    LTEXT           "",IDC_TEXT,40,9,228,24
+END
+
+IDD_MSGBOXEX DIALOG DISCARDABLE  0, 0, 275, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,164,50,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,218,50,50,14
+    PUSHBUTTON      "&Yes",IDYES,164,50,50,14
+    PUSHBUTTON      "&No",IDNO,218,50,50,14
+    ICON            "",IDC_ICO,7,9,21,20
+    LTEXT           "",IDC_TEXT,40,9,228,8
+    CONTROL         "",IDC_CHECK,"Button",BS_AUTOCHECKBOX|WS_TABSTOP,40,28,228,10
+END

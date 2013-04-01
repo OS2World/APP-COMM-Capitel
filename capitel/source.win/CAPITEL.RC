@@ -1,0 +1,40 @@
+
+#define _INC_WINDOWS_H_ #include <windows.h>
+#define _INC_CAPITEL_H_ #include "capitel.h"
+#define _INC_VERSION_H_ #include "..\..\common\source\version.h"
+#define _INC_GLOBALS_H_ #include "..\..\common\source\global.h"
+
+_INC_WINDOWS_H_
+_INC_CAPITEL_H_
+_INC_VERSION_H_
+_INC_GLOBALS_H_
+
+ID_MAIN    ICON DISCARDABLE "CAPITEL.ICO"
+ID_CALL0   ICON DISCARDABLE "CALL0.ICO"
+ID_CALL1   ICON DISCARDABLE "CALL1.ICO"
+ID_CALL2   ICON DISCARDABLE "CALL2.ICO"
+ID_CALL3   ICON DISCARDABLE "CALL3.ICO"
+ID_PORT0   ICON DISCARDABLE "PORT0.ICO"
+ID_PORT1   ICON DISCARDABLE "PORT1.ICO"
+ID_CALLER0 ICON DISCARDABLE "CALLER0.ICO"
+ID_CALLER1 ICON DISCARDABLE "CALLER1.ICO"
+ID_ACTION0 ICON DISCARDABLE "ACTION0.ICO"
+ID_ACTION1 ICON DISCARDABLE "ACTION1.ICO"
+
+ID_TOOLBARBMP  BITMAP DISCARDABLE "TOOLBAR.BMP"
+
+ID_TRAYBMP_SML BITMAP DISCARDABLE "TRAY_SML.BMP"
+ID_TRAYBMP_LRG BITMAP DISCARDABLE "TRAY_LRG.BMP"
+
+#include "english.rc"
+#include "german.rc"
+#include "spanish.rc"
+#include "french.rc"
+#include "norweg.rc"
+#include "dutch.rc"
+#include "finnish.rc"
+#include "italian.rc"
+#include "nynorsk.rc"
+#include "danish.rc"
+#include "hungary.rc"
+

@@ -1,0 +1,17 @@
+# 1st col.: number of caller
+# 2nd col.: name of caller
+# 3rd col.: welcome.wav for this entry
+# 4th col.: reject-cause for this entry (0=normal, 1=busy, 2=refuse, 3=unavailable)
+# 5th col.: max. recording time
+# 6th col.: answering delay
+# 7th col.: active flag
+# 8th col.: ringing.wav
+# 9th col.: callback number
+#
+# note: - "*" star means port default
+#       - insert a blank for no settings
+#
+089-*|Caller from Munich|*|*|*|*|1|*|*
+0241-9519011|Werner|*|*|*|*|1|*|*
+0241-9209025|Carsten|*|*|*|*|1|*|*
+

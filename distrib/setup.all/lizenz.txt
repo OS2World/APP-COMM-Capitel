@@ -1,0 +1,157 @@
+
+ Lizenzvereinbarung und Gew„hrleistung
+ =====================================
+
+    1. Begriffsbestimmungen
+    -----------------------
+    Im Sinne der nachfolgenden Vorschriften dieser Vereinbarung
+    bedeuten
+
+    - Autoren: Werner Fehn, Schuttenhofweg 220, D-52080 Aachen
+               Carsten Wimmer, Trierer Str. 281a, D-52078 Aachen
+
+
+    - Lizenznehmer: derjenige, der das Programm nutzt, verbreitet,
+      vervielf„ltigt, vertreibt oder in einer sonstigen Form
+      verwendet, gleich ob es sich um eine natrliche oder
+      juristische Person handelt.
+
+    - Programm: Der ausfhrbare Programmcode, seine Beschreibung,
+      Bedienungsanleitungen, Hilfetexte sowie diese
+      Lizenzvereinbarung fr CapiTel.
+
+    - Benutzung, Nutzung: Der bestimmungsgem„áe Gebrauch, beginnend
+      mit dem Laden des ausfhrbaren Programmes in den
+      Arbeitsspeicher des Rechners.
+
+    - Programmarchiv: Das Programm und alle zugeh”rigen Dateien,
+      die vom Autor zum Vertrieb zusammengefasst wurden
+
+    - grobes Verschulden: Vorsatz und grobe Fahrl„ssigkeit, auch
+      des Erfllungsgehilfen.
+
+
+    2. Gegenstand
+    -------------
+    2.1 Die Autoren gew„hren  dem  Lizenznehmer  das  nicht  ausschlieáliche
+    Recht  zur  Nutzung  des  Programms  im  Rahmen   der   nachfolgenden
+    Bedingungen.
+
+    2.2 Das Programm unterliegt den Bestimmungen  des  Urheberrechts.  Es
+    darf  nur  in  unver„nderter  Form   und   unter   Beifgung   dieser
+    Lizenzvereinbarung   vertrieben,   vervielf„ltigt   oder   verbreitet
+    werden. Der Vertrieb, die Vervielf„ltigung und  die  Verbreitung  des
+    vollst„ndigen  Programmarchivs  sind   nur   erlaubt,   solange   sie
+    unentgeltlich  erfolgt.  Die  Verbreitung,  der  Vertrieb   und   die
+    Vervielf„ltigung ist nicht unentgeltlich, wenn das Programm  zusammen
+    mit anderen Gegenst„nden, die nicht unentgeltlich  abgegeben  werden,
+    wie  z.B.  Modems  oder   Zeitschriften,   erfolgt.   Im   Fall   der
+    entgeltlichen Verbreitung, Vervielf„ltigung oder des  Vertriebes  ist
+    vor  der  Verbreitung,  Vervielf„ltigung  oder   dem   Vertrieb   die
+    schriftliche Erlaubnis des Autors erforderlich.
+
+
+    2.3 Der Lizenznehmer ist nicht befugt, sich Zugang zum Quellcode  des
+    Programmes zu verschaffen  oder  irgendwelche  Ver„nderungen  an  dem
+    Programm oder einem seiner Bestandteile vorzunehmen,  wenn  er  nicht
+    vom Autor hierzu ausdrcklich erm„chtigt wurde.
+
+    2.4 Der Lizenznehmer  ist  berechtigt,  das  Programm  60  Tage  lang
+    unentgeltlich zu nutzen. Die Frist beginnt mit der  ersten  Benutzung
+    des Programms. Nach Ablauf dieser Frist ist  eine  weitere  Benutzung
+    nur gestattet, wenn der Benutzer  eine  Nutzungslizenz  erworben  hat
+    (Registrierung).   Natrliche   Personen   als   Lizenznehmer    sind
+    berechtigt, das Programm auf  beliebig  vielen  Rechnern  zu  nutzen,
+    solange sichergestellt ist, daá das Programm ausschlieálich  von  dem
+    Lizenznehmer genutzt wird und zu einem Zeitpunkt nur eine  Kopie  des
+    Programms benutzt wird. Juristische  Personen  als Lizenznehmer haben
+    fr  jede  natrliche  Person,  die  das  Programm nutzt, eine Lizenz
+    zu erwerben.
+
+    2.5 Die Registrierung erfolgt durch  šberweisung  eines  Betrages  in
+    H”he von 25,00 DM oder 12 Euro auf das in ORDER.TXT genannte Konto
+    unter Angabe des Namens.   Die   Autoren   verpflichten   sich,
+    sp„testens vier Wochen nach Erhalt der  Registrierungsgebhr  mittels
+    E-Mail einen Freischaltungs-Code an den Lizenznehmer zu  bermitteln,
+    der die vom Lizenznehmer  benutzte  Programmversion  als  registriert
+    kennzeichnet. Der  Autor  ist  bemht,  die  Registrierung  schneller
+    vorzunehmen. Nachdem der Lizenznehmer alles erforderliche getan  hat,
+    um die Registrierungsgebhr auf das Konto des Autors  zu  berweisen,
+    ist er berechtigt, das Programm  bis  zum  Erhalt  der  Registrierung
+    auch ber die 60-Tage-Frist zu nutzen. Geht die  Registrierungsgebhr
+    aus Grnden, die der Lizenznehmer zu vertreten hat, beim Autor  nicht
+    ein oder ist aus Grnden, die  der  Lizenznehmer  zu  vertreten  hat,
+    eine Registrierung nicht m”glich, hat der  Lizenznehmer  unverzglich
+    nach Bekanntwerden dieser Umst„nde die Registrierung zu  erm”glichen.
+    Hat   der   Lizenznehmer   vier   Wochen   nach    šberweisung    der
+    Registrierungsgebhr noch keinen Registrierungscode erhalten, so  hat
+    er sich auf seine Kosten mit dem Autor in Verbindung  zu  setzen  und
+    diesen ber diesen Umstand zu informieren.
+
+    2.6 Mit  der  Registrierung  erwirbt  der  Benutzer  das  Recht,  das
+    Programm zu nutzen. Ferner erwirbt er das Recht,  Weiterentwicklungen
+    und Updates des Programmes zu den gleichen Bedingungen zu nutzen.
+
+    Die Registrierung begrndet  keinen  Anspruch  gegen  den  Autor  des
+    Programms,   das   Programm   weiterzuentwickeln   oder    ge„nderten
+    Gegebenheiten anzupassen.  Der  Autor  ist  hierzu  berechtigt,  aber
+    nicht verpflichtet.
+
+    3. Gew„hrleistung
+    -----------------
+    3.1 Das Programm  wird  berlassen,  wie  es  ist.  Es  besteht  kein
+    Anspruch auf Weiterentwicklung oder nderung des Programmes.
+
+    3.2 Die  Autoren haften  ausschlieálich  im  Rahmen  der  gesetzlichen
+    Bestimmungen.
+
+    3.3  Im  Falle  von  Programmfehlern,  die  weder  auf   dem   Fehlen
+    zugesicherter  Eigenschaften  beruhen,  noch  arglistig  verschwiegen
+    wurden, ist jedweder   Anspruch  auf  Schadensersatz  ausgeschlossen.
+    Dies  gilt  nicht  fr  Sch„den,  die  durch   Vorsatz   oder   grobe
+    Fahrl„ssigkeit der  Autoren  oder  ihrer  Erfllungsgehilfen  (grobes
+    Verschulden)   entstanden   sind    oder    fr    die    nach    dem
+    Produkthaftungsgesetz gehaftet wird.  Das  Recht  auf  Wandlung  oder
+    Minderung bleibt in jedem Falle unberhrt.
+
+    3.4 Ein Anspruch auf  Nachbesserung  besteht  nicht.  Ebenso  besteht
+    kein Anspruch auf Lieferung eines fehlerfreien Programmes.
+
+    3.5 Es obliegt dem Lizenznehmer, zu prfen, ob das Programm  mit  der
+    auf  seinem  Rechner  installierten  Hard-  und   Software   zusammen
+    funktioniert.  Eine   Garantie   fr   die   Funktionsf„higkeit   des
+    Programmes  mit  jeglicher  Hard-  und  Software  besteht  nicht.  Es
+    besteht  daher  kein  Anspruch  auf  Lieferung  von   Treibern   oder
+    Modifizierung des Programmes.  Fr  den  Fall,  daá  ein  Fehler  des
+    Programmes vorliegt, bleibt das Recht  auf  Wandlung  oder  Minderung
+    unberhrt.  Ebenso  unberhrt   bleibt   die   Haftung   fr   grobes
+    Verschulden und die Haftung nach dem Produkthaftungsgesetz.
+
+    3.6  Die  Autoren  sind  nicht  verpflichtet,  den Lizenznehmer durch
+    Beratung oder in sonstiger Weise bei der Benutzung des Programmes  zu
+    untersttzen.    Fr     die     Mitteilung     von     Hard-     und
+    Softwareunvertr„glichkeiten  und  sonstiger  bei  der  Benutzung  des
+    Programmes auftretender Probleme ist der Autor jedoch dankbar.
+
+    4. Sonstige Bestimmungen
+    ------------------------
+    4.1  Soweit  rechtlich  m”glich   wird   als   Gerichtsstand   Aachen
+    vereinbart.
+
+    4.2 Fr  s„mtliche  Rechtsbeziehungen  zwischen  den  Autoren und  dem
+    Lizenznehmer gilt  das  Recht  der  Bundesrepublik  Deutschland.  Bei
+    Lieferungen in  das  Ausland  ist  die  Anwendung  des  UN-Kaufrechts
+    ausgeschlossen.
+
+    4.3    Sollten    einzelne    Bestimmungen    dieser     Vereinbarung
+    rechtsunwirksam   sein,   bleibt   die   Wirksamkeit   der    brigen
+    Bestimmungen   davon   unberhrt.   Autoren  und  Lizenznehmer   sind
+    verpflichtet,  anstelle  der  unwirksamen  Klausel  eine  solche   zu
+    vereinbaren, die der unwirksamen Klausel wirtschaftlich  am  n„chsten
+    kommt.
+
+    4.4 nderungen und Abweichungen von dieser Vereinbarung bedrfen  der
+    Schriftform. Dies gilt insbesondere  fr  ein  Abweichen  von  diesem
+    Schriftformerfordernis selbst.  Das  Schriftformerfordernis  ist  bei
+    Verwendung eines Telefax-Ger„tes gewahrt.
+
